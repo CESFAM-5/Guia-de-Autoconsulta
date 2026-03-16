@@ -163,6 +163,186 @@
   .urgencia-banner a { display: inline-block; margin-top: 6px; font-size: 13px; font-weight: 600; color: var(--verde); text-decoration: none; }
   .hora-actual { text-align: center; font-size: 12px; color: var(--texto-suave); margin-bottom: 14px; font-weight: 400; }
 
+  /* ── PÁGINAS DE CONTENIDO ── */
+  #view-pagina {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: var(--fondo);
+    z-index: 150;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+    animation: slideInRight 0.22s ease;
+  }
+  #view-pagina.visible { display: block; }
+  @keyframes slideInRight {
+    from { transform: translateX(30px); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+  }
+
+  .pagina-header {
+    background: var(--verde);
+    position: sticky; top: 0; z-index: 10;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 2px 8px rgba(26,107,74,0.18);
+  }
+
+  .pagina-back {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.18);
+    border: none; border-radius: 10px;
+    color: white; font-size: 13px; font-weight: 500;
+    padding: 7px 12px; cursor: pointer;
+    font-family: var(--font); flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .pagina-back:active { background: rgba(255,255,255,0.28); }
+  .pagina-back svg { width: 14px; height: 14px; }
+
+  .pagina-header-titulo {
+    color: rgba(255,255,255,0.75);
+    font-size: 12px; font-weight: 400;
+    letter-spacing: 0.03em;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .pagina-body {
+    max-width: 480px; margin: 0 auto;
+    padding: 20px 18px 40px;
+  }
+
+  .pagina-categoria {
+    display: inline-block;
+    background: var(--verde-claro); color: var(--verde);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  .pagina-titulo {
+    font-size: 20px; font-weight: 700;
+    color: var(--texto); line-height: 1.2;
+    margin-bottom: 5px;
+  }
+
+  .pagina-fecha {
+    font-size: 11px; color: #9ab0a6;
+    margin-bottom: 18px;
+  }
+
+  /* Navegación por anclaje */
+  .pagina-nav {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .pagina-nav-pill {
+    background: var(--fondo);
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 12px; font-weight: 500;
+    color: var(--verde); cursor: pointer;
+    font-family: var(--font);
+    transition: all 0.15s;
+  }
+  .pagina-nav-pill:active { background: var(--verde-claro); }
+
+  /* Secciones de contenido */
+  .pagina-seccion {
+    margin-bottom: 24px;
+    scroll-margin-top: 80px;
+  }
+
+  .pagina-seccion-titulo {
+    font-size: 11px; font-weight: 700;
+    color: var(--verde);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--verde-claro);
+    margin-bottom: 12px;
+  }
+
+  .pagina-texto {
+    font-size: 15px; color: var(--texto);
+    line-height: 1.7; margin-bottom: 10px;
+  }
+
+  .pagina-bullet {
+    display: flex; gap: 10px;
+    margin-bottom: 8px; align-items: flex-start;
+  }
+
+  .pagina-bullet-dot {
+    width: 6px; height: 6px;
+    background: var(--verde-medio);
+    border-radius: 50%; flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  .pagina-bullet span {
+    font-size: 15px; color: var(--texto); line-height: 1.65;
+  }
+
+  .pagina-requisito {
+    display: flex; gap: 10px;
+    align-items: flex-start; margin-bottom: 8px;
+  }
+
+  .pagina-req-check {
+    color: var(--verde); font-size: 15px;
+    flex-shrink: 0; margin-top: 1px;
+  }
+
+  .pagina-req-texto {
+    font-size: 15px; color: var(--texto); line-height: 1.6;
+  }
+
+  /* Links internos como tarjeta */
+  .link-card-interno {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--blanco); border: 1px solid var(--borde);
+    border-radius: 12px; padding: 12px 14px;
+    margin-bottom: 8px; cursor: pointer;
+    transition: background 0.15s;
+    border-left: 3px solid var(--verde-medio);
+  }
+  .link-card-interno:active { background: var(--verde-claro); }
+
+  .link-card-interno-icon {
+    width: 34px; height: 34px;
+    background: var(--verde-claro); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .link-card-interno-icon svg { width: 16px; height: 16px; }
+
+  .link-card-interno-texto { flex: 1; }
+  .link-card-interno-nombre { font-size: 14px; font-weight: 600; color: var(--texto); }
+  .link-card-interno-desc { font-size: 12px; color: var(--texto-suave); margin-top: 2px; }
+  .link-card-interno-arrow svg { width: 15px; height: 15px; color: #9ab0a6; }
+
+  /* Link inline dentro de texto */
+  .link-inline-interno {
+    color: var(--verde); font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1.5px solid #b8d9cb;
+    padding-bottom: 1px; cursor: pointer;
+  }
+
+  /* Link externo */
+  .link-externo {
+    display: inline-flex; align-items: center; gap: 5px;
+    color: var(--verde); font-size: 14px; font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px dashed #b8d9cb; padding-bottom: 1px;
+  }
+  .link-externo svg { width: 12px; height: 12px; flex-shrink: 0; }
+
   /* Botones urgencia */
   .btn-urgencia {
     display: inline-flex; align-items: center; justify-content: center; gap: 6px;
@@ -321,18 +501,19 @@
 const BASE_URL = "https://sites.google.com/view/guiadeautoconsulta";
 
 const TEMAS = [
-  {letra:"A",nombre:"Adolescentes y Jóvenes",url:"/a/adolescentes-y-jóvenes",categoria:"Programa",tags:"adolescente joven programa salud sexual anticonceptivo control"},
+  {letra:"A",nombre:"Adolescentes y Jóvenes",url:"/a/adolescentes-y-jóvenes",categoria:"Programa",tags:"adolescente joven programa salud sexual anticonceptivo control",pagina:"adolescentes-jovenes"},
   {letra:"A",nombre:"Adulto Mayor Autovalente",url:"/a/adulto-mayor-autovalente-programa",categoria:"Programa",tags:"adulto mayor anciano 60 años tercera edad programa autovalente"},
-  {letra:"A",nombre:"Alimentación Complementaria — PNAC",url:"/a/alimentación-complementaria-programa-nacional-de-pnac",categoria:"Programa",tags:"leche pnac alimento niño embarazada lactante bebé formula purita"},
-  {letra:"A",nombre:"PACAM — Alimentación Adulto Mayor",url:"/a/alimentación-complementaria-del-adulto-mayor-programa-nacional-de-pacam",categoria:"Programa",tags:"pacam alimento adulto mayor leche nutrición anciano"},
+  {letra:"A",nombre:"Alimentación Complementaria — PNAC",url:"/a/alimentación-complementaria-programa-nacional-de-pnac",categoria:"Programa",tags:"leche pnac alimento niño embarazada lactante bebé formula purita",pagina:"pnac"},
+  {letra:"A",nombre:"PACAM — Alimentación Adulto Mayor",url:"/a/alimentación-complementaria-del-adulto-mayor-programa-nacional-de-pacam",categoria:"Programa",tags:"pacam alimento adulto mayor leche nutrición anciano",pagina:"pacam"},
   {letra:"A",nombre:"Anular hora",url:"/a/anular-hora",categoria:"Trámite",tags:"anular cancelar hora cita médica some"},
+  {letra:"A",nombre:"Apoyo Clínico",url:"/a/apoyo-clínico",categoria:"Servicio",tags:"apoyo clínico laboratorio vacunatorio inyectable electrocardiograma herida curación tuberculosis samu",pagina:"apoyo-clinico"},
   {letra:"A",nombre:"Apoyo a la Identidad de Género",url:"/a/apoyo-a-la-identidad-de-género",categoria:"Programa",tags:"identidad género trans transgénero diversidad sexual lgbtq"},
-  {letra:"A",nombre:"Asistente Social",url:"/a/asistente-social",categoria:"Profesional",tags:"asistente social trabajadora social beneficio subsidio ayuda trámite pobreza"},
-  {letra:"A",nombre:"Atención Domiciliaria",url:"/a/atención-domiciliaria-a-personas-con-dependencia-severa-programa-de",categoria:"Programa",tags:"visita domicilio casa postrado dependiente discapacidad crónica"},
+  {letra:"A",nombre:"Asistente Social",url:"/a/asistente-social",categoria:"Profesional",tags:"asistente social trabajadora social beneficio subsidio ayuda trámite pobreza",pagina:"asistente-social"},
+  {letra:"A",nombre:"Atención Domiciliaria",url:"/a/atención-domiciliaria-a-personas-con-dependencia-severa-programa-de",categoria:"Programa",tags:"visita domicilio casa postrado dependiente discapacidad crónica",pagina:"atencion-domiciliaria"},
   {letra:"A",nombre:"Atención Primaria de Salud",url:"/a/atención-primaria-de-salud",categoria:"Información",tags:"aps cesfam atención primaria información general"},
-  {letra:"A",nombre:"Ayudas Técnicas",url:"/a/ayudas-técnicas",categoria:"Servicio",tags:"silla ruedas bastón andador audífono muleta discapacidad ayuda"},
-  {letra:"B",nombre:"Bodega de Alimentos",url:"/b/bodega-de-alimentos",categoria:"Servicio",tags:"bodega alimento comida retiro entrega"},
-  {letra:"B",nombre:"Salud Bucal — Dental",url:"/b/bucal-programa-de-salud",categoria:"Programa",tags:"diente muela dolor dental dentista odontólogo boca limpieza extracción"},
+  {letra:"A",nombre:"Ayudas Técnicas",url:"/a/ayudas-técnicas",categoria:"Servicio",tags:"silla ruedas bastón andador audífono muleta discapacidad ayuda",pagina:"ayudas-tecnicas"},
+  {letra:"B",nombre:"Bodega de Alimentos",url:"/b/bodega-de-alimentos",categoria:"Servicio",tags:"bodega alimento comida retiro entrega",pagina:"bodega-alimentos"},
+  {letra:"B",nombre:"Salud Bucal — Dental",url:"/b/bucal-programa-de-salud",categoria:"Programa",tags:"diente muela dolor dental dentista odontólogo boca limpieza extracción",pagina:"salud-bucal"},
   {letra:"C",nombre:"Cáncer",url:"/c/cáncer",categoria:"Programa",tags:"cáncer tumor detección mamografía pap oncología GES prevención"},
   {letra:"C",nombre:"Cambio de hora",url:"/c/cambio-de-hora",categoria:"Trámite",tags:"cambiar hora cita médica reagendar some"},
   {letra:"C",nombre:"Carnet de control",url:"/c/carnet-de-control",categoria:"Trámite",tags:"carnet control registro libreta salud"},
@@ -449,7 +630,7 @@ function renderResultados(query, res){
   }
   p.innerHTML=volverBtn
     +`<div class="resultados-header"><span class="resultados-titulo">Resultados para "${query}"</span><span class="resultados-count">${res.length} encontrado${res.length>1?'s':''}</span></div>`
-    +res.map(r=>`<div class="resultado-card"><a class="resultado-link" href="${BASE_URL}${r.url}" target="_blank" rel="noopener">
+    +res.map(r=>`<div class="resultado-card"><a class="resultado-link" href="${BASE_URL}${r.url}" target="_blank" rel="noopener" ${r.pagina?`onclick="event.preventDefault();abrirPagina('${r.pagina}')"`:''}">
       <div class="resultado-icono">${ICONS[r.categoria]||ICONS['Información']}</div>
       <div class="resultado-texto">
         <div class="resultado-nombre">${r.nombre}</div>
@@ -532,7 +713,7 @@ function renderIndice(){
     <div class="letra-seccion" id="sec-${l}">
       <div class="letra-titulo">${l}</div>
       ${TEMAS.filter(t=>t.letra===l).map(i=>`
-        <a class="item-lista" href="${BASE_URL}${i.url}" target="_blank" rel="noopener">
+        <a class="item-lista" href="${BASE_URL}${i.url}" target="_blank" rel="noopener" ${i.pagina?`onclick="event.preventDefault();abrirPagina('${i.pagina}')"`:''}">
           <span>${i.nombre}</span>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </a>`).join('')}
@@ -591,7 +772,513 @@ function renderEstado(){
 function ajustarHeader(){document.documentElement.style.setProperty('--header-h',document.querySelector('header').offsetHeight+'px');}
 window.addEventListener('load',ajustarHeader);
 window.addEventListener('resize',ajustarHeader);
+
+/* ════════════════════════════════════════════════
+   BASE DE DATOS DE PÁGINAS MIGRADAS
+   Agregar cada tema migrado aquí.
+   ════════════════════════════════════════════════ */
+const PAGINAS = {
+
+  /* ── A ─────────────────────────────────────── */
+
+  "adolescentes-jovenes": {
+    id: "adolescentes-jovenes",
+    nombre: "Adolescentes y Jóvenes",
+    titulo: "Programa Nacional de Salud Integral de Adolescentes y Jóvenes",
+    categoria: "Programa",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Saber +"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">El objetivo del Programa Nacional de Salud Integral de Adolescentes y Jóvenes es contribuir a la salud y el desarrollo integral de este grupo de la población, en su contexto familiar y comunitario, a través de actividades de fomento, protección, prevención, recuperación y rehabilitación de la salud, que impulsen la plena expresión de su potencial biopsicosocial y una mejor calidad de vida.</p>
+        <p class="pagina-texto">Así mismo, es relevante la coordinación y articulación de una red de servicios, por cuanto sus necesidades deben ser abordadas en forma integrada, posibilitando cuando sea necesario, la intervención simultánea de los distintos niveles de atención y distintos equipos intra e intersectoriales, particularmente cuando se trata de poblaciones de adolescentes y jóvenes en situación de vulneración de derechos y en conflicto con la justicia.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+        <p class="pagina-texto">Es una prestación de salud <strong>gratuita</strong>, dirigida a la población de 10 a 19 años.</p>
+        <p class="pagina-texto">Se define como la atención integral de adolescentes que permite evaluar el estado de salud, el crecimiento y desarrollo, fomentando los factores y conductas protectores e identificando aquellas de riesgo y otros problemas o necesidades en salud, con objeto de intervenir en forma oportuna, integrada e integral.</p>
+        <p class="pagina-texto">La realización de este control implica que se incorporen los enfoques de derecho, curso de vida, interculturalidad, determinantes sociales, género y diversidad.</p>
+        <p class="pagina-texto">El control de salud constituye una oportunidad única para abordar las necesidades de salud de adolescentes, por lo que debe ser realizado con altos estándares de calidad y por equipo capacitado y cercano a los adolescentes.</p>
+        <p class="pagina-texto" style="font-weight:600; margin-top:14px;">Las acciones incluidas en el Programa son:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Desarrollar el inicio de una relación vincular "profesional-usuario".</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Entrevista clínica: Anamnesis completa biopsicosocial y familiar, registrando la información en el instrumento ficha Integral CLAP/OPS/OMS modificada.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Examen físico general, según orientaciones técnicas.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Identificar riesgos en ámbitos: Salud sexual y reproductiva (SSR), suicidio, drogas y nutricionales.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Establecer una hipótesis diagnóstica o diagnóstico, proponer un plan de intervención inicial, indicaciones y derivaciones, esta última si es necesario.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Revisar calendario de inmunizaciones, según norma.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Entregar información que promueva el uso de los servicios de salud y el autocuidado a través de guías anticipatorias para adolescentes y sus familias.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Brindar la posibilidad y oportunidad de referir a consejerías.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Indicar consulta y seguimiento si procede.</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito">
+          <span class="pagina-req-check">✓</span>
+          <span class="pagina-req-texto">Estar inscrita/o en el CESFAM
+            ${enlaceInterno('inscripcion','¿Cómo inscribirse?')}
+          </span>
+        </div>
+        <div class="pagina-requisito">
+          <span class="pagina-req-check">✓</span>
+          <span class="pagina-req-texto">Tener entre 10 y 19 años de edad.</span>
+        </div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo">Acceder</div>
+        <p class="pagina-texto">Para acceder a las prestaciones debe solicitar hora para <strong>Control de Salud Integral de Adolescentes y Jóvenes</strong> en el SOME Satélite de su sector.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora para control de adolescentes')}
+        ${enlaceTarjeta('hora-presentacion','Hora de presentación','Llegar 15 minutos antes de la cita')}
+      </div>
+
+      <div class="pagina-seccion" id="sec-Saber +">
+        <div class="pagina-seccion-titulo">Saber +</div>
+        <a href="https://diprece.minsal.cl/programas-de-salud/programas-ciclo-vital/informacion-a-la-comunidad-salud-joven-y-adolescente/" target="_blank" rel="noopener" class="link-externo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          DIPRECE — División de Prevención y Control de Enfermedades, Ministerio de Salud
+        </a>
+      </div>
+    `
+  },
+
+  /* ── Agregar más temas aquí siguiendo el mismo patrón ── */
+
+  "apoyo-clinico": {
+    id: "apoyo-clinico",
+    nombre: "Apoyo Clínico",
+    titulo: "Apoyo Clínico",
+    categoria: "Servicio",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Requisitos"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Es la unidad que provee de un conjunto de servicios y recursos que respaldan directamente la labor clínica del CESFAM. Esta unidad no está orientada a la atención directa del paciente, sino que brinda soporte a los equipos clínicos para mejorar la calidad y eficiencia de la atención.</p>
+        <p class="pagina-texto">Incluye, entre otros:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Laboratorio — toma de muestras</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Vacunatorio</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Inyectable</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Toma de electrocardiogramas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tratamiento de heridas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Ejecución de campañas de vacunación</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Primeros auxilios</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Coordinación con SAMU</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Pesquisa y tratamiento de la tuberculosis (TBC)</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+      </div>
+    `
+  },
+
+  "salud-bucal": {
+    id: "salud-bucal",
+    nombre: "Salud Bucal, Programa Nacional de",
+    titulo: "Programa de Salud Bucal",
+    categoria: "Programa",
+    actualizacion: "",
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">El Programa de Salud Bucal busca prevenir, diagnosticar y tratar las enfermedades bucodentales, promoviendo hábitos de higiene oral desde la infancia hasta la adultez. Está dirigido especialmente a grupos prioritarios y busca reducir la incidencia de caries, enfermedades periodontales y otras afecciones dentales, mejorando la calidad de vida de la población usuaria.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Control y atención preventiva</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Evaluación y diagnóstico dental:</strong> examen bucal completo para detectar caries, enfermedades de las encías y otras condiciones. Define el plan de tratamiento o control adecuado.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Aplicación de flúor:</strong> fortalece el esmalte dental y previene caries, especialmente en niños y adolescentes.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Sellantes dentales:</strong> colocación en molares para evitar la formación de caries en dientes definitivos.</span></div>
+
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:8px;">Atención para grupos prioritarios</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Embarazadas:</strong> control dental integral con diagnóstico, educación en higiene oral y tratamiento de caries.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Escolares (6 a 12 años):</strong> controles regulares, educación en salud oral, flúor, sellantes, limpiezas y tratamiento de caries.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Adolescentes:</strong> prestaciones preventivas y tratamiento de caries.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Adultos mayores:</strong> atención para mantener la salud bucal y prevenir enfermedades que afecten la calidad de vida.</span></div>
+
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:8px;">Educación en salud bucal</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Consejería en higiene oral:</strong> orientación sobre técnicas de cepillado, uso de hilo dental y alimentación saludable.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Charlas y talleres:</strong> actividades de sensibilización dirigidas a usuarios de todas las edades y a la comunidad.</span></div>
+
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:8px;">Tratamiento de problemas bucodentales</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tratamiento de caries y restauraciones:</strong> obturaciones para devolver funcionalidad y estética dental.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Limpiezas y control periodontal:</strong> limpiezas profundas para prevenir gingivitis y periodontitis.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Extracciones dentales:</strong> cuando el daño es severo o necesario para la salud general.</span></div>
+
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:8px;">Promoción comunitaria</p>
+        <p class="pagina-texto">El programa incluye actividades en jardines infantiles, colegios y organizaciones comunitarias, con exámenes preventivos y educación sobre higiene bucal.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo">Acceder</div>
+        <p class="pagina-texto">Las horas de Consulta Odontológica se solicitan en el <strong>SOME Central</strong>.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora de consulta odontológica')}
+        ${enlaceTarjeta('hora-presentacion','Hora de presentación','Llegar 15 minutos antes de la cita')}
+      </div>
+    `
+  },
+
+  "bodega-alimentos": {
+    id: "bodega-alimentos",
+    nombre: "Bodega de Alimentos",
+    titulo: "Bodega de Alimentos",
+    categoria: "Servicio",
+    actualizacion: "",
+    nav: ["Descripción","Prestaciones","Requisitos","Horario","Ubicación"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Lugar destinado a la entrega de productos alimenticios contemplados en el Programa Nacional de Alimentación Complementaria (PNAC) y en el Programa Nacional de Alimentación Complementaria del Adulto Mayor (PACAM).</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+          ${enlaceTarjeta('pnac','Alimentación Complementaria — PNAC','Ver requisitos y productos del programa')}
+          ${enlaceTarjeta('pacam','PACAM — Adulto Mayor','Ver requisitos del programa del adulto mayor')}
+        </div>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+        <p class="pagina-texto">Ventanilla única de dispensación de productos alimenticios, educación y orientación general a usuarios.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <p class="pagina-texto">Los requisitos dependen del subprograma al que pertenece el usuario. En términos generales, implica tener los controles de salud y las vacunas al día.</p>
+        ${enlaceTarjeta('pnac','Ver requisitos PNAC','Niños, gestantes y madres que amamantan')}
+        ${enlaceTarjeta('pacam','Ver requisitos PACAM','Adultos mayores')}
+      </div>
+      <div class="pagina-seccion" id="sec-Horario">
+        <div class="pagina-seccion-titulo">Horario</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:00 – 13:00 / 14:00 – 16:00</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:00 – 13:00 / 14:00 – 15:00</span></div>
+        <p class="pagina-texto" style="margin-top:10px; color:#d94040; font-weight:600;">🛑 Cerrado el último día hábil de cada mes</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Ubicación">
+        <div class="pagina-seccion-titulo">Ubicación</div>
+        <p class="pagina-texto">Subterráneo del CESFAM N°5.</p>
+      </div>
+    `
+  },
+
+  /* ── PENDIENTE ── Apoyo a la Identidad de Género, PAIG
+     Faltan dos campos — consultar con Matrona Ximena Marín:
+     1. Nombre exacto de la prestación para pedir en SOME
+     2. Texto completo sobre quién puede solicitar la hora
+  ── */
+
+  /* ── A (continuación) ──────────────────────── */
+
+  "pacam": {
+    id: "pacam",
+    nombre: "Alimentación Complementaria del Adulto Mayor (PACAM)",
+    titulo: "Programa Nacional de Alimentación Complementaria del Adulto Mayor, PACAM",
+    categoria: "Programa",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Requisitos","Lugar y horario","Encargada/o"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">El PACAM es un conjunto de actividades de apoyo alimentario-nutricional de carácter preventivo y de recuperación, que distribuye alimentos fortificados con micronutrientes a los adultos mayores, en los Establecimientos de Atención Primaria del Sistema Nacional de Servicios de Salud.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrito en el CESFAM N°5.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Para ingresar al programa debe tener cumplidos los 70 años; o 65 años si es tuberculoso o pertenece a Chile Solidario; o 60 años si pertenece al Hogar de Cristo.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Tener controles de salud al día (al menos EMPAM).</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Contar con carné de control o libreta de controles actualizada.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Lugar y horario">
+        <div class="pagina-seccion-titulo">Lugar y horario</div>
+        <p class="pagina-texto">Retiro en <strong>Bodega de Alimentos</strong> (subterráneo).</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:00 – 16:30 hrs</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:00 – 15:30 hrs</span></div>
+        <p class="pagina-texto" style="margin-top:10px; color:#d94040; font-weight:600;">🛑 Cerrado el último día hábil del mes</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Encargada/o">
+        <div class="pagina-seccion-titulo">Encargada/o</div>
+        <p class="pagina-texto">Nutricionista Daniela Parra M.</p>
+      </div>
+    `
+  },
+
+  "pnac": {
+    id: "pnac",
+    nombre: "Alimentación Complementaria (PNAC)",
+    titulo: "Programa Nacional de Alimentación Complementaria, PNAC",
+    categoria: "Programa",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Requisitos","Productos","Entrega y horario","Encargada/o","Más información"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Es un programa de carácter universal que considera un conjunto de actividades de apoyo nutricional de tipo preventivo y de recuperación, a través del cual se distribuyen alimentos destinados a:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Niños/as menores de 6 años.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Niños con peso de nacimiento menor de 1.500 g y/o menos de 32 semanas de gestación.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Gestantes y madres que amamantan.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <p class="pagina-texto" style="font-weight:600;">Usuarios de FONASA:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Estar inscrita/o en el CESFAM N°5.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tener controles de salud al día.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tener vacunas al día según esquema ministerial vigente.</span></div>
+        <p class="pagina-texto" style="font-weight:600; margin-top:10px;">Usuarios de ISAPRE:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Estar adscrito en el CESFAM N°5.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tener controles de salud al día.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tener vacunas al día según esquema ministerial vigente.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Productos">
+        <div class="pagina-seccion-titulo">Productos</div>
+        <p class="pagina-texto">Los productos entregados por el PNAC dependen de los diferentes subprogramas:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>PNAC Básico:</strong> Fórmula de inicio – Purita +Pro 1 – Purita +Pro 2 – Purita Mamá</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>PNAC Refuerzo:</strong> Fórmula de inicio – Purita +Pro 1 – Purita Mamá – Mi Sopita</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>PNAC Prematuro:</strong> Fórmula para prematuros – Mi Sopita</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>PNAC APLV:</strong> Fórmula extensamente hidrolizada – fórmula aminoacídica.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>PNAC EIM:</strong> Fórmulas especializadas de acuerdo con el diagnóstico de errores innatos del metabolismo.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Entrega y horario">
+        <div class="pagina-seccion-titulo">Entrega y horario</div>
+        <p class="pagina-texto">Retiro en <strong>Bodega de Alimentos</strong> (subterráneo).</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:00 – 16:30 hrs</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:00 – 15:30 hrs</span></div>
+        <p class="pagina-texto" style="margin-top:10px; color:#d94040; font-weight:600;">🛑 Cerrado el último día hábil del mes</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Encargada/o">
+        <div class="pagina-seccion-titulo">Encargada/o</div>
+        <p class="pagina-texto">Nutricionista Daniela Parra M.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Más información">
+        <div class="pagina-seccion-titulo">Más información</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>El retiro debe realizarse con el carné de control donde se indique el último control de salud y vacuna al día.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>A niños menores de 6 meses el alimento entregado depende de la condición de lactancia, que debe quedar anotada en el carné y actualizarse en cada control.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>La entrega es mensual para prematuros, niños menores de 2 años, gestantes y madres que amamantan.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Para niños de 2 años y más, la entrega se realiza de manera bimensual.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>No se realizan entregas retroactivas ni adelantos; solo se entrega lo que corresponde al mes en vigencia.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Para usuarios del extrasistema (Fonasa libre elección, ISAPRES, Fuerzas Armadas sin previsión) y otros casos específicos, deben usar los formularios ministeriales.</span></div>
+        <a href="https://www.minsal.cl" target="_blank" rel="noopener" class="link-externo" style="margin-top:8px; display:inline-flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Sitio web MINSAL
+        </a>
+      </div>
+    `
+  },
+
+  "asistente-social": {
+    id: "asistente-social",
+    nombre: "Asistente Social",
+    titulo: "Asistente Social",
+    categoria: "Profesional",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Equipo"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Profesional de las ciencias sociales que contribuye a mejorar la calidad de vida de la población usuaria, enfocado en el Modelo de Salud Integral con enfoque de salud familiar y comunitaria, desarrollando las potencialidades de los individuos, familias, grupos y comunidades, desde una perspectiva sistémica e integradora, promoviendo el cambio social y la resolución de problemas en las relaciones humanas a través de la promoción, educación y participación en salud.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Intervenir en forma transdisciplinaria, bajo una mirada bio-psico-social, a personas, familias y comunidad en cualquier etapa del ciclo vital, según los distintos programas de salud.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Identificar, priorizar y buscar la solución de problemas a través del equipo e involucrar a todo actor de la comunidad que dé respuesta a una solución propuesta.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Realizar Consulta Social según situación presente: Consulta de Orientación social, Consulta socio-familiar, Consulta Especializada, Consejería Individual y Familiar.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Realizar Visitas Domiciliarias Integrales, entre otras.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo">Acceder</div>
+        <p class="pagina-texto">Solicitar hora de atención en el SOME de su sector.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora para Asistente Social')}
+        ${enlaceTarjeta('hora-presentacion','Hora de presentación','Llegar 15 minutos antes de la cita')}
+      </div>
+      <div class="pagina-seccion" id="sec-Equipo">
+        <div class="pagina-seccion-titulo">Equipo</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tr. Social Matías Valenzuela Rojas</strong> — Sector Lila</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tr. Social Catalina Tiznado Candia</strong> — Sector Verde</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tr. Social Francisco Muñoz Tobar</strong> — Sector Rojo</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tr. Social Catherine Reyes Aracena</strong> — Programa de Acompañamiento de Niños, Niñas y Adolescentes</span></div>
+      </div>
+    `
+  },
+
+  "atencion-domiciliaria": {
+    id: "atencion-domiciliaria",
+    nombre: "Atención Domiciliaria a Personas con Dependencia Severa",
+    titulo: "Programa de Atención Domiciliaria a Personas con Dependencia Severa",
+    categoria: "Programa",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Clasificación de dependencia"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Este programa corresponde a una estrategia de atención de salud que incorpora los ámbitos promocional, preventivo y curativo de la salud, así como también los ámbitos de seguimiento y acompañamiento, centrado en la persona con dependencia severa y su cuidadora/or.</p>
+        <p class="pagina-texto">Pretende mejorar la oportunidad de atención de las personas con dependencia severa y su cuidador/a, realizando la atención de salud correspondiente a la Atención Primaria de Salud en el domicilio familiar, resguardando la continuidad de la atención con los otros niveles de salud y el acceso a servicios locales.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+        <p class="pagina-texto">La canasta básica recomendada durante doce meses para una persona con dependencia severa incluye a lo menos:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>2 visitas domiciliarias integrales.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Al menos 6 visitas domiciliarias de tratamiento.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Capacitación a las cuidadoras/es.</span></div>
+        <p class="pagina-texto">Todas estas acciones se deben reevaluar cada doce meses en base a la condición de salud de la persona y los requerimientos que esta tenga.</p>
+        <p class="pagina-texto">La permanencia en el programa es durante la existencia de la situación de dependencia severa. Si esta situación se modifica — ya sea por una mejora en los niveles de independencia y autonomía o por fallecimiento — la persona egresa del programa.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Calificar como Dependiente Severo según el Índice de Barthel. Solicitar evaluación con la/el enfermera/o de su sector.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo">Acceder</div>
+        <p class="pagina-texto">La persona cuidadora debe solicitar una evaluación del/la usuario/a a la <strong>jefatura de sector</strong>.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Clasificación de dependencia">
+        <div class="pagina-seccion-titulo">Clasificación de dependencia</div>
+        <p class="pagina-texto"><strong>Dependiente Severo:</strong> persona que según la evaluación por el Índice de Barthel obtiene 35 puntos o menos.</p>
+        <p class="pagina-texto">En caso que la situación de dependencia esté asociada a niños menores de 6 años o a personas con diagnóstico de origen psiquiátrico y/o intelectual, el médico del establecimiento deberá realizar un certificado que valide la dependencia.</p>
+        <p class="pagina-texto">Cuando el equipo de salud identifique una persona con dependencia severa que no esté inscrita o esté inscrita en otra comuna, orientará hacia la inscripción en el centro de salud más cercano a su domicilio.</p>
+        <p class="pagina-texto">Las personas institucionalizadas (en establecimientos de larga estadía públicos o privados) inscritas en los Centros de Salud deben recibir la atención domiciliaria del Programa.</p>
+        <p class="pagina-texto"><strong>Cuidadora/or</strong> es la persona que realiza los cuidados directos, pudiendo ser un familiar o un cuidador externo (vecino/a, amigo/a, etc.).</p>
+      </div>
+    `
+  },
+
+  "ayudas-tecnicas": {
+    id: "ayudas-tecnicas",
+    nombre: "Ayudas Técnicas",
+    titulo: "Ayudas Técnicas",
+    categoria: "Servicio",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Implementos","Requisitos","Acceder"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Las ayudas técnicas son los elementos o implementos requeridos por una persona con discapacidad para prevenir la progresión de ésta, mejorar o recuperar su funcionalidad, o desarrollar una vida independiente.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Implementos">
+        <div class="pagina-seccion-titulo">Implementos disponibles</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Silla de ruedas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Bastón de apoyo</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Cojín antiescaras</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Colchón antiescaras</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Andador</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Poseer una indicación (receta) de ayuda técnica extendida por un médico del CESFAM N°5.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo">Acceder</div>
+        <p class="pagina-texto">Presentar la indicación (receta) de ayuda técnica extendida por un médico del CESFAM N°5.</p>
+        ${enlaceTarjeta('medicos','Médicos del CESFAM','Para obtener la indicación médica')}
+      </div>
+    `
+  },
+
+};
+
+/* ── Funciones auxiliares para links ── */
+function enlaceTarjeta(id, nombre, desc) {
+  if (!PAGINAS[id]) return '';
+  return `<div class="link-card-interno" onclick="abrirPagina('${id}')">
+    <div class="link-card-interno-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    </div>
+    <div class="link-card-interno-texto">
+      <div class="link-card-interno-nombre">${nombre}</div>
+      <div class="link-card-interno-desc">${desc}</div>
+    </div>
+    <div class="link-card-interno-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+  </div>`;
+}
+
+function enlaceInterno(id, texto) {
+  if (!PAGINAS[id]) return '';
+  return ` <span class="link-inline-interno" onclick="abrirPagina('${id}')">${texto}</span>`;
+}
+
+/* ── Abrir / cerrar página ── */
+let paginaOrigen = 'buscar';
+
+function abrirPagina(id) {
+  const pagina = PAGINAS[id];
+  if (!pagina) return;
+
+  // Detectar origen
+  const tabActiva = document.querySelector('.tab.active');
+  if (tabActiva) {
+    const txt = tabActiva.textContent.trim();
+    paginaOrigen = txt.includes('Índice') ? 'indice' : 'buscar';
+  }
+
+  // Renderizar header
+  document.getElementById('paginaHeaderTitulo').textContent =
+    paginaOrigen === 'indice' ? 'Índice A–Z' : 'Buscar';
+
+  // Renderizar body
+  const nav = pagina.nav.map(s =>
+    `<button class="pagina-nav-pill" onclick="irSeccion('sec-${s}')">${s}</button>`
+  ).join('');
+
+  document.getElementById('paginaBody').innerHTML = `
+    <span class="pagina-categoria">${pagina.categoria}</span>
+    <h1 class="pagina-titulo">${pagina.titulo}</h1>
+    <p class="pagina-fecha">Actualización: ${pagina.actualizacion}</p>
+    <div class="pagina-nav">${nav}</div>
+    ${pagina.contenido}
+  `;
+
+  // Mostrar
+  const vista = document.getElementById('view-pagina');
+  vista.classList.add('visible');
+  vista.scrollTop = 0;
+  history.pushState({vista:'pagina', id}, '');
+}
+
+function cerrarPagina() {
+  document.getElementById('view-pagina').classList.remove('visible');
+  history.back();
+}
+
+function irSeccion(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    const vista = document.getElementById('view-pagina');
+    const top = el.offsetTop - 70;
+    vista.scrollTo({ top, behavior: 'smooth' });
+  }
+}
+
+// Botón atrás del navegador cierra la página
+window.addEventListener('popstate', function(e) {
+  const pagina = document.getElementById('view-pagina');
+  if (pagina.classList.contains('visible')) {
+    pagina.classList.remove('visible');
+  } else if (enResultados) {
+    volverInicio();
+  }
+});
+
 </script>
+<!-- ══════════ VISTA PÁGINA DE CONTENIDO ══════════ -->
+<div id="view-pagina">
+  <div class="pagina-header" id="paginaHeader">
+    <button class="pagina-back" onclick="cerrarPagina()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Volver
+    </button>
+    <span class="pagina-header-titulo" id="paginaHeaderTitulo">Índice A–Z</span>
+  </div>
+  <div class="pagina-body" id="paginaBody"></div>
+</div>
+
 <!-- MODAL MAPA -->
 <div class="mapa-overlay" id="mapaOverlay" onclick="cerrarMapaSiOverlay(event)">
   <div class="mapa-sheet">
