@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>CESFAM N°5 — Guía de Autoconsulta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #1a6b4a;
+    --verde-claro: #e6f4ee;
+    --verde-medio: #2d8f63;
+    --texto: #1a1a1a;
+    --texto-suave: #5a5a5a;
+    --borde: #dde8e3;
+    --fondo: #f7faf8;
+    --blanco: #ffffff;
+    --radio: 16px;
+    --radio-sm: 10px;
+    --header-h: 130px;
+    --font: 'Plus Jakarta Sans', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font); background: var(--fondo); color: var(--texto); min-height: 100vh; font-size: 15px; overflow: hidden; }
+
+  /* ── HEADER ── */
+  header { background: var(--verde); color: white; position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: 0 2px 14px rgba(26,107,74,0.22); }
+  .header-inner { display: flex; align-items: center; gap: 14px; padding: 18px 20px 14px; max-width: 480px; margin: 0 auto; }
+
+  /* ── LOGO: cambia src="LOGO_URL_AQUI" por la URL de tu imagen ── */
+  .logo-icon {
+    width: 52px; height: 52px;
+    background: white;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .logo-icon img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 4px; }
+  .logo-icon svg { display: none; }
+
+  .logo-text h1 { font-family: var(--font); font-size: 21px; font-weight: 600; line-height: 1.1; color: white; letter-spacing: -0.02em; }
+  .logo-text p { font-size: 11px; opacity: 0.72; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 3px; font-weight: 400; }
+
+  .tabs { display: flex; background: rgba(0,0,0,0.18); border-top: 1px solid rgba(255,255,255,0.1); }
+  .tab { flex: 1; padding: 11px 8px; text-align: center; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.6); cursor: pointer; transition: all 0.2s; border: none; background: transparent; letter-spacing: 0.02em; position: relative; font-family: var(--font); }
+  .tab.active { color: white; background: rgba(255,255,255,0.12); }
+  .tab.active::after { content: ''; position: absolute; bottom: 0; left: 22%; right: 22%; height: 2px; background: white; border-radius: 2px 2px 0 0; }
+
+  .view { display: none; }
+  .view.active { display: flex; flex-direction: column; }
+
+  /* ── BUSCADOR ── */
+  #view-buscar { position: fixed; top: var(--header-h); bottom: 0; left: 0; right: 0; }
+  .buscar-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .buscar-inner { max-width: 480px; margin: 0 auto; padding: 16px 16px 8px; }
+
+  .buscar-input-area { flex-shrink: 0; padding: 10px 16px max(14px, env(safe-area-inset-bottom)); background: var(--fondo); border-top: 1px solid var(--borde); }
+  .buscar-input-inner { max-width: 480px; margin: 0 auto; }
+  .buscar-input-row { display: flex; gap: 10px; align-items: center; background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 26px; padding: 10px 14px 10px 18px; transition: border-color 0.2s; }
+  .buscar-input-row:focus-within { border-color: var(--verde-medio); }
+  .buscar-input-row svg { width: 18px; height: 18px; color: #9ab0a6; flex-shrink: 0; }
+  .buscar-input-row input { flex: 1; border: none; outline: none; font-family: var(--font); font-size: 15px; color: var(--texto); background: transparent; }
+  .buscar-input-row input::placeholder { color: #aab8b2; }
+  .clear-btn { width: 24px; height: 24px; background: #dde8e3; border: none; border-radius: 50%; cursor: pointer; display: none; align-items: center; justify-content: center; flex-shrink: 0; font-size: 13px; color: var(--texto-suave); font-family: var(--font); }
+  .clear-btn.visible { display: flex; }
+
+  /* ── BIENVENIDA ── */
+  .bienvenida { text-align: center; padding: 24px 16px 16px; }
+  .bienvenida-icon { width: 60px; height: 60px; background: var(--verde-claro); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+  .bienvenida-icon svg { width: 30px; height: 30px; }
+  .bienvenida h2 { font-size: 19px; font-weight: 600; color: var(--verde); margin-bottom: 8px; }
+  .bienvenida p { font-size: 14px; color: var(--texto-suave); line-height: 1.6; max-width: 280px; margin: 0 auto 20px; }
+  .chips-titulo { font-size: 11px; font-weight: 600; color: var(--texto-suave); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .chip { background: var(--blanco); border: 1px solid var(--borde); border-radius: 20px; padding: 8px 14px; font-size: 13px; font-family: var(--font); cursor: pointer; color: var(--texto); transition: all 0.15s; display: flex; align-items: center; gap: 6px; font-weight: 400; }
+  .chip:active { background: var(--verde-claro); border-color: #b8d9cb; }
+
+  /* ── RESULTADOS ── */
+  .resultados-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .resultados-titulo { font-size: 13px; font-weight: 500; color: var(--texto-suave); }
+  .resultados-count { font-size: 12px; background: var(--verde-claro); color: var(--verde); border-radius: 12px; padding: 2px 10px; font-weight: 600; }
+
+  /* botón volver */
+  .btn-volver { display: flex; align-items: center; gap: 8px; background: var(--blanco); border: 1.5px solid var(--borde); border-radius: 12px; padding: 10px 16px; margin-bottom: 14px; cursor: pointer; font-family: var(--font); font-size: 13px; font-weight: 500; color: var(--verde); width: 100%; transition: all 0.15s; }
+  .btn-volver svg { width: 16px; height: 16px; flex-shrink: 0; }
+  .btn-volver:active { background: var(--verde-claro); }
+
+  .resultado-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio); margin-bottom: 10px; overflow: hidden; animation: fadeUp 0.18s ease; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:translateY(0)} }
+  .resultado-link { display: flex; align-items: center; padding: 14px 16px; text-decoration: none; color: var(--texto); gap: 12px; }
+  .resultado-link:active { background: var(--verde-claro); }
+  .resultado-icono { width: 38px; height: 38px; background: var(--verde-claro); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .resultado-icono svg { width: 18px; height: 18px; }
+  .resultado-texto { flex: 1; }
+  .resultado-nombre { font-size: 14px; font-weight: 600; line-height: 1.3; margin-bottom: 2px; }
+  .resultado-tag { font-size: 11px; color: var(--texto-suave); }
+  .resultado-match { font-size: 11px; color: var(--verde-medio); font-weight: 500; margin-top: 2px; }
+  .resultado-arrow svg { width: 16px; height: 16px; color: #9ab0a6; }
+  .sin-resultados { text-align: center; padding: 36px 20px; }
+  .sin-resultados p { font-size: 14px; color: var(--texto-suave); line-height: 1.6; }
+  .sin-resultados strong { color: var(--texto); }
+  .sin-resultados .tip { margin-top: 14px; font-size: 13px; color: var(--verde); }
+
+  /* ── ÍNDICE ── */
+  #view-indice { position: fixed; top: var(--header-h); bottom: 0; left: 0; right: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .indice-inner { max-width: 480px; margin: 0 auto; padding: 16px; }
+
+  .indice-guia {
+    background: var(--verde-claro);
+    border: 1px solid #b8d9cb;
+    border-radius: var(--radio-sm);
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .indice-guia svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--verde); }
+  .indice-guia p { font-size: 13px; color: var(--verde); line-height: 1.4; font-weight: 500; }
+
+  .letras-nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; justify-content: center; }
+  .letra-btn {
+    min-width: 42px; height: 42px;
+    padding: 0 10px;
+    background: var(--blanco);
+    border: 1.5px solid var(--borde);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--verde);
+    cursor: pointer;
+    font-family: var(--font);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .letra-btn:active { background: var(--verde-claro); border-color: #b8d9cb; transform: scale(0.96); }
+  .letra-btn.vacia { color: #c5d5ce; border-color: #e8efec; border-style: dashed; cursor: default; font-weight: 400; }
+
+  .letra-seccion { margin-bottom: 18px; }
+  .letra-titulo { font-size: 24px; font-weight: 700; color: var(--verde); margin-bottom: 8px; padding-left: 4px; scroll-margin-top: 140px; }
+  .item-lista { display: flex; align-items: center; padding: 13px 14px; background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio-sm); margin-bottom: 6px; text-decoration: none; color: var(--texto); gap: 10px; }
+  .item-lista:active { background: var(--verde-claro); }
+  .item-lista span { flex: 1; font-size: 14px; line-height: 1.3; font-weight: 400; }
+  .item-lista .arrow { width: 16px; height: 16px; color: #9ab0a6; flex-shrink: 0; }
+
+  /* ── ESTADO ── */
+  #view-estado { position: fixed; top: var(--header-h); bottom: 0; left: 0; right: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .estado-inner { max-width: 480px; margin: 0 auto; padding: 16px; }
+  .estado-card { background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio); overflow: hidden; margin-bottom: 12px; }
+  .estado-card-header { padding: 13px 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--borde); }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-verde { background: #2d9f6f; } .dot-rojo { background: #d94040; } .dot-amarillo { background: #e8a020; }
+  .estado-card-header strong { font-size: 14px; font-weight: 600; flex: 1; }
+  .estado-label { font-size: 12px; font-weight: 600; }
+  .label-abierto { color: #2d9f6f; } .label-cerrado { color: #d94040; } .label-solo-hora { color: #e8a020; }
+  .estado-horario { padding: 11px 16px; font-size: 13px; color: var(--texto-suave); line-height: 1.7; font-weight: 400; }
+  .urgencia-banner { background: #fff3e0; border: 1px solid #f5c06a; border-radius: var(--radio); padding: 14px 16px; margin-bottom: 14px; display: flex; gap: 10px; align-items: flex-start; }
+  .urgencia-banner svg { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; }
+  .urgencia-banner strong { display: block; font-size: 13px; font-weight: 600; color: #7a4a0a; }
+  .urgencia-banner p { font-size: 12px; color: #8a5c1a; margin-top: 2px; }
+  .urgencia-banner a { display: inline-block; margin-top: 6px; font-size: 13px; font-weight: 600; color: var(--verde); text-decoration: none; }
+  .hora-actual { text-align: center; font-size: 12px; color: var(--texto-suave); margin-bottom: 14px; font-weight: 400; }
+
+  /* ── PÁGINAS DE CONTENIDO ── */
+  #view-pagina {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: var(--fondo);
+    z-index: 150;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+    animation: slideInRight 0.22s ease;
+  }
+  #view-pagina.visible { display: block; }
+  @keyframes slideInRight {
+    from { transform: translateX(30px); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+  }
+
+  .pagina-header {
+    background: var(--verde);
+    position: sticky; top: 0; z-index: 10;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 2px 8px rgba(26,107,74,0.18);
+  }
+
+  .pagina-back {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.18);
+    border: none; border-radius: 10px;
+    color: white; font-size: 13px; font-weight: 500;
+    padding: 7px 12px; cursor: pointer;
+    font-family: var(--font); flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .pagina-back:active { background: rgba(255,255,255,0.28); }
+  .pagina-back svg { width: 14px; height: 14px; }
+
+  .pagina-header-titulo {
+    color: rgba(255,255,255,0.75);
+    font-size: 12px; font-weight: 400;
+    letter-spacing: 0.03em;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .pagina-body {
+    max-width: 480px; margin: 0 auto;
+    padding: 20px 18px 40px;
+  }
+
+  .pagina-categoria {
+    display: inline-block;
+    background: var(--verde-claro); color: var(--verde);
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  .pagina-titulo {
+    font-size: 20px; font-weight: 700;
+    color: var(--texto); line-height: 1.2;
+    margin-bottom: 5px;
+  }
+
+  .pagina-fecha {
+    font-size: 11px; color: #9ab0a6;
+    margin-bottom: 18px;
+  }
+
+  /* Navegación por anclaje */
+  .pagina-nav {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .pagina-nav-pill {
+    background: var(--fondo);
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 12px; font-weight: 500;
+    color: var(--verde); cursor: pointer;
+    font-family: var(--font);
+    transition: all 0.15s;
+  }
+  .pagina-nav-pill:active { background: var(--verde-claro); }
+
+  /* Secciones de contenido */
+  .pagina-seccion {
+    margin-bottom: 24px;
+    scroll-margin-top: 80px;
+  }
+
+  .pagina-seccion-titulo {
+    font-size: 11px; font-weight: 700;
+    color: var(--verde);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--verde-claro);
+    margin-bottom: 12px;
+  }
+
+  .pagina-texto {
+    font-size: 15px; color: var(--texto);
+    line-height: 1.7; margin-bottom: 10px;
+  }
+
+  .pagina-bullet {
+    display: flex; gap: 10px;
+    margin-bottom: 8px; align-items: flex-start;
+  }
+
+  .pagina-bullet-dot {
+    width: 6px; height: 6px;
+    background: var(--verde-medio);
+    border-radius: 50%; flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  .pagina-bullet span {
+    font-size: 15px; color: var(--texto); line-height: 1.65;
+  }
+
+  .pagina-requisito {
+    display: flex; gap: 10px;
+    align-items: flex-start; margin-bottom: 8px;
+  }
+
+  .pagina-req-check {
+    color: var(--verde); font-size: 15px;
+    flex-shrink: 0; margin-top: 1px;
+  }
+
+  .pagina-req-texto {
+    font-size: 15px; color: var(--texto); line-height: 1.6;
+  }
+
+  /* Links internos como tarjeta */
+  .link-card-interno {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--blanco); border: 1px solid var(--borde);
+    border-radius: 12px; padding: 12px 14px;
+    margin-bottom: 8px; cursor: pointer;
+    transition: background 0.15s;
+    border-left: 3px solid var(--verde-medio);
+  }
+  .link-card-interno:active { background: var(--verde-claro); }
+
+  .link-card-interno-icon {
+    width: 34px; height: 34px;
+    background: var(--verde-claro); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .link-card-interno-icon svg { width: 16px; height: 16px; }
+
+  .link-card-interno-texto { flex: 1; }
+  .link-card-interno-nombre { font-size: 14px; font-weight: 600; color: var(--texto); }
+  .link-card-interno-desc { font-size: 12px; color: var(--texto-suave); margin-top: 2px; }
+  .link-card-interno-arrow svg { width: 15px; height: 15px; color: #9ab0a6; }
+
+  /* Link inline dentro de texto */
+  .link-inline-interno {
+    color: var(--verde); font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1.5px solid #b8d9cb;
+    padding-bottom: 1px; cursor: pointer;
+  }
+
+  /* Link externo */
+  .link-externo {
+    display: inline-flex; align-items: center; gap: 5px;
+    color: var(--verde); font-size: 14px; font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px dashed #b8d9cb; padding-bottom: 1px;
+  }
+  .link-externo svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+  /* Botones urgencia */
+  .btn-urgencia {
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 9px 12px; border-radius: 20px;
+    font-size: 13px; font-weight: 600; font-family: var(--font);
+    cursor: pointer; text-decoration: none; border: none;
+    transition: all 0.15s; white-space: nowrap; flex: 1;
+  }
+  .btn-llamar { background: #d94040 !important; color: #ffffff !important; }
+  .btn-llamar svg { stroke: #ffffff !important; }
+  .btn-llamar:active { background: #b83030 !important; }
+  .btn-mapa { background: #1a6b4a !important; color: #ffffff !important; }
+  .btn-mapa svg { stroke: #ffffff !important; }
+  .btn-mapa:active { background: #155a3e !important; }
+
+  /* Modal mapa */
+  .mapa-overlay {
+    display: none; position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.55); z-index: 200;
+    align-items: flex-end;
+  }
+  .mapa-overlay.visible { display: flex; }
+  .mapa-sheet {
+    background: var(--blanco); width: 100%; max-width: 480px;
+    margin: 0 auto; border-radius: 20px 20px 0 0;
+    overflow: hidden; height: 75vh;
+    display: flex; flex-direction: column;
+    animation: slideUp 0.25s ease;
+  }
+  @keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+  .mapa-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px; border-bottom: 1px solid var(--borde);
+    flex-shrink: 0;
+  }
+  .mapa-header strong { font-size: 15px; font-weight: 600; color: var(--texto); }
+  .mapa-header p { font-size: 12px; color: var(--texto-suave); margin-top: 2px; }
+  .mapa-cerrar {
+    width: 30px; height: 30px; background: var(--fondo);
+    border: none; border-radius: 50%; cursor: pointer;
+    font-size: 16px; color: var(--texto-suave);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font);
+  }
+  .mapa-iframe { flex: 1; border: none; width: 100%; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-icon">
+      <img src="data:image/png;base64,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" alt="Logo CESFAM N°5">
+    </div>
+    <div class="logo-text">
+      <h1>CESFAM N°5</h1>
+      <p>Guía de Autoconsulta</p>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('buscar',this)">Buscar</button>
+    <button class="tab" onclick="switchTab('indice',this)">Índice A–Z</button>
+    <button class="tab" onclick="switchTab('estado',this)">Estado</button>
+  </div>
+</header>
+
+<!-- ══════════ BUSCADOR ══════════ -->
+<div id="view-buscar" class="view active">
+  <div class="buscar-scroll">
+    <div class="buscar-inner">
+
+      <div class="bienvenida" id="bienvenidaPanel">
+        <div class="bienvenida-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <h2>¿En qué te podemos ayudar?</h2>
+        <p>Escribe lo que necesitas con tus propias palabras y encontraremos la información correcta.</p>
+        <div class="chips-titulo">Consultas frecuentes</div>
+        <div class="chips">
+          <button class="chip" onclick="buscarTexto('necesito hora médico')">🩺 Sacar hora al médico</button>
+          <button class="chip" onclick="buscarTexto('retiro medicamentos farmacia')">💊 Retirar medicamentos</button>
+          <button class="chip" onclick="buscarTexto('control embarazo matrona')">🤰 Embarazo y matrona</button>
+          <button class="chip" onclick="buscarTexto('vacuna vacunatorio')">💉 Vacunas</button>
+          <button class="chip" onclick="buscarTexto('resultado examen laboratorio')">🔬 Exámenes</button>
+          <button class="chip" onclick="buscarTexto('urgencia emergencia')">🚨 Urgencias</button>
+          <button class="chip" onclick="buscarTexto('diente muela dolor dental')">🦷 Dentista</button>
+          <button class="chip" onclick="buscarTexto('certificado médico licencia')">📄 Certificados</button>
+          <button class="chip" onclick="buscarTexto('niño control sano pediatra')">👶 Control niño sano</button>
+          <button class="chip" onclick="buscarTexto('depresión ansiedad salud mental')">🧠 Salud mental</button>
+          <button class="chip" onclick="abrirMapa()">🗺️ Red de salud</button>
+        </div>
+      </div>
+
+      <div id="resultadosPanel" style="display:none"></div>
+
+    </div>
+  </div>
+  <div class="buscar-input-area">
+    <div class="buscar-input-inner">
+      <div class="buscar-input-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="buscarInput" placeholder="Ej: necesito ver al médico..." oninput="onBuscarInput(this.value)">
+        <button class="clear-btn" id="clearBtn" onclick="volverInicio()">✕</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ÍNDICE ══════════ -->
+<div id="view-indice" class="view">
+  <div class="indice-inner">
+    <div class="indice-guia">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      <p>Toque la letra inicial del tema que busca para ir directamente a esa sección.</p>
+    </div>
+    <div class="letras-nav" id="letrasNav"></div>
+    <div id="listaItems"></div>
+  </div>
+</div>
+
+<!-- ══════════ ESTADO ══════════ -->
+<div id="view-estado" class="view">
+  <div class="estado-inner">
+    <div class="hora-actual" id="horaActual"></div>
+    <div class="urgencia-banner">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#e08020" stroke-width="2">
+        <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+      <div style="flex:1">
+        <strong>Emergencias médicas</strong>
+        <p>Para urgencias vitales llama al SAMU</p>
+        <div style="display:flex;gap:8px;margin-top:10px;width:100%;">
+          <a href="tel:131" class="btn-urgencia btn-llamar" style="color:#ffffff !important; text-decoration:none !important;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" width="15" height="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span style="color:#ffffff !important;">Llamar al 131</span>
+          </a>
+          <button onclick="abrirMapa()" class="btn-urgencia btn-mapa">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            SAPUs cercanos
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="estadoCards"></div>
+  </div>
+</div>
+
+<script>
+const BASE_URL = "https://sites.google.com/view/guiadeautoconsulta";
+
+const TEMAS = [
+  {letra:"A",nombre:"Adolescentes y Jóvenes",url:"/a/adolescentes-y-jóvenes",categoria:"Programa",tags:"adolescente joven programa salud sexual anticonceptivo control",pagina:"adolescentes-jovenes"},
+  {letra:"A",nombre:"Adulto Mayor Autovalente",url:"/a/adulto-mayor-autovalente-programa",categoria:"Programa",tags:"adulto mayor anciano 60 años tercera edad programa autovalente"},
+  {letra:"A",nombre:"Alimentación Complementaria — PNAC",url:"/a/alimentación-complementaria-programa-nacional-de-pnac",categoria:"Programa",tags:"leche pnac alimento niño embarazada lactante bebé formula purita",pagina:"pnac"},
+  {letra:"A",nombre:"PACAM — Alimentación Adulto Mayor",url:"/a/alimentación-complementaria-del-adulto-mayor-programa-nacional-de-pacam",categoria:"Programa",tags:"pacam alimento adulto mayor leche nutrición anciano",pagina:"pacam"},
+  {letra:"A",nombre:"Anular hora",url:"/a/anular-hora",categoria:"Trámite",tags:"anular cancelar hora cita médica some"},
+  {letra:"A",nombre:"Apoyo Clínico",url:"/a/apoyo-clínico",categoria:"Servicio",tags:"apoyo clínico laboratorio vacunatorio inyectable electrocardiograma herida curación tuberculosis samu",pagina:"apoyo-clinico"},
+  {letra:"A",nombre:"Apoyo a la Identidad de Género",url:"/a/apoyo-a-la-identidad-de-género",categoria:"Programa",tags:"identidad género trans transgénero diversidad sexual lgbtq"},
+  {letra:"A",nombre:"Asistente Social",url:"/a/asistente-social",categoria:"Profesional",tags:"asistente social trabajadora social beneficio subsidio ayuda trámite pobreza",pagina:"asistente-social"},
+  {letra:"A",nombre:"Atención Domiciliaria",url:"/a/atención-domiciliaria-a-personas-con-dependencia-severa-programa-de",categoria:"Programa",tags:"visita domicilio casa postrado dependiente discapacidad crónica",pagina:"atencion-domiciliaria"},
+  {letra:"A",nombre:"Atención Primaria de Salud",url:"/a/atención-primaria-de-salud",categoria:"Información",tags:"aps cesfam atención primaria información general"},
+  {letra:"A",nombre:"Ayudas Técnicas",url:"/a/ayudas-técnicas",categoria:"Servicio",tags:"silla ruedas bastón andador audífono muleta discapacidad ayuda",pagina:"ayudas-tecnicas"},
+  {letra:"B",nombre:"Bodega de Alimentos",url:"/b/bodega-de-alimentos",categoria:"Servicio",tags:"bodega alimento comida retiro entrega",pagina:"bodega-alimentos"},
+  {letra:"B",nombre:"Salud Bucal — Dental",url:"/b/bucal-programa-de-salud",categoria:"Programa",tags:"diente muela dolor dental dentista odontólogo boca limpieza extracción",pagina:"salud-bucal"},
+  {letra:"C",nombre:"Cáncer",url:"/c/cáncer",categoria:"Programa",tags:"cáncer tumor detección mamografía pap oncología GES prevención"},
+  {letra:"C",nombre:"Cambio de hora",url:"/c/cambio-de-hora",categoria:"Trámite",tags:"cambiar hora cita médica reagendar some"},
+  {letra:"C",nombre:"Carnet de control",url:"/c/carnet-de-control",categoria:"Trámite",tags:"carnet control registro libreta salud"},
+  {letra:"C",nombre:"Programa Cardiovascular",url:"/c/cardiovascular-programa",categoria:"Programa",tags:"corazón hipertensión presión alta diabetes colesterol cardiovascular crónico"},
+  {letra:"C",nombre:"Certificados médicos",url:"/c/certificados",categoria:"Trámite",tags:"certificado médico constancia papel trabajo colegio juzgado diagnóstico"},
+  {letra:"C",nombre:"Chile Crece Contigo",url:"/c/chile-crece-contigo",categoria:"Programa",tags:"chile crece contigo embarazo bebé niño primera infancia crianza apoyo"},
+  {letra:"C",nombre:"Control Sano",url:"/c/control-sano",categoria:"Servicio",tags:"control sano niño bebé crecimiento desarrollo peso talla pediatra enfermera"},
+  {letra:"C",nombre:"Credencial de Discapacidad",url:"/c/credencial-de-discapacidad",categoria:"Trámite",tags:"credencial discapacidad certificado registro compin"},
+  {letra:"C",nombre:"Curaciones",url:"/c/curaciones",categoria:"Servicio",tags:"curación herida úlcera pie diabético apósito curar enfermera tens"},
+  {letra:"C",nombre:"Cómo llegar al CESFAM",url:"/c/cómo-llegar",categoria:"Información",tags:"dirección llegar micro bus metro cesfam ubicación mapa cómo"},
+  {letra:"D",nombre:"Depresión",url:"/d/depresión",categoria:"Programa",tags:"depresión tristeza ánimo bajo salud mental psicóloga ansiedad angustia"},
+  {letra:"D",nombre:"Derechos y Deberes",url:"/d/derechos-y-deberes",categoria:"Información",tags:"derechos deberes paciente usuario reclamo queja"},
+  {letra:"E",nombre:"Electrocardiograma",url:"/e/electrocardiograma",categoria:"Examen",tags:"electrocardiograma ECG corazón arritmia examen cardíaco"},
+  {letra:"E",nombre:"Embarazo",url:"/e/embarazo",categoria:"Programa",tags:"embarazo embarazada control prenatal matrona semana gestación parto ecografía"},
+  {letra:"E",nombre:"EMPA — Examen Adulto",url:"/e/empa",categoria:"Examen",tags:"empa examen preventivo adulto chequeo control anual salud"},
+  {letra:"E",nombre:"EMPAM — Examen Adulto Mayor",url:"/e/empam",categoria:"Examen",tags:"empam examen preventivo adulto mayor anciano control anual"},
+  {letra:"E",nombre:"Enfermera",url:"/e/enfermera",categoria:"Profesional",tags:"enfermera enfermero atención procedimiento curación inyectable"},
+  {letra:"E",nombre:"Epilepsia",url:"/e/epilepsia",categoria:"Programa",tags:"epilepsia convulsión crisis GES medicamento antiepiléptico"},
+  {letra:"E",nombre:"Equipo de Cabecera",url:"/e/equipo-de-cabecera",categoria:"Información",tags:"equipo cabecera médico enfermera sector asignado familia"},
+  {letra:"E",nombre:"ERA — Enfermedades Respiratorias",url:"/e/era-sala",categoria:"Servicio",tags:"era asma bronquitis respiratorio inhalador nebulización EPOC pulmón"},
+  {letra:"E",nombre:"Estimulación Temprana",url:"/e/estimulación-temprana-sala-de",categoria:"Servicio",tags:"estimulación temprana bebé niño desarrollo motor lenguaje terapia"},
+  {letra:"E",nombre:"Exámenes de laboratorio",url:"/e/exámenes",categoria:"Servicio",tags:"examen laboratorio sangre orina resultado análisis muestra ayuno tons"},
+  {letra:"F",nombre:"Farmacia",url:"/f/farmacia",categoria:"Servicio",tags:"farmacia medicamento remedio retiro receta pastilla jarabe fármaco"},
+  {letra:"F",nombre:"Fonoaudióloga",url:"/f/fonoaudióloga",categoria:"Profesional",tags:"fonoaudióloga habla lenguaje voz niño adulto comunicación disfagia"},
+  {letra:"F",nombre:"FONASA",url:"/f/fonasa",categoria:"Información",tags:"fonasa seguro salud beneficiario inscripción tramo cotización"},
+  {letra:"G",nombre:"GES — Garantías en Salud",url:"/g/ges",categoria:"Programa",tags:"ges auge garantía salud diagnóstico tratamiento cobertura enfermedad"},
+  {letra:"G",nombre:"Ginecólogo",url:"/g/ginecólogo",categoria:"Profesional",tags:"ginecólogo mujer útero ovario pap anticonceptivo ginecología"},
+  {letra:"H",nombre:"Horarios de atención",url:"/h/horarios-de-atención",categoria:"Información",tags:"horario hora atención abierto cerrado lunes sábado cuando"},
+  {letra:"H",nombre:"Hospitales de referencia",url:"/h/hospitales",categoria:"Información",tags:"hospital derivación urgencia especialidad interconsulta referencia"},
+  {letra:"I",nombre:"ITS — Infecciones de Transmisión Sexual",url:"/i/infecciones-de-transmisión-sexual-its",categoria:"Programa",tags:"ITS sífilis gonorrea herpes condón prevención sexual infección"},
+  {letra:"I",nombre:"Vacuna Influenza",url:"/i/influenza",categoria:"Servicio",tags:"influenza gripe vacuna invierno adulto mayor embarazada flu"},
+  {letra:"I",nombre:"Inmunizaciones — Vacunas",url:"/i/inmunizaciones-programa-nacional-de",categoria:"Programa",tags:"vacuna inmunización calendario niño adulto dosis refuerzo"},
+  {letra:"I",nombre:"Atención Inmigrantes",url:"/i/inmigrante-programa-de-salud",categoria:"Programa",tags:"inmigrante extranjero migrante salud sin documentos acceso"},
+  {letra:"I",nombre:"Inscripción en el CESFAM",url:"/i/inscripción",categoria:"Trámite",tags:"inscripción inscribir registrar nuevo usuario primera vez cesfam"},
+  {letra:"I",nombre:"Interconsultas — Especialidades",url:"/i/interconsultas",categoria:"Trámite",tags:"interconsulta especialidad derivación cardiólogo neurólogo espera lista"},
+  {letra:"I",nombre:"IRA — Infecciones Respiratorias Agudas",url:"/i/i-r-a-sala-de-infecciones-respiratorias-agudas",categoria:"Servicio",tags:"ira bronquitis neumonía tos fiebre respiratorio nebulización niño"},
+  {letra:"I",nombre:"Inyectable",url:"/i/inyectable",categoria:"Servicio",tags:"inyección inyectable ampolla enfermera tens procedimiento"},
+  {letra:"K",nombre:"Kinesiólogo",url:"/k/kine",categoria:"Profesional",tags:"kinesiólogo kinesiología rehabilitación dolor espalda rodilla fisioterapia"},
+  {letra:"L",nombre:"Licencia Médica",url:"/l/licencia",categoria:"Trámite",tags:"licencia médica reposo baja laboral trabajo incapacidad firma tramitar"},
+  {letra:"L",nombre:"Línea 800",url:"/l/linea-800",categoria:"Información",tags:"línea 800 teléfono gratuito llamar consulta"},
+  {letra:"M",nombre:"Mamografía",url:"/m/mamografía",categoria:"Examen",tags:"mamografía mama pecho cáncer detección examen GES prevención"},
+  {letra:"M",nombre:"Matrona",url:"/m/matrona",categoria:"Profesional",tags:"matrona embarazo parto pap anticoncepción planificación familiar ginecológico"},
+  {letra:"M",nombre:"Médicos",url:"/m/médicos",categoria:"Profesional",tags:"médico doctor hora consulta médica atención general"},
+  {letra:"M",nombre:"Salud Mental",url:"/m/mental-programa-de-salud",categoria:"Programa",tags:"salud mental depresión ansiedad psicóloga psiquiatra trastorno estrés"},
+  {letra:"N",nombre:"Nutricionista",url:"/n/nutricionista",categoria:"Profesional",tags:"nutricionista nutrición dieta sobrepeso obesidad alimentación diabetes"},
+  {letra:"N",nombre:"Número telefónico CESFAM",url:"/n/número-telefónico",categoria:"Información",tags:"teléfono número llamar cesfam contacto fono"},
+  {letra:"O",nombre:"Odontólogo / Dentista",url:"/o/odontólogo",categoria:"Profesional",tags:"odontólogo dentista diente muela dolor caries extracción dental"},
+  {letra:"O",nombre:"OIRS — Reclamos y Sugerencias",url:"/o/oficina-informaciones-reclamos-y-sugerencias-oficina-de",categoria:"Servicio",tags:"reclamo queja sugerencia felicitación oirs oficina información"},
+  {letra:"O",nombre:"Oxígeno domiciliario",url:"/o/oxígeno-domiciliario",categoria:"Servicio",tags:"oxígeno domicilio casa concentrador pulmón respiratorio"},
+  {letra:"P",nombre:"Pap — Examen ginecológico",url:"/p/pap",categoria:"Examen",tags:"pap papanicolau cuello útero cáncer cervicouterino examen mujer"},
+  {letra:"P",nombre:"Pediatra",url:"/p/pediatra",categoria:"Profesional",tags:"pediatra niño control sano enfermedad infantil bebé infancia"},
+  {letra:"P",nombre:"Píldora del día después",url:"/p/píldora-de-anticoncepción-de-emergencia",categoria:"Servicio",tags:"píldora día después anticonceptivo emergencia pae levonorgestrel"},
+  {letra:"P",nombre:"Podología",url:"/p/podología",categoria:"Servicio",tags:"podología pie uña encarnada hongo callosidad pie diabético"},
+  {letra:"P",nombre:"Portal Paciente",url:"/p/portal-paciente",categoria:"Servicio",tags:"portal paciente online internet resultado examen hora ficha digital web"},
+  {letra:"P",nombre:"Programas de salud",url:"/p/programas-de-salud",categoria:"Información",tags:"programas salud listado todos"},
+  {letra:"P",nombre:"Psicóloga",url:"/p/psicóloga",categoria:"Profesional",tags:"psicóloga psicología terapia ansiedad depresión estrés salud mental"},
+  {letra:"R",nombre:"Radiografías",url:"/r/radiografías",categoria:"Examen",tags:"radiografía rx rayos columna rodilla tórax hueso fractura imagen"},
+  {letra:"R",nombre:"Rehabilitación Comunitaria",url:"/r/rehabilitación-comunitaria-sala",categoria:"Servicio",tags:"rehabilitación comunitaria discapacidad terapia kinesiólogo"},
+  {letra:"S",nombre:"Salud Responde — 600 360 7777",url:"/s/salud-responde",categoria:"Información",tags:"salud responde 600 teléfono consulta orientación médica gratuita"},
+  {letra:"S",nombre:"SAMU — Urgencia 131",url:"/s/samu",categoria:"Información",tags:"samu 131 urgencia emergencia ambulancia grave accidente"},
+  {letra:"S",nombre:"Salud Sexual y Reproductiva",url:"/s/sexual-y-reproductiva-programa",categoria:"Programa",tags:"sexual reproductiva anticonceptivo planificación familiar condón diu pastilla"},
+  {letra:"S",nombre:"SOME — Sacar hora",url:"/s/some-servicio-de-orientación-médica-y-estadística",categoria:"Servicio",tags:"some sacar hora cita médica solicitar orientación estadística"},
+  {letra:"T",nombre:"Talleres de salud",url:"/t/talleres",categoria:"Servicio",tags:"taller charla educación salud grupo actividad comunitaria"},
+  {letra:"T",nombre:"Telesalud",url:"/t/telesalud",categoria:"Servicio",tags:"telesalud teleconsulta videollamada online remoto teléfono médico"},
+  {letra:"T",nombre:"TENS",url:"/t/tens",categoria:"Profesional",tags:"tens técnico enfermería curación inyectable toma muestra"},
+  {letra:"T",nombre:"Terapeuta Ocupacional",url:"/t/terapeuta-ocupacional",categoria:"Profesional",tags:"terapeuta ocupacional terapia rehabilitación actividad discapacidad"},
+  {letra:"T",nombre:"Tips de salud",url:"/t/tips",categoria:"Información",tags:"tips consejos salud prevención autocuidado"},
+  {letra:"T",nombre:"Tuberculosis — TBC",url:"/t/tuberculósis",categoria:"Programa",tags:"tuberculosis tbc tos crónica GES tratamiento bacilo"},
+  {letra:"U",nombre:"Urgencias",url:"/u/urgencias",categoria:"Información",tags:"urgencia emergencia qué hacer grave accidente herida"},
+  {letra:"U",nombre:"Urgencias — Números",url:"/u/urgencias/números-urgencias",categoria:"Información",tags:"urgencia número teléfono llamar emergencia samu 131"},
+  {letra:"V",nombre:"Vacunatorio",url:"/v/vacunatorio",categoria:"Servicio",tags:"vacuna vacunatorio inmunización dosis niño adulto sin hora calendario"},
+  {letra:"V",nombre:"VIH — SIDA",url:"/v/vih",categoria:"Programa",tags:"vih sida examen test detección tratamiento antirretroviral GES"},
+  {letra:"V",nombre:"Visita domiciliaria",url:"/v/visita-domiciliaria",categoria:"Servicio",tags:"visita domicilio casa postrado encamado atención domicilio enfermero"},
+];
+
+/* ── Motor de búsqueda ── */
+function normalizar(s){ return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim(); }
+
+function buscar(query){
+  if(!query.trim()) return [];
+  const palabras = normalizar(query).split(" ").filter(p=>p.length>1);
+  return TEMAS.map(t=>{
+    const nom=normalizar(t.nombre), tags=normalizar(t.tags), cat=normalizar(t.categoria);
+    let score=0, mw=[];
+    for(const p of palabras){
+      if(nom.includes(p)){score+=10;mw.push(p);}
+      else if(tags.includes(p)){score+=5;mw.push(p);}
+      else if(cat.includes(p)) score+=2;
+    }
+    if(nom.includes(normalizar(query))) score+=20;
+    score+=new Set(mw).size*3;
+    return{...t,score,mw:[...new Set(mw)]};
+  }).filter(t=>t.score>0).sort((a,b)=>b.score-a.score).slice(0,8);
+}
+
+const ICONS={
+  "Profesional":`<svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
+  "Servicio":`<svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+  "Programa":`<svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+  "Examen":`<svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="1.8"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/></svg>`,
+  "Trámite":`<svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`,
+  "Información":`<svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
+};
+
+function renderResultados(query, res){
+  const p=document.getElementById('resultadosPanel');
+  const volverBtn=`<button class="btn-volver" onclick="volverInicio()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al inicio
+  </button>`;
+  if(!res.length){
+    p.innerHTML=volverBtn+`<div class="sin-resultados"><p>No encontré resultados para <strong>"${query}"</strong>.<br>Intenta con otras palabras o revisa el Índice A–Z.</p><p class="tip">También puedes consultar en el mesón del CESFAM.</p></div>`;
+    return;
+  }
+  p.innerHTML=volverBtn
+    +`<div class="resultados-header"><span class="resultados-titulo">Resultados para "${query}"</span><span class="resultados-count">${res.length} encontrado${res.length>1?'s':''}</span></div>`
+    +res.map(r=>`<div class="resultado-card"><a class="resultado-link" href="${BASE_URL}${r.url}" target="_blank" rel="noopener" ${r.pagina ? 'onclick="event.preventDefault();abrirPagina(\''+r.pagina+'\')"' : ''}">
+      <div class="resultado-icono">${ICONS[r.categoria]||ICONS['Información']}</div>
+      <div class="resultado-texto">
+        <div class="resultado-nombre">${r.nombre}</div>
+        <div class="resultado-tag">${r.categoria}</div>
+        ${r.mw.length?`<div class="resultado-match">Relacionado: ${r.mw.slice(0,3).join(', ')}</div>`:''}
+      </div>
+      <div class="resultado-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+    </a></div>`).join('');
+}
+
+let timer=null;
+let enResultados=false;
+
+function onBuscarInput(val){
+  document.getElementById('clearBtn').classList.toggle('visible', val.length>0);
+  clearTimeout(timer);
+  if(!val.trim()){
+    if(enResultados) volverInicio();
+    return;
+  }
+  timer=setTimeout(()=>{
+    const res=buscar(val);
+    document.getElementById('bienvenidaPanel').style.display='none';
+    document.getElementById('resultadosPanel').style.display='block';
+    document.querySelector('.buscar-scroll').scrollTop=0;
+    renderResultados(val,res);
+    if(!enResultados){
+      history.pushState({vista:'resultados'},'');
+      enResultados=true;
+    }
+  },200);
+}
+
+function buscarTexto(txt){
+  document.getElementById('buscarInput').value=txt;
+  document.getElementById('clearBtn').classList.add('visible');
+  const res=buscar(txt);
+  document.getElementById('bienvenidaPanel').style.display='none';
+  document.getElementById('resultadosPanel').style.display='block';
+  document.querySelector('.buscar-scroll').scrollTop=0;
+  renderResultados(txt,res);
+  if(!enResultados){
+    history.pushState({vista:'resultados'},'');
+    enResultados=true;
+  }
+}
+
+function volverInicio(){
+  document.getElementById('buscarInput').value='';
+  document.getElementById('clearBtn').classList.remove('visible');
+  document.getElementById('bienvenidaPanel').style.display='block';
+  document.getElementById('resultadosPanel').style.display='none';
+  enResultados=false;
+}
+
+// Botón atrás del navegador
+window.addEventListener('popstate', function(e){
+  if(enResultados) volverInicio();
+});
+
+/* ── Tabs ── */
+function switchTab(tab,btn){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('view-'+tab).classList.add('active');
+  btn.classList.add('active');
+  if(tab==='indice') renderIndice();
+  if(tab==='estado') renderEstado();
+  if(tab==='buscar' && enResultados) volverInicio();
+}
+
+/* ── Índice ── */
+function renderIndice(){
+  const letras=[...new Set(TEMAS.map(t=>t.letra))].sort();
+  document.getElementById('letrasNav').innerHTML='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(l=>{
+    const ok=letras.includes(l);
+    return`<button class="letra-btn ${ok?'':'vacia'}" ${ok?`onclick="irLetra('${l}')"`:''}>${l}</button>`;
+  }).join('');
+  document.getElementById('listaItems').innerHTML=letras.map(l=>`
+    <div class="letra-seccion" id="sec-${l}">
+      <div class="letra-titulo">${l}</div>
+      ${TEMAS.filter(t=>t.letra===l).map(i=>`
+        <a class="item-lista" href="${BASE_URL}${i.url}" target="_blank" rel="noopener" ${i.pagina ? 'onclick="event.preventDefault();abrirPagina(\''+i.pagina+'\')"' : ''}">
+          <span>${i.nombre}</span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>`).join('')}
+    </div>`).join('');
+}
+
+function irLetra(l){ document.getElementById('sec-'+l)?.scrollIntoView({behavior:'smooth'}); }
+
+/* ── Estado dinámico ── */
+const SERVICIOS=[
+  {nombre:"CESFAM N°5 — Atención general",
+   horario:"Lunes a viernes: 08:00 – 20:00\nSábado: 08:00 – 14:00\nDomingos y festivos: Cerrado",
+   soloHora:false,
+   estaAbierto(h,m,d){if(d>=1&&d<=5)return h>=8&&h<20;if(d===6)return h>=8&&h<14;return false;}},
+  {nombre:"SOME — Sacar y anular horas",
+   horario:"Lunes a viernes: 08:00 – 20:00\nSábado: 08:00 – 14:00",
+   soloHora:false,
+   estaAbierto(h,m,d){if(d>=1&&d<=5)return h>=8&&h<20;if(d===6)return h>=8&&h<14;return false;}},
+  {nombre:"Farmacia",
+   horario:"Lunes a viernes: 08:00 – 18:00\nSábado: 08:00 – 13:00",
+   soloHora:false,
+   estaAbierto(h,m,d){if(d>=1&&d<=5)return h>=8&&h<18;if(d===6)return h>=8&&h<13;return false;}},
+  {nombre:"Laboratorio / Toma de muestras",
+   horario:"Lunes a viernes: 08:00 – 11:00\nRequiere ayuno previo",
+   soloHora:false,
+   estaAbierto(h,m,d){if(d>=1&&d<=5){const t=h*60+m;return t>=480&&t<660;}return false;}},
+  {nombre:"Vacunatorio",
+   horario:"Lunes a viernes: 08:30 – 16:30\nSin necesidad de hora previa",
+   soloHora:false,
+   estaAbierto(h,m,d){if(d>=1&&d<=5){const t=h*60+m;return t>=510&&t<990;}return false;}},
+  {nombre:"Bodega de Alimentos",
+   horario:"Consultar horario en el mesón\nLunes a viernes",
+   soloHora:false,
+   estaAbierto(h,m,d){return d>=1&&d<=5&&h>=8&&h<17;}},
+  {nombre:"SAMU — Urgencias",
+   horario:"Atención de urgencia todos los días\nLlamar al 131",
+   soloHora:false, siempre24:true,
+   estaAbierto(){return true;}},
+];
+
+function renderEstado(){
+  const n=new Date(),h=n.getHours(),m=n.getMinutes(),d=n.getDay();
+  document.getElementById('horaActual').textContent=`Hora actual: ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')} — ${'Dom Lun Mar Mié Jue Vie Sáb'.split(' ')[d]}`;
+  document.getElementById('estadoCards').innerHTML=SERVICIOS.map(s=>{
+    const ab=s.estaAbierto(h,m,d);
+    const dc=s.siempre24||ab?'dot-verde':'dot-rojo';
+    let lc,lt;
+    if(s.siempre24){lc='label-abierto';lt='24 horas';}
+    else if(s.soloHora&&ab){lc='label-solo-hora';lt='Solo con hora';}
+    else if(ab){lc='label-abierto';lt='Abierto';}
+    else{lc='label-cerrado';lt='Cerrado';}
+    return`<div class="estado-card"><div class="estado-card-header"><div class="dot ${dc}"></div><strong>${s.nombre}</strong><span class="estado-label ${lc}">${lt}</span></div><div class="estado-horario">${s.horario.replace(/\n/g,'<br>')}</div></div>`;
+  }).join('');
+}
+
+function ajustarHeader(){document.documentElement.style.setProperty('--header-h',document.querySelector('header').offsetHeight+'px');}
+window.addEventListener('load',ajustarHeader);
+window.addEventListener('resize',ajustarHeader);
+
+/* ════════════════════════════════════════════════
+   BASE DE DATOS DE PÁGINAS MIGRADAS
+   Agregar cada tema migrado aquí.
+   ════════════════════════════════════════════════ */
+const PAGINAS = {
+
+  /* ── A ─────────────────────────────────────── */
+
+  "adolescentes-jovenes": {
+    id: "adolescentes-jovenes",
+    nombre: "Adolescentes y Jóvenes",
+    titulo: "Programa Nacional de Salud Integral de Adolescentes y Jóvenes",
+    categoria: "Programa",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Saber +"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">El objetivo del Programa Nacional de Salud Integral de Adolescentes y Jóvenes es contribuir a la salud y el desarrollo integral de este grupo de la población, en su contexto familiar y comunitario, a través de actividades de fomento, protección, prevención, recuperación y rehabilitación de la salud, que impulsen la plena expresión de su potencial biopsicosocial y una mejor calidad de vida.</p>
+        <p class="pagina-texto">Así mismo, es relevante la coordinación y articulación de una red de servicios, por cuanto sus necesidades deben ser abordadas en forma integrada, posibilitando cuando sea necesario, la intervención simultánea de los distintos niveles de atención y distintos equipos intra e intersectoriales, particularmente cuando se trata de poblaciones de adolescentes y jóvenes en situación de vulneración de derechos y en conflicto con la justicia.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+        <p class="pagina-texto">Es una prestación de salud <strong>gratuita</strong>, dirigida a la población de 10 a 19 años.</p>
+        <p class="pagina-texto">Se define como la atención integral de adolescentes que permite evaluar el estado de salud, el crecimiento y desarrollo, fomentando los factores y conductas protectores e identificando aquellas de riesgo y otros problemas o necesidades en salud, con objeto de intervenir en forma oportuna, integrada e integral.</p>
+        <p class="pagina-texto">La realización de este control implica que se incorporen los enfoques de derecho, curso de vida, interculturalidad, determinantes sociales, género y diversidad.</p>
+        <p class="pagina-texto">El control de salud constituye una oportunidad única para abordar las necesidades de salud de adolescentes, por lo que debe ser realizado con altos estándares de calidad y por equipo capacitado y cercano a los adolescentes.</p>
+        <p class="pagina-texto" style="font-weight:600; margin-top:14px;">Las acciones incluidas en el Programa son:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Desarrollar el inicio de una relación vincular "profesional-usuario".</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Entrevista clínica: Anamnesis completa biopsicosocial y familiar, registrando la información en el instrumento ficha Integral CLAP/OPS/OMS modificada.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Examen físico general, según orientaciones técnicas.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Identificar riesgos en ámbitos: Salud sexual y reproductiva (SSR), suicidio, drogas y nutricionales.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Establecer una hipótesis diagnóstica o diagnóstico, proponer un plan de intervención inicial, indicaciones y derivaciones, esta última si es necesario.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Revisar calendario de inmunizaciones, según norma.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Entregar información que promueva el uso de los servicios de salud y el autocuidado a través de guías anticipatorias para adolescentes y sus familias.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Brindar la posibilidad y oportunidad de referir a consejerías.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Indicar consulta y seguimiento si procede.</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito">
+          <span class="pagina-req-check">✓</span>
+          <span class="pagina-req-texto">Estar inscrita/o en el CESFAM
+            ${enlaceInterno('inscripcion','¿Cómo inscribirse?')}
+          </span>
+        </div>
+        <div class="pagina-requisito">
+          <span class="pagina-req-check">✓</span>
+          <span class="pagina-req-texto">Tener entre 10 y 19 años de edad.</span>
+        </div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo">Acceder</div>
+        <p class="pagina-texto">Para acceder a las prestaciones debe solicitar hora para <strong>Control de Salud Integral de Adolescentes y Jóvenes</strong> en el SOME Satélite de su sector.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora para control de adolescentes')}
+        ${enlaceTarjeta('hora-presentacion','Hora de presentación','Llegar 15 minutos antes de la cita')}
+      </div>
+
+      <div class="pagina-seccion" id="sec-Saber +">
+        <div class="pagina-seccion-titulo">Saber +</div>
+        <a href="https://diprece.minsal.cl/programas-de-salud/programas-ciclo-vital/informacion-a-la-comunidad-salud-joven-y-adolescente/" target="_blank" rel="noopener" class="link-externo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          DIPRECE — División de Prevención y Control de Enfermedades, Ministerio de Salud
+        </a>
+      </div>
+    `
+  },
+
+  /* ── Agregar más temas aquí siguiendo el mismo patrón ── */
+
+  "apoyo-clinico": {
+    id: "apoyo-clinico",
+    nombre: "Apoyo Clínico",
+    titulo: "Apoyo Clínico",
+    categoria: "Servicio",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Requisitos"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Es la unidad que provee de un conjunto de servicios y recursos que respaldan directamente la labor clínica del CESFAM. Esta unidad no está orientada a la atención directa del paciente, sino que brinda soporte a los equipos clínicos para mejorar la calidad y eficiencia de la atención.</p>
+        <p class="pagina-texto">Incluye, entre otros:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Laboratorio — toma de muestras</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Vacunatorio</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Inyectable</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Toma de electrocardiogramas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tratamiento de heridas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Ejecución de campañas de vacunación</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Primeros auxilios</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Coordinación con SAMU</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Pesquisa y tratamiento de la tuberculosis (TBC)</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+      </div>
+    `
+  },
+
+  "salud-bucal": {
+    id: "salud-bucal",
+    nombre: "Salud Bucal, Programa Nacional de",
+    titulo: "Programa de Salud Bucal",
+    categoria: "Programa",
+    actualizacion: "",
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">El Programa de Salud Bucal busca prevenir, diagnosticar y tratar las enfermedades bucodentales, promoviendo hábitos de higiene oral desde la infancia hasta la adultez. Está dirigido especialmente a grupos prioritarios y busca reducir la incidencia de caries, enfermedades periodontales y otras afecciones dentales, mejorando la calidad de vida de la población usuaria.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Control y atención preventiva</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Evaluación y diagnóstico dental:</strong> examen bucal completo para detectar caries, enfermedades de las encías y otras condiciones. Define el plan de tratamiento o control adecuado.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Aplicación de flúor:</strong> fortalece el esmalte dental y previene caries, especialmente en niños y adolescentes.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Sellantes dentales:</strong> colocación en molares para evitar la formación de caries en dientes definitivos.</span></div>
+
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:8px;">Atención para grupos prioritarios</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Embarazadas:</strong> control dental integral con diagnóstico, educación en higiene oral y tratamiento de caries.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Escolares (6 a 12 años):</strong> controles regulares, educación en salud oral, flúor, sellantes, limpiezas y tratamiento de caries.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Adolescentes:</strong> prestaciones preventivas y tratamiento de caries.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Adultos mayores:</strong> atención para mantener la salud bucal y prevenir enfermedades que afecten la calidad de vida.</span></div>
+
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:8px;">Educación en salud bucal</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Consejería en higiene oral:</strong> orientación sobre técnicas de cepillado, uso de hilo dental y alimentación saludable.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Charlas y talleres:</strong> actividades de sensibilización dirigidas a usuarios de todas las edades y a la comunidad.</span></div>
+
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:8px;">Tratamiento de problemas bucodentales</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tratamiento de caries y restauraciones:</strong> obturaciones para devolver funcionalidad y estética dental.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Limpiezas y control periodontal:</strong> limpiezas profundas para prevenir gingivitis y periodontitis.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Extracciones dentales:</strong> cuando el daño es severo o necesario para la salud general.</span></div>
+
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:8px;">Promoción comunitaria</p>
+        <p class="pagina-texto">El programa incluye actividades en jardines infantiles, colegios y organizaciones comunitarias, con exámenes preventivos y educación sobre higiene bucal.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo">Acceder</div>
+        <p class="pagina-texto">Las horas de Consulta Odontológica se solicitan en el <strong>SOME Central</strong>.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora de consulta odontológica')}
+        ${enlaceTarjeta('hora-presentacion','Hora de presentación','Llegar 15 minutos antes de la cita')}
+      </div>
+    `
+  },
+
+  "bodega-alimentos": {
+    id: "bodega-alimentos",
+    nombre: "Bodega de Alimentos",
+    titulo: "Bodega de Alimentos",
+    categoria: "Servicio",
+    actualizacion: "",
+    nav: ["Descripción","Prestaciones","Requisitos","Horario","Ubicación"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Lugar destinado a la entrega de productos alimenticios contemplados en el Programa Nacional de Alimentación Complementaria (PNAC) y en el Programa Nacional de Alimentación Complementaria del Adulto Mayor (PACAM).</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+          ${enlaceTarjeta('pnac','Alimentación Complementaria — PNAC','Ver requisitos y productos del programa')}
+          ${enlaceTarjeta('pacam','PACAM — Adulto Mayor','Ver requisitos del programa del adulto mayor')}
+        </div>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+        <p class="pagina-texto">Ventanilla única de dispensación de productos alimenticios, educación y orientación general a usuarios.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <p class="pagina-texto">Los requisitos dependen del subprograma al que pertenece el usuario. En términos generales, implica tener los controles de salud y las vacunas al día.</p>
+        ${enlaceTarjeta('pnac','Ver requisitos PNAC','Niños, gestantes y madres que amamantan')}
+        ${enlaceTarjeta('pacam','Ver requisitos PACAM','Adultos mayores')}
+      </div>
+      <div class="pagina-seccion" id="sec-Horario">
+        <div class="pagina-seccion-titulo">Horario</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:00 – 13:00 / 14:00 – 16:00</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:00 – 13:00 / 14:00 – 15:00</span></div>
+        <p class="pagina-texto" style="margin-top:10px; color:#d94040; font-weight:600;">🛑 Cerrado el último día hábil de cada mes</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Ubicación">
+        <div class="pagina-seccion-titulo">Ubicación</div>
+        <p class="pagina-texto">Subterráneo del CESFAM N°5.</p>
+      </div>
+    `
+  },
+
+  /* ── PENDIENTE ── Apoyo a la Identidad de Género, PAIG
+     Faltan dos campos — consultar con Matrona Ximena Marín:
+     1. Nombre exacto de la prestación para pedir en SOME
+     2. Texto completo sobre quién puede solicitar la hora
+  ── */
+
+  /* ── A (continuación) ──────────────────────── */
+
+  "pacam": {
+    id: "pacam",
+    nombre: "Alimentación Complementaria del Adulto Mayor (PACAM)",
+    titulo: "Programa Nacional de Alimentación Complementaria del Adulto Mayor, PACAM",
+    categoria: "Programa",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Requisitos","Lugar y horario","Encargada/o"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">El PACAM es un conjunto de actividades de apoyo alimentario-nutricional de carácter preventivo y de recuperación, que distribuye alimentos fortificados con micronutrientes a los adultos mayores, en los Establecimientos de Atención Primaria del Sistema Nacional de Servicios de Salud.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrito en el CESFAM N°5.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Para ingresar al programa debe tener cumplidos los 70 años; o 65 años si es tuberculoso o pertenece a Chile Solidario; o 60 años si pertenece al Hogar de Cristo.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Tener controles de salud al día (al menos EMPAM).</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Contar con carné de control o libreta de controles actualizada.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Lugar y horario">
+        <div class="pagina-seccion-titulo">Lugar y horario</div>
+        <p class="pagina-texto">Retiro en <strong>Bodega de Alimentos</strong> (subterráneo).</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:00 – 16:30 hrs</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:00 – 15:30 hrs</span></div>
+        <p class="pagina-texto" style="margin-top:10px; color:#d94040; font-weight:600;">🛑 Cerrado el último día hábil del mes</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Encargada/o">
+        <div class="pagina-seccion-titulo">Encargada/o</div>
+        <p class="pagina-texto">Nutricionista Daniela Parra M.</p>
+      </div>
+    `
+  },
+
+  "pnac": {
+    id: "pnac",
+    nombre: "Alimentación Complementaria (PNAC)",
+    titulo: "Programa Nacional de Alimentación Complementaria, PNAC",
+    categoria: "Programa",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Requisitos","Productos","Entrega y horario","Encargada/o","Más información"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Es un programa de carácter universal que considera un conjunto de actividades de apoyo nutricional de tipo preventivo y de recuperación, a través del cual se distribuyen alimentos destinados a:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Niños/as menores de 6 años.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Niños con peso de nacimiento menor de 1.500 g y/o menos de 32 semanas de gestación.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Gestantes y madres que amamantan.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <p class="pagina-texto" style="font-weight:600;">Usuarios de FONASA:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Estar inscrita/o en el CESFAM N°5.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tener controles de salud al día.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tener vacunas al día según esquema ministerial vigente.</span></div>
+        <p class="pagina-texto" style="font-weight:600; margin-top:10px;">Usuarios de ISAPRE:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Estar adscrito en el CESFAM N°5.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tener controles de salud al día.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tener vacunas al día según esquema ministerial vigente.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Productos">
+        <div class="pagina-seccion-titulo">Productos</div>
+        <p class="pagina-texto">Los productos entregados por el PNAC dependen de los diferentes subprogramas:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>PNAC Básico:</strong> Fórmula de inicio – Purita +Pro 1 – Purita +Pro 2 – Purita Mamá</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>PNAC Refuerzo:</strong> Fórmula de inicio – Purita +Pro 1 – Purita Mamá – Mi Sopita</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>PNAC Prematuro:</strong> Fórmula para prematuros – Mi Sopita</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>PNAC APLV:</strong> Fórmula extensamente hidrolizada – fórmula aminoacídica.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>PNAC EIM:</strong> Fórmulas especializadas de acuerdo con el diagnóstico de errores innatos del metabolismo.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Entrega y horario">
+        <div class="pagina-seccion-titulo">Entrega y horario</div>
+        <p class="pagina-texto">Retiro en <strong>Bodega de Alimentos</strong> (subterráneo).</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:00 – 16:30 hrs</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:00 – 15:30 hrs</span></div>
+        <p class="pagina-texto" style="margin-top:10px; color:#d94040; font-weight:600;">🛑 Cerrado el último día hábil del mes</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Encargada/o">
+        <div class="pagina-seccion-titulo">Encargada/o</div>
+        <p class="pagina-texto">Nutricionista Daniela Parra M.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Más información">
+        <div class="pagina-seccion-titulo">Más información</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>El retiro debe realizarse con el carné de control donde se indique el último control de salud y vacuna al día.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>A niños menores de 6 meses el alimento entregado depende de la condición de lactancia, que debe quedar anotada en el carné y actualizarse en cada control.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>La entrega es mensual para prematuros, niños menores de 2 años, gestantes y madres que amamantan.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Para niños de 2 años y más, la entrega se realiza de manera bimensual.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>No se realizan entregas retroactivas ni adelantos; solo se entrega lo que corresponde al mes en vigencia.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Para usuarios del extrasistema (Fonasa libre elección, ISAPRES, Fuerzas Armadas sin previsión) y otros casos específicos, deben usar los formularios ministeriales.</span></div>
+        <a href="https://www.minsal.cl" target="_blank" rel="noopener" class="link-externo" style="margin-top:8px; display:inline-flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Sitio web MINSAL
+        </a>
+      </div>
+    `
+  },
+
+  "asistente-social": {
+    id: "asistente-social",
+    nombre: "Asistente Social",
+    titulo: "Asistente Social",
+    categoria: "Profesional",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Equipo"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Profesional de las ciencias sociales que contribuye a mejorar la calidad de vida de la población usuaria, enfocado en el Modelo de Salud Integral con enfoque de salud familiar y comunitaria, desarrollando las potencialidades de los individuos, familias, grupos y comunidades, desde una perspectiva sistémica e integradora, promoviendo el cambio social y la resolución de problemas en las relaciones humanas a través de la promoción, educación y participación en salud.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Intervenir en forma transdisciplinaria, bajo una mirada bio-psico-social, a personas, familias y comunidad en cualquier etapa del ciclo vital, según los distintos programas de salud.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Identificar, priorizar y buscar la solución de problemas a través del equipo e involucrar a todo actor de la comunidad que dé respuesta a una solución propuesta.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Realizar Consulta Social según situación presente: Consulta de Orientación social, Consulta socio-familiar, Consulta Especializada, Consejería Individual y Familiar.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Realizar Visitas Domiciliarias Integrales, entre otras.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo">Acceder</div>
+        <p class="pagina-texto">Solicitar hora de atención en el SOME de su sector.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora para Asistente Social')}
+        ${enlaceTarjeta('hora-presentacion','Hora de presentación','Llegar 15 minutos antes de la cita')}
+      </div>
+      <div class="pagina-seccion" id="sec-Equipo">
+        <div class="pagina-seccion-titulo">Equipo</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tr. Social Matías Valenzuela Rojas</strong> — Sector Lila</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tr. Social Catalina Tiznado Candia</strong> — Sector Verde</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tr. Social Francisco Muñoz Tobar</strong> — Sector Rojo</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tr. Social Catherine Reyes Aracena</strong> — Programa de Acompañamiento de Niños, Niñas y Adolescentes</span></div>
+      </div>
+    `
+  },
+
+  "atencion-domiciliaria": {
+    id: "atencion-domiciliaria",
+    nombre: "Atención Domiciliaria a Personas con Dependencia Severa",
+    titulo: "Programa de Atención Domiciliaria a Personas con Dependencia Severa",
+    categoria: "Programa",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Clasificación de dependencia"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Este programa corresponde a una estrategia de atención de salud que incorpora los ámbitos promocional, preventivo y curativo de la salud, así como también los ámbitos de seguimiento y acompañamiento, centrado en la persona con dependencia severa y su cuidadora/or.</p>
+        <p class="pagina-texto">Pretende mejorar la oportunidad de atención de las personas con dependencia severa y su cuidador/a, realizando la atención de salud correspondiente a la Atención Primaria de Salud en el domicilio familiar, resguardando la continuidad de la atención con los otros niveles de salud y el acceso a servicios locales.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+        <p class="pagina-texto">La canasta básica recomendada durante doce meses para una persona con dependencia severa incluye a lo menos:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>2 visitas domiciliarias integrales.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Al menos 6 visitas domiciliarias de tratamiento.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Capacitación a las cuidadoras/es.</span></div>
+        <p class="pagina-texto">Todas estas acciones se deben reevaluar cada doce meses en base a la condición de salud de la persona y los requerimientos que esta tenga.</p>
+        <p class="pagina-texto">La permanencia en el programa es durante la existencia de la situación de dependencia severa. Si esta situación se modifica — ya sea por una mejora en los niveles de independencia y autonomía o por fallecimiento — la persona egresa del programa.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Calificar como Dependiente Severo según el Índice de Barthel. Solicitar evaluación con la/el enfermera/o de su sector.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo">Acceder</div>
+        <p class="pagina-texto">La persona cuidadora debe solicitar una evaluación del/la usuario/a a la <strong>jefatura de sector</strong>.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Clasificación de dependencia">
+        <div class="pagina-seccion-titulo">Clasificación de dependencia</div>
+        <p class="pagina-texto"><strong>Dependiente Severo:</strong> persona que según la evaluación por el Índice de Barthel obtiene 35 puntos o menos.</p>
+        <p class="pagina-texto">En caso que la situación de dependencia esté asociada a niños menores de 6 años o a personas con diagnóstico de origen psiquiátrico y/o intelectual, el médico del establecimiento deberá realizar un certificado que valide la dependencia.</p>
+        <p class="pagina-texto">Cuando el equipo de salud identifique una persona con dependencia severa que no esté inscrita o esté inscrita en otra comuna, orientará hacia la inscripción en el centro de salud más cercano a su domicilio.</p>
+        <p class="pagina-texto">Las personas institucionalizadas (en establecimientos de larga estadía públicos o privados) inscritas en los Centros de Salud deben recibir la atención domiciliaria del Programa.</p>
+        <p class="pagina-texto"><strong>Cuidadora/or</strong> es la persona que realiza los cuidados directos, pudiendo ser un familiar o un cuidador externo (vecino/a, amigo/a, etc.).</p>
+      </div>
+    `
+  },
+
+  "ayudas-tecnicas": {
+    id: "ayudas-tecnicas",
+    nombre: "Ayudas Técnicas",
+    titulo: "Ayudas Técnicas",
+    categoria: "Servicio",
+    actualizacion: "18/06/2025",
+    nav: ["Descripción","Implementos","Requisitos","Acceder"],
+    contenido: `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Las ayudas técnicas son los elementos o implementos requeridos por una persona con discapacidad para prevenir la progresión de ésta, mejorar o recuperar su funcionalidad, o desarrollar una vida independiente.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Implementos">
+        <div class="pagina-seccion-titulo">Implementos disponibles</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Silla de ruedas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Bastón de apoyo</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Cojín antiescaras</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Colchón antiescaras</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Andador</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Poseer una indicación (receta) de ayuda técnica extendida por un médico del CESFAM N°5.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo">Acceder</div>
+        <p class="pagina-texto">Presentar la indicación (receta) de ayuda técnica extendida por un médico del CESFAM N°5.</p>
+        ${enlaceTarjeta('medicos','Médicos del CESFAM','Para obtener la indicación médica')}
+      </div>
+    `
+  },
+
+};
+
+/* ── Funciones auxiliares para links ── */
+function enlaceTarjeta(id, nombre, desc) {
+  if (!PAGINAS[id]) return '';
+  return `<div class="link-card-interno" onclick="abrirPagina('${id}')">
+    <div class="link-card-interno-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    </div>
+    <div class="link-card-interno-texto">
+      <div class="link-card-interno-nombre">${nombre}</div>
+      <div class="link-card-interno-desc">${desc}</div>
+    </div>
+    <div class="link-card-interno-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+  </div>`;
+}
+
+function enlaceInterno(id, texto) {
+  if (!PAGINAS[id]) return '';
+  return ` <span class="link-inline-interno" onclick="abrirPagina('${id}')">${texto}</span>`;
+}
+
+/* ── Handler click para items con página interna ── */
+function handleItemClick(e, el) {
+  var pagina = el.getAttribute('data-pagina');
+  if (pagina) {
+    e.preventDefault();
+    abrirPagina(pagina);
+  }
+}
+
+/* ── Abrir / cerrar página ── */
+let paginaOrigen = 'buscar';
+
+function abrirPagina(id) {
+  const pagina = PAGINAS[id];
+  if (!pagina) return;
+
+  // Detectar origen
+  const tabActiva = document.querySelector('.tab.active');
+  if (tabActiva) {
+    const txt = tabActiva.textContent.trim();
+    paginaOrigen = txt.includes('Índice') ? 'indice' : 'buscar';
+  }
+
+  // Renderizar header
+  document.getElementById('paginaHeaderTitulo').textContent =
+    paginaOrigen === 'indice' ? 'Índice A–Z' : 'Buscar';
+
+  // Renderizar body
+  const nav = pagina.nav.map(s =>
+    `<button class="pagina-nav-pill" onclick="irSeccion('sec-${s}')">${s}</button>`
+  ).join('');
+
+  document.getElementById('paginaBody').innerHTML = `
+    <span class="pagina-categoria">${pagina.categoria}</span>
+    <h1 class="pagina-titulo">${pagina.titulo}</h1>
+    <p class="pagina-fecha">Actualización: ${pagina.actualizacion}</p>
+    <div class="pagina-nav">${nav}</div>
+    ${pagina.contenido}
+  `;
+
+  // Mostrar
+  const vista = document.getElementById('view-pagina');
+  vista.classList.add('visible');
+  vista.scrollTop = 0;
+  history.pushState({vista:'pagina', id}, '');
+}
+
+function cerrarPagina() {
+  document.getElementById('view-pagina').classList.remove('visible');
+  history.back();
+}
+
+function irSeccion(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    const vista = document.getElementById('view-pagina');
+    const top = el.offsetTop - 70;
+    vista.scrollTo({ top, behavior: 'smooth' });
+  }
+}
+
+// Botón atrás del navegador cierra la página
+window.addEventListener('popstate', function(e) {
+  const pagina = document.getElementById('view-pagina');
+  if (pagina.classList.contains('visible')) {
+    pagina.classList.remove('visible');
+  } else if (enResultados) {
+    volverInicio();
+  }
+});
+
+</script>
+<!-- ══════════ VISTA PÁGINA DE CONTENIDO ══════════ -->
+<div id="view-pagina">
+  <div class="pagina-header" id="paginaHeader">
+    <button class="pagina-back" onclick="cerrarPagina()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Volver
+    </button>
+    <span class="pagina-header-titulo" id="paginaHeaderTitulo">Índice A–Z</span>
+  </div>
+  <div class="pagina-body" id="paginaBody"></div>
+</div>
+
+<!-- MODAL MAPA -->
+<div class="mapa-overlay" id="mapaOverlay" onclick="cerrarMapaSiOverlay(event)">
+  <div class="mapa-sheet">
+    <div class="mapa-header">
+      <div>
+        <strong>Red pública de salud</strong>
+        <p>SAPUs, CESFAMs y hospitales del sector</p>
+      </div>
+      <button class="mapa-cerrar" onclick="cerrarMapa()">✕</button>
+    </div>
+    <iframe
+      class="mapa-iframe"
+      id="mapaIframe"
+      src=""
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+<script>
+const MAPA_URL = "https://www.google.com/maps/d/embed?mid=1dgJqn6sC6GM9k_E7qDXLVAuB32H_ric&ehbc=2E312F";
+
+function abrirMapa(){
+  document.getElementById('mapaIframe').src = MAPA_URL;
+  document.getElementById('mapaOverlay').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarMapa(){
+  document.getElementById('mapaOverlay').classList.remove('visible');
+  document.getElementById('mapaIframe').src = '';
+  document.body.style.overflow = '';
+}
+
+function cerrarMapaSiOverlay(e){
+  if(e.target === document.getElementById('mapaOverlay')) cerrarMapa();
+}
+</script>
+</body>
+</html>
