@@ -601,8 +601,8 @@ const TEMAS = [
   {letra:"N",nombre:"Nutricionista",url:"/n/nutricionista",categoria:"Profesional",tags:"nutricionista nutrición dieta sobrepeso obesidad alimentación diabetes",pagina:"nutricionista"},
   {letra:"N",nombre:"Número de identificación provisorio para salud, NIP",url:"/n/número-de-identificación-provisorio-para-salud",categoria:"Información",tags:"NIP número identificación provisorio salud fonasa extranjero inmigrante sin RUN",pagina:"nip"},
   {letra:"N",nombre:"Número telefónico CESFAM",url:"/n/número-telefónico",categoria:"Información",tags:"teléfono número llamar cesfam contacto fono"},
-  {letra:"O",nombre:"Odontólogo / Dentista",url:"/o/odontólogo",categoria:"Profesional",tags:"odontólogo dentista diente muela dolor caries extracción dental"},
-  {letra:"O",nombre:"OIRS — Reclamos y Sugerencias",url:"/o/oficina-informaciones-reclamos-y-sugerencias-oficina-de",categoria:"Servicio",tags:"reclamo queja sugerencia felicitación oirs oficina información"},
+  {letra:"O",nombre:"Odontólogo / Dentista",url:"/o/odontólogo",categoria:"Profesional",tags:"odontólogo dentista diente muela dolor caries extracción dental",pagina:"odontologo"},
+  {letra:"O",nombre:"OIRS — Reclamos y Sugerencias",url:"/o/oficina-informaciones-reclamos-y-sugerencias-oficina-de",categoria:"Servicio",tags:"reclamo queja sugerencia felicitación oirs oficina información",pagina:"oirs"},
   {letra:"O",nombre:"Oxígeno domiciliario",url:"/o/oxígeno-domiciliario",categoria:"Servicio",tags:"oxígeno domicilio casa concentrador pulmón respiratorio"},
   {letra:"P",nombre:"Pap — Examen ginecológico",url:"/p/pap",categoria:"Examen",tags:"pap papanicolau cuello útero cáncer cervicouterino examen mujer"},
   {letra:"P",nombre:"Pediatra",url:"/p/pediatra",categoria:"Profesional",tags:"pediatra niño control sano enfermedad infantil bebé infancia"},
@@ -2856,6 +2856,83 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Nut. Sudy Martínez M. — Box 228</span></div>
         <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:12px; margin-bottom:6px;">Sector Verde</p>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Nut. Denise Méndez D. — Box 209</span></div>
+      </div>
+    `
+  },
+
+  "odontologo": {
+    id: "odontologo",
+    nombre: "Odontóloga/o",
+    titulo: "Odontóloga/o",
+    categoria: "Profesional",
+    actualizacion: "",
+    nav: ["Descripción","Prestaciones","Acceso","Equipo"],
+    contenido: () => `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Es un profesional de la salud dental cuya principal función es proporcionar atención y servicios dentales básicos a la población en general, con un enfoque en la prevención, diagnóstico y tratamiento de enfermedades bucodentales.</p>
+        <p class="pagina-texto">Esto incluye limpieza dental, detección y tratamiento de caries, empastes, extracciones simples, evaluación de la salud de las encías, tratamiento de enfermedades periodontales leves, educación sobre higiene bucal y promoción de prácticas saludables.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Atenciones odontológicas a lo largo del ciclo vital en tratamientos integrales y resolutivos, basados en guías clínicas y protocolos.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Prescripción de medicamentos.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Atenciones de urgencia odontológica de manera resolutiva.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Derivaciones a especialidades odontológicas de la atención secundaria según diagnóstico.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceso">
+        <div class="pagina-seccion-titulo">Acceso</div>
+        <p class="pagina-texto">Solicitar hora de <strong>Consulta Odontológica</strong> en el SOME Satélite de su sector o en el SOME Central del CESFAM.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora de consulta odontológica')}
+      </div>
+      <div class="pagina-seccion" id="sec-Equipo">
+        <div class="pagina-seccion-titulo">Equipo por sector</div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px;">Sector Rojo</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Marines Mendoza M. — Box 010</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Camila Cid S.</span></div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:12px; margin-bottom:6px;">Sector Lila</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Tania Pérez O. — Box 013</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Carla Soto S. — Box 015</span></div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:12px; margin-bottom:6px;">Sector Verde</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dr. Johan Tapia — Box 011</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dr. Patricio Ramírez S. — Box 011A</span></div>
+      </div>
+    `
+  },
+
+  "oirs": {
+    id: "oirs",
+    nombre: "OIRS — Oficina de Informaciones, Reclamos y Sugerencias",
+    titulo: "Oficina de Informaciones, Reclamos y Sugerencias, OIRS",
+    categoria: "Servicio",
+    actualizacion: "",
+    nav: ["Descripción","Prestaciones","Ubicación y contacto","Horario"],
+    contenido: () => `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo">Descripción</div>
+        <p class="pagina-texto">Unidad destinada a la orientación y entrega de información relacionada con el CESFAM N°5, la red de salud, y a resolver cualquier otra consulta que redunde en beneficio de una atención expedita.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo">Prestaciones</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Información sobre prestaciones del CESFAM.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Entrega y recepción de Formulario de Solicitud Ciudadana para presentación de Solicitudes, Reclamos, Sugerencias, Denuncias y Felicitaciones.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Entrega de resultados de exámenes realizados en el CESFAM.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Entrega de resultados de exámenes de convenios: radiografía de tórax y de cadera, mamografías y eco abdominal.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Agendar horas de radiografía de caderas en convenio vigente.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Entrega de Número de Identificación Provisorio para Salud (NIP) una vez realizado el trámite de solicitud.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Ubicación y contacto">
+        <div class="pagina-seccion-titulo">Ubicación y contacto</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Hall central, 1er piso.</span></div>
+        <a href="tel:+56225748414" class="btn-urgencia btn-llamar" style="display:inline-flex; margin-top:10px; text-decoration:none; max-width:220px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="15" height="15"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +56 2 2574 8414
+        </a>
+      </div>
+      <div class="pagina-seccion" id="sec-Horario">
+        <div class="pagina-seccion-titulo">Horario</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:00 – 17:00 hrs</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:00 – 16:00 hrs</span></div>
       </div>
     `
   },
