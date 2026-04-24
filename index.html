@@ -673,7 +673,7 @@ function renderResultados(query, res){
   }
   p.innerHTML=volverBtn
     +`<div class="resultados-header"><span class="resultados-titulo">Resultados para "${query}"</span><span class="resultados-count">${res.length} encontrado${res.length>1?'s':''}</span></div>`
-    +res.map(r=>`<div class="resultado-card"><a class="resultado-link" href="${BASE_URL}${r.url}" target="_blank" rel="noopener" ${r.pagina ? 'onclick="event.preventDefault();abrirPagina(\''+r.pagina+'\')"' : ''}">
+    +res.map(r=>`<div class="resultado-card"><a class="resultado-link" href="javascript:void(0);" ${r.pagina ? `onclick="abrirPagina('${r.pagina}')"` : `href="${BASE_URL}${r.url}" target="_blank" rel="noopener"`}>
       <div class="resultado-icono">${ICONS[r.categoria]||ICONS['Información']}</div>
       <div class="resultado-texto">
         <div class="resultado-nombre">${r.nombre}</div>
