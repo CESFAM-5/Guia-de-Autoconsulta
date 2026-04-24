@@ -756,7 +756,7 @@ function renderIndice(){
     <div class="letra-seccion" id="sec-${l}">
       <div class="letra-titulo">${l}</div>
       ${TEMAS.filter(t=>t.letra===l).map(i=>`
-        <a class="item-lista" href="${BASE_URL}${i.url}" target="_blank" rel="noopener" ${i.pagina ? 'onclick="event.preventDefault();abrirPagina(\''+i.pagina+'\')"' : ''}">
+        <a class="item-lista" href="javascript:void(0);" onclick="abrirPagina('${i.pagina}'); return false;">
           <span>${i.nombre}</span>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </a>`).join('')}
