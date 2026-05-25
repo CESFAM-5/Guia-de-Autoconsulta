@@ -811,7 +811,7 @@ const SERVICIOS=[
    soloHora:false,
    estaAbierto(h,m,d){if(d>=1&&d<=5){const t=h*60+m;return t>=510&&t<990;}return false;}},
   {nombre:"Bodega de Alimentos",
-   horario:"Consultar horario en el mesón\nLunes a viernes",
+   horario:"Lunes a Jueves de 8:00 a 13:00 - 14:00 a 16:00\nViernes de 08:00 a 13.00 - 14:00 a 15:00\nCerrado el último día hábil del mes",
    soloHora:false,
    estaAbierto(h,m,d){return d>=1&&d<=5&&h>=8&&h<17;}},
   {nombre:"SAMU — Urgencias",
