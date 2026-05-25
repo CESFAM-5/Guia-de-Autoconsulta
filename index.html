@@ -803,7 +803,7 @@ const SERVICIOS=[
    soloHora:false,
    estaAbierto(h,m,d){if(d>=1&&d<=5)return h>=8&&h<18;if(d===6)return h>=8&&h<13;return false;}},
   {nombre:"Laboratorio / Toma de muestras",
-   horario:"Lunes a viernes: 08:00 – 11:00\nRequiere ayuno previo",
+   horario:"Lunes a viernes: 08:00 – 11:00\nDebe tomar número de atención",
    soloHora:false,
    estaAbierto(h,m,d){if(d>=1&&d<=5){const t=h*60+m;return t>=480&&t<660;}return false;}},
   {nombre:"Vacunatorio",
