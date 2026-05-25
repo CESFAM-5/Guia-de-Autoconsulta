@@ -791,7 +791,7 @@ function irLetra(l){ document.getElementById('sec-'+l)?.scrollIntoView({behavior
 /* ── Estado dinámico ── */
 const SERVICIOS=[
   {nombre:"CESFAM N°5 — Atención general",
-   horario:"Lunes a viernes: 08:00 – 20:00\nSábado: 08:00 – 14:00\nDomingos y festivos: Cerrado",
+   horario:"Lunes a viernes: 08:00 – 20:00\nSábado: 08:00 – 14:00 (Solo agendados previamente)\nDomingos y festivos: Cerrado",
    soloHora:false,
    estaAbierto(h,m,d){if(d>=1&&d<=5)return h>=8&&h<20;if(d===6)return h>=8&&h<14;return false;}},
   {nombre:"SOME — Sacar y anular horas",
