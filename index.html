@@ -791,7 +791,7 @@ function irLetra(l){ document.getElementById('sec-'+l)?.scrollIntoView({behavior
 /* ── Estado dinámico ── */
 const SERVICIOS=[
   {nombre:"CESFAM N°5 — Atención general",
-   horario:"Lunes a viernes: 08:00 – 20:00\nSábado: 08:00 – 14:00 (Solo agendados previamente)\nDomingos y festivos: Cerrado",
+   horario:"Lunes a viernes: 08:00 – 20:00\nSábado: 08:00 – 14:00 (Solo con hora previa)\nDomingos y festivos: Cerrado",
    soloHora:false,
    estaAbierto(h,m,d){if(d>=1&&d<=5)return h>=8&&h<20;if(d===6)return h>=8&&h<14;return false;}},
   {nombre:"SOME — Sacar y anular horas",
@@ -811,7 +811,7 @@ const SERVICIOS=[
    soloHora:false,
    estaAbierto(h,m,d){if(d>=1&&d<=5){const t=h*60+m;return t>=510&&t<990;}return false;}},
   {nombre:"Bodega de Alimentos",
-   horario:"Lunes a Jueves de 8:00 a 13:00 - 14:00 a 16:00\nViernes de 08:00 a 13.00 - 14:00 a 15:00\nCerrado el último día hábil del mes",
+   horario:"Lunes a Jueves de 8:30 a 13:00 - 14:00 a 16:00\nViernes de 08:30 a 13.00 - 14:00 a 15:00\nCerrado el último día hábil del mes",
    soloHora:false,
    estaAbierto(h,m,d){return d>=1&&d<=5&&h>=8&&h<17;}},
   {nombre:"SAMU — Urgencias",
@@ -3298,8 +3298,8 @@ const PAGINAS = {
       <div class="pagina-seccion" id="sec-Lugar y horario">
         <div class="pagina-seccion-titulo">Lugar y horario</div>
         <p class="pagina-texto">Retiro en <strong>Bodega de Alimentos</strong> (subterráneo).</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:00 – 16:30 hrs</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:00 – 15:30 hrs</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:30 – 16:30 hrs</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:30 – 15:30 hrs</span></div>
         <p class="pagina-texto" style="margin-top:10px; color:#d94040; font-weight:600;">🛑 Cerrado el último día hábil del mes</p>
       </div>
       <div class="pagina-seccion" id="sec-Encargada/o">
@@ -3347,8 +3347,8 @@ const PAGINAS = {
       <div class="pagina-seccion" id="sec-Entrega y horario">
         <div class="pagina-seccion-titulo">Entrega y horario</div>
         <p class="pagina-texto">Retiro en <strong>Bodega de Alimentos</strong> (subterráneo).</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:00 – 16:30 hrs</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:00 – 15:30 hrs</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a jueves: 08:30 – 16:30 hrs</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Viernes: 08:30 – 15:30 hrs</span></div>
         <p class="pagina-texto" style="margin-top:10px; color:#d94040; font-weight:600;">🛑 Cerrado el último día hábil del mes</p>
       </div>
       <div class="pagina-seccion" id="sec-Encargada/o">
