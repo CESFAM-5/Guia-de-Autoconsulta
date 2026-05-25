@@ -634,6 +634,7 @@ const TEMAS = [
   {letra:"R",nombre:"Rehabilitación Comunitaria",url:"/r/rehabilitación-comunitaria-sala",categoria:"Servicio",tags:"rehabilitación comunitaria discapacidad terapia kinesiólogo",pagina:"rehabilitacion-sala"},
   {letra:"S",nombre:"Salud Responde — 600 360 7777",url:"/s/salud-responde",categoria:"Información",tags:"salud responde 600 teléfono consulta orientación médica gratuita",pagina:"salud-responde"},
   {letra:"S",nombre:"SAMU — Urgencia 131",url:"/s/samu",categoria:"Información",tags:"samu 131 urgencia emergencia ambulancia grave accidente",pagina:"samu"},
+  {letra:"S",nombre:"SAPU — Servicio de Atención Primaria de Urgencias",url:"/s/sapu",categoria:"Servicio",tags:"SAPU urgencia emergencia atención primaria baja complejidad sábado domingo horario",pagina:"sapu"},
   {letra:"S",nombre:"Salud Sexual y Reproductiva",url:"/s/sexual-y-reproductiva-programa",categoria:"Programa",tags:"sexual reproductiva anticonceptivo planificación familiar condón diu pastilla",pagina:"sexual-reproductiva"},
   {letra:"S",nombre:"SOME — Sacar hora",url:"/s/some-servicio-de-orientación-médica-y-estadística",categoria:"Servicio",tags:"some sacar hora cita médica solicitar orientación estadística",pagina:"some"},
   {letra:"T",nombre:"Talleres de salud",url:"/t/talleres",categoria:"Servicio",tags:"taller charla educación salud grupo actividad comunitaria",pagina:"talleres"},
@@ -4145,6 +4146,76 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Manténgase en línea — el operador le dará instrucciones mientras llega la ambulancia.</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>El servicio es <strong>gratuito</strong> para usuarios FONASA.</span></div>
         ${enlaceTarjeta('salud-responde','Salud Responde 600 360 7777','Para consultas no urgentes')}
+      </div>
+    `
+  },
+
+  "sapu": {
+    id: "sapu",
+    nombre: "SAPU",
+    titulo: "SAPU — Servicio de Atención Primaria de Urgencias",
+    categoria: "Servicio",
+    actualizacion: "",
+    nav: ["Descripción","Horarios de atención","Ubicación","Cuándo asistir"],
+    contenido: () => `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo-principal">Descripción</div>
+        <p class="pagina-texto">Un Servicio de Atención Primaria de Urgencia (SAPU) es un establecimiento de salud que ofrece atención a las necesidades de urgencia/emergencia de baja complejidad, que se encuentra adosado a CESFAM o en un local anexo.</p>
+        <p class="pagina-texto">El SAPU atiende problemas de salud que necesitan atención rápida pero que no implican riesgo vital. Funcionan en las tardes, noches, fines de semana y festivos, complementando la atención del CESFAM.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Horarios de atención">
+        <div class="pagina-seccion-titulo-principal">Horarios de atención</div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:10px;">SAPU Corto:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a Viernes: 17:00 a 00:00 horas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sábados, Domingos y festivos: 08:00 a 00:00 horas</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:10px;">SAPU Largo:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a Viernes: 17:00 a 08:00 horas del día siguiente</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sábados, Domingos y festivos: 08:00 a 08:00 horas del día siguiente</span></div>
+        
+        <p class="pagina-texto" style="margin-top:14px; font-size:13px; color:#9ab0a6; font-style:italic;"><strong>Nota:</strong> El tipo de SAPU (corto o largo) puede variar según la ubicación. Confirma los horarios del SAPU más cercano.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Ubicación">
+        <div class="pagina-seccion-titulo-principal">Ubicación</div>
+        <p class="pagina-texto">Encuentra el SAPU más cercano a través de:</p>
+        
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px;">
+          <a href="https://drive.google.com/open?id=1dgJqn6sC6GM9k_E7qDXLVAuB32H_ric&usp=drive_copy" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; padding:12px 14px; background:var(--blanco); border:1.5px solid var(--borde); border-radius:var(--radio-sm); text-decoration:none; color:var(--texto); font-weight:500; font-size:14px; transition:all 0.2s;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2" style="width:18px; height:18px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Mapa de establecimientos de salud
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px; height:16px; margin-left:auto;"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          
+          <a href="https://saludresponde.minsal.cl/buscador-de-establecimientos-de-salud/" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; padding:12px 14px; background:var(--blanco); border:1.5px solid var(--borde); border-radius:var(--radio-sm); text-decoration:none; color:var(--texto); font-weight:500; font-size:14px; transition:all 0.2s;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2" style="width:18px; height:18px;"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            Buscador de establecimientos MINSAL
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px; height:16px; margin-left:auto;"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          
+          <button onclick="document.location.href='tel:6003607777'" style="display:flex; align-items:center; gap:8px; padding:12px 14px; background:var(--blanco); border:1.5px solid var(--borde); border-radius:var(--radio-sm); text-decoration:none; color:var(--texto); font-weight:500; font-size:14px; transition:all 0.2s; cursor:pointer; font-family:var(--font);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2" style="width:18px; height:18px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Llamar a SaludResponde 600 360 7777
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px; height:16px; margin-left:auto;"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="pagina-seccion" id="sec-Cuándo asistir">
+        <div class="pagina-seccion-titulo-principal">Cuándo asistir a un SAPU</div>
+        <p class="pagina-texto">Debes acudir a un SAPU cuando necesitas atención urgente pero sin riesgo vital:</p>
+        
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sangrado provocado por heridas o enfermedad.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Heridas o quemaduras de mediana complejidad.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Intoxicaciones por alcohol, remedios, drogas, gas, alimentos y cloro, entre otras.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dolor intenso de inicio repentino en la cabeza, pecho y/o estómago, entre otros.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Caída de mediana altura o golpes fuertes sin pérdida de consciencia.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Accidentes menores.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Crisis de asma o problemas respiratorios leves a moderados.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Mordeduras o picaduras de animales o insectos.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Otros problemas de salud que no impliquen riesgo vital.</span></div>
+        
+        <div style="background:#fff3e0; border:1px solid #f5c06a; border-radius:var(--radio-sm); padding:12px 14px; margin-top:14px;">
+          <p style="margin:0; font-size:13px; color:#7a4a0a;"><strong>⚠️ ¿Cuándo ir a SAMU (131)?</strong> Si hay riesgo vital: pérdida de consciencia, dolor de pecho intenso, dificultad severa para respirar, accidentes graves, convulsiones o cualquier situación donde la vida está en peligro.</p>
+        </div>
       </div>
     `
   },
