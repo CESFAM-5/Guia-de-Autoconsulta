@@ -813,7 +813,11 @@ const SERVICIOS=[
   {nombre:"Bodega de Alimentos",
    horario:"Lunes a Jueves de 8:30 a 13:00 - 14:00 a 16:00\nViernes de 08:30 a 13.00 - 14:00 a 15:00\nCerrado el último día hábil del mes",
    soloHora:false,
-   estaAbierto(h,m,d){return d>=1&&d<=5&&h>=8&&h<17;}},
+   estaAbierto(h,m,d){
+     if(d>=1&&d<=4){const t=h*60+m;return(t>=510&&t<780)||(t>=840&&t<960);}
+     if(d===5){const t=h*60+m;return(t>=510&&t<780)||(t>=840&&t<900);}
+     return false;
+   }},
   {nombre:"SAMU — Urgencias",
    horario:"Atención de urgencia todos los días\nLlamar al 131",
    soloHora:false, siempre24:true,
