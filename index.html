@@ -4089,25 +4089,33 @@ const PAGINAS = {
     titulo: "Jefaturas del CESFAM N°5",
     categoria: "Información",
     actualizacion: "",
-    nav: ["Descripción","Dirección","Jefas de Sector"],
+    nav: ["Descripción","Cargos","Saber +"],
     contenido: () => `
       <div class="pagina-seccion" id="sec-Descripción">
         <div class="pagina-seccion-titulo-principal">Descripción</div>
         
-        <p class="pagina-texto">Las jefaturas del CESFAM N°5 están conformadas por la Dirección y las Jefas de Sector. Las jefas de sector coordinan el equipo de cabecera de cada uno de los sectores en que se organiza el CESFAM.</p>
+        <p class="pagina-texto">La estructura organizacional del CESFAM N° 5 está compuesta por un equipo directivo integrado por la Directora, Subdirección Técnica y Subdirección Administrativa, además de las jefas de los Equipos de Cabecera (Lila, Rojo y Verde), Equipo Transversal y de Apoyo Clínico.</p>
       </div>
-      <div class="pagina-seccion" id="sec-Dirección">
-        <div class="pagina-seccion-titulo">Dirección</div>
+      <div class="pagina-seccion" id="sec-Cargos">
+        <div class="pagina-seccion-titulo">Cargos</div>
         
-        <p class="pagina-texto" style="color:var(--texto-suave); font-style:italic;">[Completar con nombre del/la Director/a]</p>
-        <p class="pagina-texto" style="color:var(--texto-suave); font-style:italic; margin-top:4px;">[Completar con cargo y datos de contacto si corresponde]</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Directora:</strong> Sandy Iglesias V.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Subdirección Técnica:</strong> Lissete Marambio G.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Subdirección Administrativa:</strong> Tamara Jordán R.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Jefa de Apoyo Clínico:</strong> Constanza Jaramillo E.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Jefa de Sector Lila:</strong> Sudy Martinez M.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Jefa de Sector Rojo:</strong> Daniela Parra M.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Jefa de Sector Verde:</strong> Jennifer Bascur B.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Jefa de Farmacia:</strong> Karla Palacios</span></div>
       </div>
-      <div class="pagina-seccion" id="sec-Jefas de Sector">
-        <div class="pagina-seccion-titulo">Jefas de Sector</div>
+      <div class="pagina-seccion" id="sec-Saber +">
+        <div class="pagina-seccion-titulo">Saber +</div>
         
-        <p class="pagina-texto" style="color:var(--texto-suave); font-style:italic;">[Completar con tabla de jefas de sector: nombre, sector y cargo]</p>
         ${enlaceTarjeta('equipo-cabecera','Equipo de Cabecera','Conoce tu sector y equipo asignado')}
         ${enlaceTarjeta('sector-lila','Sector Lila','Ver información del Sector Lila')}
+        ${enlaceTarjeta('sector-rojo','Sector Rojo','Ver información del Sector Rojo')}
+        ${enlaceTarjeta('sector-verde','Sector Verde','Ver información del Sector Verde')}
+        ${enlaceTarjeta('como-llegar','Cómo llegar al CESFAM 5','Ubicación y formas de acceso')}
       </div>
     `
   },
