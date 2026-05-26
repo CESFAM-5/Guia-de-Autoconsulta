@@ -5204,9 +5204,8 @@ window.addEventListener('popstate', function(e) {
 const MAPA_URL = "https://www.google.com/maps/d/viewer?hl=es&mid=1MfzH4twW_AuMyQHuFUpkV8IPV0s&ll=-33.472058328180225%2C-70.7272748876531&z=12";
 
 function abrirMapa(){
-  document.getElementById('mapaIframe').src = MAPA_URL;
-  document.getElementById('mapaOverlay').classList.add('visible');
-  document.body.style.overflow = 'hidden';
+  // Abre el mapa en una nueva pestaña en lugar de iframe
+  window.open(MAPA_URL, '_blank');
 }
 
 function cerrarMapa(){
