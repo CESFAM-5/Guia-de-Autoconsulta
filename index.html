@@ -2043,34 +2043,69 @@ const PAGINAS = {
     `
   },
 
-  "epilepsia": {
+"epilepsia": {
     id: "epilepsia",
     nombre: "Epilepsia, Programa",
     titulo: "Programa de Epilepsia",
     categoria: "Programa",
     actualizacion: "",
-    nav: ["Descripción","Prestaciones","Requisitos","Acceder"],
+    nav: ["Descripción","Síntomas","Prestaciones","Requisitos","Acceder","GES"],
     contenido: () => `
       <div class="pagina-seccion" id="sec-Descripción">
         <div class="pagina-seccion-titulo-principal">Descripción</div>
-        <p class="pagina-texto">Es una condición neurológica crónica caracterizada por la recurrencia de crisis convulsivas debido a una actividad anormal y excesiva de las neuronas en el cerebro. Las personas con epilepsia pueden experimentar episodios de pérdida de consciencia, convulsiones y otras alteraciones motoras o sensoriales, que varían en frecuencia e intensidad según el tipo de epilepsia y el perfil de cada paciente.</p>
+        <p class="pagina-texto">La epilepsia es una enfermedad neurológica crónica caracterizada por la recurrencia de crisis epilépticas (convulsivas o no convulsivas) debido a una actividad eléctrica anormal y excesiva de las neuronas en el cerebro. Afecta a personas de todas las edades y puede tener un impacto significativo en la calidad de vida, el trabajo, la conducción de vehículos y las relaciones sociales.</p>
+        <p class="pagina-texto">El CESFAM N°5 participa activamente en la detección, tratamiento y seguimiento de personas con epilepsia, coordinando con la red especializada cuando es necesario.</p>
       </div>
+
+      <div class="pagina-seccion" id="sec-Síntomas">
+        <div class="pagina-seccion-titulo-principal">Síntomas</div>
+        <p class="pagina-texto">Los síntomas varían según el tipo de crisis. Algunas personas pierden el conocimiento, otras no. Las crisis pueden incluir:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Crisis convulsivas generalizadas (tónico-clónicas):</strong> pérdida brusca del conocimiento, rigidez muscular seguida de movimientos rítmicos de brazos y piernas, mordedura de lengua, pérdida de orina. La persona no recuerda lo ocurrido.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Crisis de ausencia:</strong> episodios breves (segundos) de desconexión del entorno, mirada fija al vacío y detención de la actividad. Frecuentes en niños y niñas.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Crisis focales (parciales):</strong> pueden incluir movimientos involuntarios de una parte del cuerpo, sensaciones extrañas, alteraciones visuales o auditivas, y confusión. La persona puede o no perder el conocimiento.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Estado postcrítico:</strong> período de confusión, somnolencia o dolor de cabeza que puede durar minutos a horas tras la crisis.</span></div>
+        <p class="pagina-texto" style="margin-top:14px; font-size:13px; color:#9ab0a6; font-style:italic;"><strong>Nota:</strong> Una sola crisis no implica necesariamente epilepsia. El diagnóstico requiere evaluación médica especializada. Si presencia una crisis por primera vez, llame al 131.</p>
+      </div>
+
       <div class="pagina-seccion" id="sec-Prestaciones">
         <div class="pagina-seccion-titulo-principal">Prestaciones</div>
-        <p class="pagina-texto">La misión de los CESFAM es desarrollar un manejo integral de la epilepsia, incluyendo la detección temprana, tratamiento y seguimiento de los pacientes, así como la educación para el paciente y su familia.</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Diagnóstico y detección:</strong> los profesionales identifican signos de epilepsia y derivan al paciente para diagnóstico especializado si es necesario. Se identifican posibles factores desencadenantes y se establece el tipo de epilepsia.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tratamiento y control:</strong> incluye prescripción de fármacos antiepilépticos para reducir la frecuencia e intensidad de las crisis. El equipo trabaja en el ajuste de medicación y control de efectos secundarios, en colaboración con el nivel secundario si se requiere.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Educación y apoyo psicosocial:</strong> educación al paciente y su familia sobre cómo manejar las crisis, qué hacer en una emergencia y cómo reconocer factores desencadenantes como el estrés o la falta de sueño. Se promueve el autocuidado y la adherencia al tratamiento.</span></div>
+        <p class="pagina-texto">El CESFAM N°5 ofrece atención integral para el manejo de la epilepsia:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Diagnóstico y detección:</strong> el médico/a evalúa la historia clínica y los episodios descritos por el paciente y sus acompañantes. Si se sospecha epilepsia, se deriva para estudio con electroencefalograma (EEG) y evaluación neurológica.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tratamiento farmacológico:</strong> indicación y seguimiento de fármacos antiepilépticos (FAE) según el tipo de epilepsia y el perfil del paciente. Los medicamentos están disponibles en la Farmacia del CESFAM de forma gratuita.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Control y seguimiento:</strong> evaluaciones periódicas para monitorear la frecuencia de crisis, ajustar dosis y detectar efectos adversos de los medicamentos.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Educación al paciente y la familia:</strong> orientación sobre primeros auxilios ante una crisis, factores desencadenantes (privación de sueño, alcohol, estrés), restricciones de actividad y autocuidado.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Apoyo psicosocial:</strong> derivación a psicología o trabajo social cuando el impacto en la calidad de vida, el estigma o las limitaciones laborales/educativas lo requieran.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Derivación a neurología:</strong> en casos de epilepsia de difícil manejo, crisis frecuentes o necesidad de ajuste especializado del tratamiento.</span></div>
       </div>
+
       <div class="pagina-seccion" id="sec-Requisitos">
         <div class="pagina-seccion-titulo-principal">Requisitos</div>
         <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
       </div>
+
       <div class="pagina-seccion" id="sec-Acceder">
         <div class="pagina-seccion-titulo-principal">Acceder</div>
-        <p class="pagina-texto">Solicitar hora de atención médica en el SOME de su sector.</p>
+        <p class="pagina-texto"><strong>Si está en medio de una crisis o presencia una crisis por primera vez:</strong> llame al SAMU.</p>
+        ${enlaceTarjeta('samu','SAMU — Urgencia 131','Para crisis epilépticas en curso o primera crisis')}
+        <p class="pagina-texto" style="margin-top:14px;"><strong>Para iniciar control o renovar medicamentos:</strong> solicite hora de atención médica en el SOME Central, de lunes a viernes desde las 07:30 hrs.</p>
         ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora de atención médica')}
-        ${enlaceTarjeta('hora-presentacion','Hora de presentación','Llegar 15 minutos antes de la cita')}
+        ${enlaceTarjeta('farmacia','Farmacia','Retiro de medicamentos antiepilépticos')}
+      </div>
+
+      <div class="pagina-seccion" id="sec-GES">
+        <div class="pagina-seccion-titulo">Garantías Explícitas en Salud (GES)</div>
+        <p class="pagina-texto">La epilepsia está incluida en el sistema de <strong>Garantías Explícitas en Salud (GES)</strong>, lo que significa que tienes derecho a acceso, plazo, calidad y protección económica garantizados.</p>
+
+        <p class="pagina-texto" style="margin-top:14px; font-weight:600; color:var(--verde);">Epilepsia no refractaria en personas desde 1 año — GES N°9</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Cobertura:</strong> diagnóstico, tratamiento farmacológico con fármacos antiepilépticos, seguimiento y educación al paciente y su familia.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Plazo garantizado:</strong> inicio de tratamiento dentro de 30 días desde la confirmación diagnóstica.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Copago:</strong> sin costo si tienes FONASA; 20% si tienes ISAPRE.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Profesionales:</strong> médico/a de APS, neurólogo/a en caso de derivación.</span></div>
+        <p class="pagina-texto" style="margin-top:10px;"><a href="https://www.superdesalud.gob.cl/orientacion-en-salud/epilepsia-no-refractaria-en-personas-desde-1-ano-de-edad/" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver detalles en Superintendencia de Salud →</a></p>
+
+        <div style="background:var(--verde-claro); padding:12px; border-radius:var(--radio-sm); margin-top:14px;">
+          <p class="pagina-texto" style="margin:0; font-size:13px; color:var(--verde);">📌 <strong>¿Qué significa GES?</strong> Son garantías que obliga a FONASA e ISAPREs a cubrir estas enfermedades. Si te diagnostican una patología GES, tienes derecho a: acceso asegurado, plazo máximo de atención, prestadores autorizados y protección económica.</p>
+        </div>
       </div>
     `
   },
