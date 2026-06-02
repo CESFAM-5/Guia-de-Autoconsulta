@@ -527,8 +527,8 @@ const TEMAS = [
   {letra:"A",nombre:"Atención Domiciliaria",url:"/a/atención-domiciliaria-a-personas-con-dependencia-severa-programa-de",categoria:"Programa",tags:"visita domicilio casa postrado dependiente discapacidad crónica",pagina:"atencion-domiciliaria"},
   {letra:"A",nombre:"Atención Primaria de Salud",url:"/a/atención-primaria-de-salud",categoria:"Información",tags:"aps cesfam atención primaria información general",pagina:"aps"},
   {letra:"A",nombre:"Ayudas Técnicas",url:"/a/ayudas-técnicas",categoria:"Servicio",tags:"silla ruedas bastón andador audífono muleta discapacidad ayuda",pagina:"ayudas-tecnicas"},
-  {letra:"B",nombre:"Bodega de Alimentos",url:"/b/bodega-de-alimentos",categoria:"Servicio",tags:"bodega alimento comida retiro entrega",pagina:"bodega-alimentos"},
-  {letra:"B",nombre:"Bucal, Programa de Salud",url:"/b/bucal-programa-de-salud",categoria:"Programa",tags:"diente muela dolor dental dentista odontólogo boca limpieza extracción",pagina:"salud-bucal"},
+  {letra:"B",nombre:"Bodega de Alimentos",url:"/b/bodega-de-alimentos",categoria:"Servicio",tags:"bodega alimento comida retiro entrega",exclude_tags:"medicamento remedio farmacia fármaco pastilla jarabe",pagina:"bodega-alimentos"},
+  {letra:"B",nombre:"Bucal, Programa de Salud",url:"/b/bucal-programa-de-salud",categoria:"Programa",tags:"diente muela dolor dental dentista odontólogo boca limpieza extracción",exclude_tags:"mental psicología psiquiatría ansiedad depresión",pagina:"salud-bucal"},
   {letra:"C",nombre:"¿Cómo puedo atenderme en el CESFAM N°5?",url:"/i/inscripción",categoria:"Información",tags:"atenderse cesfam inscribir cómo atención nuevo usuario primera vez registro",pagina:"inscripcion"},
   {letra:"C",nombre:"Caderas, Radiografía de",url:"/c/caderas-radiografía-de",categoria:"Examen",tags:"caderas radiografía cadera bebé niño 3 meses displasia examen",pagina:"caderas-radiografia"},
   {letra:"C",nombre:"Cambio de hora",url:"/c/cambio-de-hora",categoria:"Trámite",tags:"cambiar hora cita médica reagendar some",pagina:"some"},
@@ -591,16 +591,16 @@ const TEMAS = [
   {letra:"I",nombre:"Inmunizaciones — Vacunas",url:"/i/inmunizaciones-programa-nacional-de",categoria:"Programa",tags:"vacuna inmunización calendario niño adulto dosis refuerzo",pagina:"inmunizaciones"},
   {letra:"I",nombre:"Inscripción en el CESFAM N° 5",url:"/i/inscripción",categoria:"Trámite",tags:"inscripción inscribir registrar nuevo usuario primera vez cesfam",pagina:"inscripcion"},
   {letra:"I",nombre:"Interconsultas — Especialidades",url:"/i/interconsultas",categoria:"Trámite",tags:"interconsulta especialidad derivación cardiólogo neurólogo espera lista",pagina:"interconsultas"},
-  {letra:"I",nombre:"Interrupción Voluntaria del Embarazo, IVE",url:"/i/interrupción-voluntaria-del-embarazoive-ley",categoria:"Información",tags:"IVE aborto interrupción voluntaria embarazo violación riesgo vida ley 21030",pagina:"ley-ive"},
+  {letra:"I",nombre:"Interrupción Voluntaria del Embarazo, IVE",url:"/i/interrupción-voluntaria-del-embarazoive-ley",categoria:"Información",tags:"IVE aborto interrupción voluntaria embarazo violación riesgo vida ley 21030",exclude_tags:"matrona control prenatal parto ecografía semana gestación",pagina:"ley-ive"},
   {letra:"I",nombre:"Inyectable",url:"/i/inyectable",categoria:"Servicio",tags:"inyección inyectable ampolla enfermera tens procedimiento",pagina:"inyectable"},
   {letra:"I",nombre:"IRA — Infecciones Respiratorias Agudas",url:"/i/i-r-a-sala-de-infecciones-respiratorias-agudas",categoria:"Servicio",tags:"ira bronquitis neumonía tos fiebre respiratorio nebulización niño",pagina:"sala-ira"},
   {letra:"I",nombre:"ITS — Infecciones de Transmisión Sexual",url:"/i/infecciones-de-transmisión-sexual-its",categoria:"Programa",tags:"ITS sífilis gonorrea herpes condón prevención sexual infección",pagina:"its"},
   {letra:"J",nombre:"Jefas de sector",url:"/j/jefaturas",categoria:"Información",tags:"jefas sector jefatura jefe encargada cargo lila rojo verde",pagina:"jefaturas"},
   {letra:"J",nombre:"Jóvenes",url:"/a/adolescentes-y-jóvenes",categoria:"Programa",tags:"jóvenes adolescente joven programa salud integral",pagina:"adolescentes-jovenes"},
-  {letra:"K",nombre:"Kinesiólogo",url:"/k/kine",categoria:"Profesional",tags:"kinesiólogo kinesiología rehabilitación dolor espalda rodilla fisioterapia",pagina:"kinesiologa"},
+  {letra:"K",nombre:"Kinesiólogo",url:"/k/kine",categoria:"Profesional",tags:"kinesiólogo kinesiología rehabilitación dolor espalda rodilla fisioterapia",exclude_tags:"dental diente muela dentista odontólogo boca caries",pagina:"kinesiologa"},
   {letra:"L",nombre:"Ley Dominga",url:"/d/dominga-ley",categoria:"Información",tags:"ley dominga muerte gestacional perinatal duelo neonatal",pagina:"ley-dominga"},
   {letra:"L",nombre:"Ley Mila",url:"/m/mila-ley",categoria:"Información",tags:"ley mila donación órganos trasplante",pagina:"ley-mila"},
-  {letra:"L",nombre:"Ley IVE — Interrupción Voluntaria del Embarazo",url:"/i/interrupción-voluntaria-del-embarazoive-ley",categoria:"Información",tags:"ley ive interrupción voluntaria embarazo aborto tres causales",pagina:"ley-ive"},
+  {letra:"L",nombre:"Ley IVE — Interrupción Voluntaria del Embarazo",url:"/i/interrupción-voluntaria-del-embarazoive-ley",categoria:"Información",tags:"ley ive interrupción voluntaria embarazo aborto tres causales",exclude_tags:"matrona control prenatal parto ecografía semana gestación",pagina:"ley-ive"},
   {letra:"L",nombre:"Leche",url:"/a/alimentación-complementaria-programa-nacional-de-pnac",categoria:"Programa",tags:"leche pnac alimento complementario niño embarazada lactante purita fórmula",pagina:"pnac"},
   {letra:"R",nombre:"Rojo, Sector",url:"/r/sector-rojo",categoria:"Información",tags:"sector rojo equipo cabecera jefa some satélite preparación",pagina:"sector-rojo"},
   {letra:"V",nombre:"Verde, Sector",url:"/v/sector-verde",categoria:"Información",tags:"sector verde equipo cabecera jefa some satélite preparación",pagina:"sector-verde"},
@@ -658,8 +658,14 @@ function normalizar(s){ return s.toLowerCase().normalize("NFD").replace(/[\u0300
 
 function buscar(query){
   if(!query.trim()) return [];
-  const palabras = normalizar(query).split(" ").filter(p=>p.length>1);
+  const qNorm = normalizar(query);
+  const palabras = qNorm.split(" ").filter(p=>p.length>1);
   return TEMAS.map(t=>{
+    // Si la query coincide con alguna palabra de exclude_tags, score = 0
+    if(t.exclude_tags){
+      const excl = normalizar(t.exclude_tags).split(" ").filter(p=>p.length>1);
+      if(excl.some(e => palabras.includes(e) || qNorm.includes(e))) return{...t,score:0,mw:[]};
+    }
     const nom=normalizar(t.nombre), tags=normalizar(t.tags), cat=normalizar(t.categoria);
     let score=0, mw=[];
     for(const p of palabras){
@@ -667,7 +673,7 @@ function buscar(query){
       else if(tags.includes(p)){score+=5;mw.push(p);}
       else if(cat.includes(p)) score+=2;
     }
-    if(nom.includes(normalizar(query))) score+=20;
+    if(nom.includes(qNorm)) score+=20;
     score+=new Set(mw).size*3;
     return{...t,score,mw:[...new Set(mw)]};
   }).filter(t=>t.score>0).sort((a,b)=>b.score-a.score).slice(0,8);
