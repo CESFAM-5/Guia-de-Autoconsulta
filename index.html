@@ -636,7 +636,6 @@ const TEMAS = [
   {letra:"S",nombre:"SAPU — Servicio de Atención Primaria de Urgencias",url:"/s/sapu",categoria:"Servicio",tags:"SAPU urgencia emergencia atención primaria baja complejidad sábado domingo horario",pagina:"sapu"},
   {letra:"S",nombre:"Salud Sexual y Reproductiva",url:"/s/sexual-y-reproductiva-programa",categoria:"Programa",tags:"sexual reproductiva anticonceptivo planificación familiar condón diu pastilla",pagina:"sexual-reproductiva"},
   {letra:"S",nombre:"SOME — Sacar hora",url:"/s/some-servicio-de-orientación-médica-y-estadística",categoria:"Servicio",tags:"some sacar hora cita médica solicitar orientación estadística",pagina:"some"},
-  { id: "suicidio", nombre: "Suicidio (Prevención)", categoria: "Información", tags: ["salud mental", "prevencion", "ayuda", "crisis", "emergencia"], migrado: true },
   {letra:"T",nombre:"Talleres de salud",url:"/t/talleres",categoria:"Servicio",tags:"taller charla educación salud grupo actividad comunitaria",pagina:"talleres"},
   {letra:"T",nombre:"Telesalud",url:"/t/telesalud",categoria:"Servicio",tags:"telesalud teleconsulta",pagina:"telesalud"},
   {letra:"T",nombre:"TENS",url:"/t/tens",categoria:"Profesional",tags:"tens técnico enfermería curación inyectable toma muestra",pagina:"tens"},
@@ -4513,71 +4512,6 @@ const PAGINAS = {
     `
   },
 
-  "suicidio": { 
-    id: "suicidio", 
-    nombre: "Suicidio (Prevención)", 
-    titulo: "Prevención del Suicidio", 
-    categoria: "Información", 
-    actualizacion: "02/06/2026", 
-    nav: ["Descripción", "Señales", "Ayuda", "Prestaciones", "Acceder", "Requisitos"], 
-    contenido: () => `
-        <div class="pagina-seccion" id="sec-Descripción">
-            <div class="pagina-seccion-titulo-principal">Descripción</div>
-            <p class="pagina-texto" style="font-style: italic; border-left: 3px solid var(--verde-medio); padding-left: 12px; color: var(--texto-suave);">
-                “Todo acto por el que un individuo se causa a sí mismo una lesión, o un daño, con un grado variable en la intención de morir, cualquiera sea el grado de intención letal o de conocimiento del verdadero móvil”
-            </p>
-        </div>
-
-        <div class="pagina-seccion" id="sec-Señales">
-            <div class="pagina-seccion-titulo-principal">Señales de alerta</div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Deseo de morir, herirse o matarse, o amenaza con hacerlo.</span></div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sentimientos de desesperanza o de no tener razones para vivir.</span></div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sentirse atrapado, bloqueado o sufrir un dolor que no puede soportar.</span></div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sentirse una carga para otros o responsable de todo lo malo que sucede.</span></div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Mayor uso de alcohol o drogas.</span></div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Búsqueda de formas de terminar con su vida (ej. en internet).</span></div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Aislamiento y alejamiento de familiares y amigos.</span></div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Alteraciones extremas del sueño (dormir demasiado o muy poco).</span></div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Visitar o llamar a cercanos para despedirse o regalar posesiones preciadas.</span></div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Muestras de agresividad, irritabilidad, agitación o ira.</span></div>
-            <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Bajo ánimo, fatiga, desgano y pérdida de interés.</span></div>
-        </div>
-
-        <div class="pagina-seccion" id="sec-Ayuda">
-            <div class="pagina-seccion-titulo-principal">¿Dónde buscar ayuda?</div>
-            <p class="pagina-texto">Tu centro de atención primaria o consultorio es la puerta de entrada para acceder a consultas de especialidad en salud mental. En la consulta de salud general se puede realizar un diagnóstico inicial, derivar a especialistas y activar garantías GES si corresponde.</p>
-            
-            <p class="pagina-texto" style="font-weight: 600; margin-top: 12px;">Ayuda inmediata y recursos en línea:</p>
-            <a href="https://cesfam-5.github.io/Prevenir-el-suicidio/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-top:8px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                Sitio Web: Prevenir el Suicidio
-            </a>
-        </div>
-
-        <div class="pagina-seccion" id="sec-Prestaciones">
-            <div class="pagina-seccion-titulo-principal">Prestaciones</div>
-            <p class="pagina-texto">A través de una consulta de Medicina General podrá recibir un primer diagnóstico e ingresar al <strong>Programa de Salud Mental</strong>. En casos complejos, podrá ser derivado a otros centros de la red (COSAM, Hospital San Borja-Arriarán, etc.).</p>
-            <div style="background:#fff3e0; border:1px solid #f5c06a; border-radius:12px; padding:14px 16px; margin-top:12px;">
-                <p class="pagina-texto" style="color: #8a5c1a; font-size: 14px; margin-bottom: 0;"><strong>Aviso importante:</strong> El CESFAM N°5 no cuenta con servicio de urgencias. En caso de emergencia de salud mental, debe acudir directamente a un SAPU o Servicio de Urgencia.</p>
-                ${enlaceTarjeta('urgencias', 'Urgencias', 'Qué hacer en una emergencia')}
-            </div>
-        </div>
-
-        <div class="pagina-seccion" id="sec-Acceder">
-            <div class="pagina-seccion-titulo-principal">Acceder</div>
-            <p class="pagina-texto">Solicite hora de atención en el SOME de su sector.</p>
-            ${enlaceTarjeta('some', 'SOME — Sacar hora', 'Solicitar hora para Medicina General o Salud Mental')}
-            ${enlaceTarjeta('hora-presentacion', 'Hora de presentación', 'Llegar 15 minutos antes de la cita')}
-        </div>
-
-        <div class="pagina-seccion" id="sec-Requisitos">
-            <div class="pagina-seccion-titulo-principal">Requisitos</div>
-            <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
-            <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Tener 5 años de edad o más.</span></div>
-        </div>
-    `
-},
-  
   "tbc": {
     id: "tbc",
     nombre: "Tuberculosis — TBC",
