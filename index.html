@@ -542,6 +542,7 @@ const TEMAS = [
   {letra:"C",nombre:"Control Sano",url:"/c/control-sano",categoria:"Servicio",tags:"control sano niño bebé crecimiento desarrollo peso talla pediatra enfermera",pagina:"control-sano"},
   {letra:"C",nombre:"Credencial de Discapacidad",url:"/c/credencial-de-discapacidad",categoria:"Trámite",tags:"credencial discapacidad certificado registro compin senadis ivadec informe biomédico",pagina:"credencial-discapacidad"},
   {letra:"C",nombre:"Curaciones",url:"/c/curaciones",categoria:"Servicio",tags:"curación herida úlcera pie diabético apósito curar enfermera tens",pagina:"curaciones"},
+  {letra:"C",nombre:"Conducta Suicida",url:"/c/conducta-suicida",categoria:"Información",tags:"suicidio suicida conducta autolesión ideación intento muerte desesperanza señales alerta prevención salud mental apoyo ayuda",pagina:"conducta-suicida"},
   {letra:"C",nombre:"Consejo de Desarrollo Local de Salud, CDL",url:"/c/consejo-de-desarrollo-local-de-salud",categoria:"Información",tags:"cdl consejo desarrollo local salud participación ciudadana comunidad directiva",pagina:"cdl"},
   {letra:"C",nombre:"¿Cómo puedo atenderme en el CESFAM N°5?",url:"/i/inscripción",categoria:"Información",tags:"atenderse cesfam inscribir cómo atención nuevo usuario primera vez registro",pagina:"inscripcion"},
   {letra:"C",nombre:"Cómo llegar al CESFAM",url:"/c/cómo-llegar",categoria:"Información",tags:"dirección llegar micro bus metro cesfam ubicación mapa cómo",pagina:"como-llegar"},
@@ -633,6 +634,7 @@ const TEMAS = [
   {letra:"R",nombre:"Rehabilitación Comunitaria",url:"/r/rehabilitación-comunitaria-sala",categoria:"Servicio",tags:"rehabilitación comunitaria discapacidad terapia kinesiólogo",pagina:"rehabilitacion-sala"},
   {letra:"S",nombre:"Salud Responde — 600 360 7777",url:"/s/salud-responde",categoria:"Información",tags:"salud responde 600 teléfono consulta orientación médica gratuita",pagina:"salud-responde"},
   {letra:"S",nombre:"SAMU — Urgencia 131",url:"/s/samu",categoria:"Información",tags:"samu 131 urgencia emergencia ambulancia grave accidente",pagina:"samu"},
+  {letra:"S",nombre:"Suicidio",url:"/c/conducta-suicida",categoria:"Información",tags:"suicidio suicida conducta autolesión ideación intento muerte desesperanza señales alerta prevención salud mental apoyo ayuda",pagina:"conducta-suicida"},
   {letra:"S",nombre:"SAPU — Servicio de Atención Primaria de Urgencias",url:"/s/sapu",categoria:"Servicio",tags:"SAPU urgencia emergencia atención primaria baja complejidad sábado domingo horario",pagina:"sapu"},
   {letra:"S",nombre:"Salud Sexual y Reproductiva",url:"/s/sexual-y-reproductiva-programa",categoria:"Programa",tags:"sexual reproductiva anticonceptivo planificación familiar condón diu pastilla",pagina:"sexual-reproductiva"},
   {letra:"S",nombre:"SOME — Sacar hora",url:"/s/some-servicio-de-orientación-médica-y-estadística",categoria:"Servicio",tags:"some sacar hora cita médica solicitar orientación estadística",pagina:"some"},
@@ -5190,6 +5192,83 @@ const PAGINAS = {
         
         <p class="pagina-texto">Sala en la que se presentan los usuarios antes de la atención profesional, donde un técnico en enfermería realiza la toma de signos vitales.</p>
         ${enlaceTarjeta('hora-presentacion','Hora de Presentación','¿Qué es la hora de presentación?')}
+      </div>
+    `
+  },
+
+  "conducta-suicida": {
+    id: "conducta-suicida",
+    nombre: "Conducta Suicida",
+    titulo: "Conducta Suicida",
+    categoria: "Información",
+    actualizacion: "02/06/2026",
+    nav: ["Descripción","Señales de alerta","¿Dónde buscar ayuda?","Prestaciones","Acceder","Requisitos"],
+    contenido: () => `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo-principal">Descripción</div>
+        <p class="pagina-texto">"Todo acto por el que un individuo se causa a sí mismo una lesión, o un daño, con un grado variable en la intención de morir, cualquiera sea el grado de intención letal o de conocimiento del verdadero móvil"</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Señales de alerta">
+        <div class="pagina-seccion-titulo-principal">Señales de alerta</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Deseo de morir, herirse o matarse, o amenaza con hacerlo.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sentimientos de desesperanza o de no tener razones para vivir.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sentirse atrapado, bloqueado o sufrir un dolor que no puede soportar.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Ser una carga para otros (amigos, familia, etc.) o el responsable de todo lo malo que sucede.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Mayor uso de alcohol o drogas.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Busca formas de terminar con su vida, por ej. en internet.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Se aisla, deja de participar.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Alejamiento de familiares y amigos.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Duerme demasiado o muy poco.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Visita o llama a sus cercanos para despedirse.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Regala posesiones preciadas.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Muestra agresividad.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Está desganado, fatigado.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Desesperanza.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Bajo ánimo y energía.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Ansiedad.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Pérdida de interés.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Irritabilidad.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Humillación / vergüenza.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Agitación / Ira.</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-¿Dónde buscar ayuda?">
+        <div class="pagina-seccion-titulo-principal">¿Dónde buscar ayuda?</div>
+        <p class="pagina-texto">Puedes encontrar apoyo en diferentes fuentes de ayuda, dependiendo de lo que sea más cercano o de más fácil acceso.</p>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:10px;">Consulta de salud general</p>
+        <p class="pagina-texto">Para muchos, la consulta de salud general puede ser el primer lugar al cual se piensa acudir al encontrarse en estas situaciones. Si te atiendes en la red pública de salud, tu centro de atención primaria o consultorio es la puerta de entrada para acceder a consultas de especialidad en salud mental.</p>
+        <p class="pagina-texto">En la consulta de salud general pueden:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Realizar un primer diagnóstico.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Derivar a especialista de salud mental, como un psicólogo o psiquiatra.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Activar prestaciones GES en caso de que corresponda (Ver sección GES).</span></div>
+        <div style="margin-top:16px;">
+          <a href="https://cesfam-5.github.io/Prevenir-el-suicidio/" target="_blank" rel="noopener" class="link-externo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Encuentra ayuda inmediata — Prevenir el suicidio
+          </a>
+          <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:6px;">Chats, números telefónicos, lugares de atención y mucho más.</p>
+        </div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo-principal">Prestaciones</div>
+        <p class="pagina-texto">En CESFAM N° 5 no contamos con servicio de atención de urgencias. En caso de necesitarlo debe dirigirse a un SAPU o Servicio de Urgencia.</p>
+        ${enlaceTarjeta('sapu','SAPU — Urgencias','Servicio de Atención Primaria de Urgencias')}
+        <p class="pagina-texto" style="margin-top:14px;">A través de una consulta de Medicina General podrá recibir un primer diagnóstico e ingresar al Programa de Salud Mental, a través del cual recibirá atenciones del equipo de salud de su sector. También podría ser derivado a otros establecimientos de la red de salud (COSAM, Hospital Clínico San Borja-Arriarán, Hospital de Urgencia de la Asistencia Pública, entre otros).</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo-principal">Acceder</div>
+        <p class="pagina-texto">Solicitar hora de programa en el SOME Satélite de su sector.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora (cita) de Medicina General o de ingreso a Salud Mental')}
+        ${enlaceTarjeta('hora-presentacion','Hora de presentación','Llegar 15 minutos antes de la cita')}
+      </div>
+
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo-principal">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Tener 5 años de edad o más.</span></div>
       </div>
     `
   }
