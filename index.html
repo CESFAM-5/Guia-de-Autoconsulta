@@ -646,6 +646,7 @@ const TEMAS = [
   {letra:"T",nombre:"Tips de salud",url:"/t/tips",categoria:"Información",tags:"tips consejos salud prevención autocuidado",pagina:"tips"},
   {letra:"T",nombre:"TONS",url:"/t/tons",categoria:"Profesional",tags:"tons técnico odontología dental box curación radiografía",pagina:"tons"},
   {letra:"T",nombre:"Tuberculosis — TBC",url:"/t/tuberculósis",categoria:"Programa",tags:"tuberculosis tbc tos crónica GES tratamiento bacilo",pagina:"tbc"},
+  {letra:"T",nombre:"Transversal, Sector",url:"/t/sector-transversal",categoria:"Información",tags:"sector transversal equipo multidisciplinario promoción prevención rehabilitación IRA ERA MAMAV estimulación temprana comunidad",pagina:"sector-transversal"},
   {letra:"U",nombre:"Urgencias",url:"/u/urgencias",categoria:"Información",tags:"urgencia emergencia qué hacer grave accidente herida",pagina:"urgencias"},
   {letra:"U",nombre:"Urgencias — Números",url:"/u/urgencias/números-urgencias",categoria:"Información",tags:"urgencia número teléfono llamar emergencia samu 131",pagina:"urgencias-numeros"},
   {letra:"V",nombre:"Vacunatorio",url:"/v/vacunatorio",categoria:"Servicio",tags:"vacuna vacunatorio inmunización dosis niño adulto sin hora calendario",pagina:"vacunatorio"},
@@ -2918,6 +2919,50 @@ const PAGINAS = {
         <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
       </div>
     `
+  },
+
+  "sector-transversal": {
+    id: "sector-transversal",
+    nombre: "Sector Transversal",
+    titulo: "Sector Transversal",
+    categoria: "Información",
+    actualizacion: "03/06/2026",
+    nav: ["Descripción","Requisitos","Jefa de Sector","Acceder","Equipo","Saber +"],
+    contenido: () => `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo-principal">Descripción</div>
+        <p class="pagina-texto">El Equipo Transversal es un equipo multidisciplinario de salud que desarrolla acciones de promoción, prevención, recuperación y rehabilitación, complementando el trabajo realizado por los equipos de cabecera y los distintos programas del CESFAM. Su labor se despliega tanto al interior del establecimiento como en el territorio, acercando las prestaciones de salud a las personas, familias y comunidades de manera oportuna e integral.</p>
+        <p class="pagina-texto">Este equipo está conformado por profesionales y técnicos de distintas disciplinas que contribuyen al abordaje de necesidades específicas de la población usuaria a lo largo de todo el curso de vida, fortaleciendo el Modelo de Atención Integral de Salud Familiar y Comunitaria. Sus intervenciones consideran no solo las condiciones de salud de las personas, sino también los factores familiares, sociales y comunitarios que influyen en su bienestar.</p>
+        <p class="pagina-texto">A través de un trabajo coordinado con los equipos clínicos, programas de salud, instituciones y organizaciones del territorio, el Equipo Transversal contribuye a entregar una atención integral, continua y centrada en las necesidades de las personas, fortaleciendo los vínculos entre el CESFAM, las familias y la comunidad.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo-principal">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Cumplir con los requisitos de edad, diagnóstico u otros que tenga cada unidad, programa o servicio. Vea el detalle en la descripción de cada prestación.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Jefa de Sector">
+        <div class="pagina-seccion-titulo-principal">Jefa de Sector</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Paola Castillo S.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo-principal">Acceder</div>
+        <p class="pagina-texto">El acceso a las prestaciones de los distintos equipos está determinado según la edad, diagnóstico y condición de salud. Verifique su consulta específica en el siguiente listado.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Equipo">
+        <div class="pagina-seccion-titulo-principal">Equipo</div>
+        ${enlaceTarjeta('ira','Sala IRA','Infecciones Respiratorias Agudas (niñas/os)')}
+        ${enlaceTarjeta('era','Sala ERA','Enfermedades Respiratorias Agudas (adultos)')}
+        ${enlaceTarjeta('mamav','Programa MAMAV','Más Adultos Mayores Autovalentes')}
+        ${enlaceTarjeta('rehabilitacion-comunitaria','Sala de Rehabilitación Comunitaria','')}
+        ${enlaceTarjeta('estimulacion-temprana','Sala de Estimulación Temprana','')}
+        ${enlaceTarjeta('mas-salud-en-comunidad','Programa Más Salud en Comunidad','')}
+        ${enlaceTarjeta('apoyo-familias-riesgo','Programa de Apoyo a Familias en Riesgo Psicosocial','')}
+      </div>
+      <div class="pagina-seccion" id="sec-Saber +">
+        <div class="pagina-seccion-titulo-principal">Saber +</div>
+        <p class="pagina-texto" style="color:var(--texto-suave); font-style:italic;">Pronto más información.</p>
+      </div>
+    \`
   },
 
   "sector-lila": {
