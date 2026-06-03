@@ -801,7 +801,7 @@ const SERVICIOS=[
    soloHora:false,
    estaAbierto(h,m,d){if(d>=1&&d<=5)return h>=8&&h<20;if(d===6)return h>=8&&h<14;return false;}},
   {nombre:"Farmacia",
-   horario:"Lunes a viernes: 08:00 – 18:00\nSábado: 08:00 – 13:00",
+   horario:"Lunes a viernes: 08:00 – 20:00\nSábado: 09:00 – 13:00",
    soloHora:false,
    estaAbierto(h,m,d){if(d>=1&&d<=5)return h>=8&&h<18;if(d===6)return h>=8&&h<13;return false;}},
   {nombre:"Laboratorio / Toma de muestras",
@@ -4133,7 +4133,7 @@ const PAGINAS = {
         
         <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
         <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Para métodos anticonceptivos regulares: solicitar hora con la matrona de su sector.</span></div>
-        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">La Píldora del día después se entrega sin hora ni receta en la farmacia.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto"><strong>La Píldora del día después</strong> se entrega sin hora previa agendada, debe solicitar una hora de atención espontánea con matrón/a en SOME de su sector.</span></div>
       </div>
       <div class="pagina-seccion" id="sec-Acceder">
         <div class="pagina-seccion-titulo-principal">Acceder</div>
