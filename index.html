@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>CESFAM N°5 — Guía de Autoconsulta</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --verde: #1a6b4a;
-    --verde-claro: #e6f4ee;
-    --verde-medio: #2d8f63;
+    --verde: #3B5F7A;
+    --verde-claro: #E8EFF5;
+    --verde-medio: #4E7A9B;
     --texto: #1a1a1a;
-    --texto-suave: #5a5a5a;
-    --borde: #dde8e3;
-    --fondo: #f7faf8;
+    --texto-suave: #5a6470;
+    --borde: #C8D8E5;
+    --fondo: #F4F6F8;
     --blanco: #ffffff;
     --radio: 16px;
     --radio-sm: 10px;
@@ -25,7 +25,7 @@
   body { font-family: var(--font); background: var(--fondo); color: var(--texto); min-height: 100vh; font-size: 15px; overflow: hidden; }
 
   /* ── HEADER ── */
-  header { background: var(--verde); color: white; position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: 0 2px 14px rgba(26,107,74,0.22); }
+  header { background: var(--verde); color: white; position: fixed; top: 0; left: 0; right: 0; z-index: 100; box-shadow: 0 2px 14px rgba(59,95,122,0.22); }
   .header-inner { display: flex; align-items: center; gap: 14px; padding: 18px 20px 14px; max-width: 480px; margin: 0 auto; }
 
   /* ── LOGO: cambia src="LOGO_URL_AQUI" por la URL de tu imagen ── */
@@ -43,10 +43,9 @@
   .logo-text h1 { font-family: var(--font); font-size: 21px; font-weight: 600; line-height: 1.1; color: white; letter-spacing: -0.02em; }
   .logo-text p { font-size: 11px; opacity: 0.72; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 3px; font-weight: 400; }
 
-  .tabs { display: flex; background: rgba(0,0,0,0.18); border-top: 1px solid rgba(255,255,255,0.1); }
-  .tab { flex: 1; padding: 11px 8px; text-align: center; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.6); cursor: pointer; transition: all 0.2s; border: none; background: transparent; letter-spacing: 0.02em; position: relative; font-family: var(--font); }
-  .tab.active { color: white; background: rgba(255,255,255,0.12); }
-  .tab.active::after { content: ''; position: absolute; bottom: 0; left: 22%; right: 22%; height: 2px; background: white; border-radius: 2px 2px 0 0; }
+  .tabs { display: flex; background: #2D4D63; border-top: 1px solid rgba(255,255,255,0.08); padding: 8px 10px 0; gap: 6px; align-items: flex-end; }
+  .tab { flex: 1; padding: 9px 8px 10px; text-align: center; font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.55); cursor: pointer; transition: all 0.2s; border: none; background: rgba(255,255,255,0.1); letter-spacing: 0.02em; position: relative; font-family: var(--font); border-radius: 8px 8px 0 0; }
+  .tab.active { color: #3B5F7A; background: #EEF2F5; font-weight: 600; padding-bottom: 12px; }
 
   .view { display: none; }
   .view.active { display: flex; flex-direction: column; }
@@ -1126,7 +1125,7 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Limpiezas y control periodontal:</strong> limpiezas profundas para prevenir gingivitis y periodontitis.</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Extracciones dentales:</strong> cuando el daño es severo o necesario para la salud general.</span></div>
         ${enlaceTarjeta('urgencia-odontologica','Urgencia Odontológica','Dolor agudo, absceso, traumatismo u otras situaciones que no pueden esperar')}
-        
+
         <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:14px; margin-bottom:8px;">Promoción comunitaria</p>
         <p class="pagina-texto">El programa incluye actividades en jardines infantiles, colegios y organizaciones comunitarias, con exámenes preventivos y educación sobre higiene bucal.</p>
       </div>
@@ -3399,7 +3398,6 @@ const PAGINAS = {
         <div class="pagina-seccion-titulo-principal">Acceder</div>
         <p class="pagina-texto">Preséntese directamente en el SOME de su sector durante el horario de atención del CESFAM, indicando que requiere atención de urgencia odontológica. La atención se evalúa según criterio clínico y orden de llegada.</p>
         ${enlaceTarjeta('some','SOME — Presentarse','Indicar que es urgencia odontológica al llegar')}
-        ${enlaceTarjeta('salud-bucal','Programa de Salud Bucal','Conozca más sobre el Programa de Salud Bucal')}
         ${enlaceTarjeta('hora-presentacion','Hora de Presentación','Llegar 15 minutos antes si tiene hora asignada')}
         <p class="pagina-texto" style="margin-top:14px; color:var(--texto-suave); font-size:13px;">⚠️ El CESFAM N°5 no cuenta con servicio de urgencias fuera de su horario habitual. Si la urgencia ocurre fuera de ese horario, diríjase al SAPU o al servicio de urgencias más cercano.</p>
         ${enlaceTarjeta('sapu','SAPU — Urgencias','Atención fuera del horario del CESFAM')}
@@ -3416,7 +3414,7 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Copago:</strong> Sin costo para beneficiarios FONASA; con copago limitado para ISAPRE según tramo.</span></div>
 
         <p class="pagina-texto" style="margin-top:10px;">
-          <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/urgencia-odontologica-ambulatoria/" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver detalles en Superintendencia de Salud →</a>
+          <a href="https://www.superdesalud.gob.cl/tax-patologias-garantizadas-ges/46-urgencia-odontologica-ambulatoria-1772/" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver detalles en Superintendencia de Salud →</a>
         </p>
 
         <div style="background:var(--verde-claro); padding:12px; border-radius:var(--radio-sm); margin-top:14px;">
