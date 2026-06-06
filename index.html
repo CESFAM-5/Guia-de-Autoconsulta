@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{letra:"A",nombre:"Asistente Social"<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -522,6 +522,7 @@ const TEMAS = [
   {letra:"A",nombre:"Apoyo a la Identidad de Género",url:"/a/apoyo-a-la-identidad-de-género",categoria:"Programa",tags:"identidad género trans transgénero diversidad sexual lgbtq",pagina:"paig"},
   {letra:"A",nombre:"Apoyo Clínico",url:"/a/apoyo-clínico",categoria:"Servicio",tags:"apoyo clínico laboratorio vacunatorio inyectable electrocardiograma herida curación tuberculosis samu",pagina:"apoyo-clinico"},
   {letra:"A",nombre:"Asma",url:"/a/asma",categoria:"Programa",tags:"asma respiratorio pulmón enfermedad crónica silbidos tos dificultad respirar sibilancias crisis GES",pagina:"asma"},
+  {letra:"A",nombre:"Acompañamiento psicosocial, Programa",url:"/a/acompanamiento-psicosocial",categoria:"Programa",tags:"acompañamiento psicosocial apoyo familiar vulnerabilidad riesgo social salud mental programa",pagina:"acompanamiento-psicosocial"},
   {letra:"A",nombre:"Asistente Social",url:"/a/asistente-social",categoria:"Profesional",tags:"asistente social trabajadora social beneficio subsidio ayuda trámite pobreza",pagina:"asistente-social"},
   {letra:"A",nombre:"Atención Domiciliaria",url:"/a/atención-domiciliaria-a-personas-con-dependencia-severa-programa-de",categoria:"Programa",tags:"visita domicilio casa postrado dependiente discapacidad crónica",pagina:"atencion-domiciliaria"},
   {letra:"A",nombre:"Atención Primaria de Salud",url:"/a/atención-primaria-de-salud",categoria:"Información",tags:"aps cesfam atención primaria información general",pagina:"aps"},
@@ -3695,6 +3696,55 @@ const PAGINAS = {
       </div>
     `
   },
+
+"acompanamiento-psicosocial": {
+    id: "acompanamiento-psicosocial",
+    nombre: "Acompañamiento Psicosocial, Programa",
+    titulo: "Programa de Acompañamiento Psicosocial",
+    categoria: "Programa",
+    actualizacion: "05/06/2026",
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Horario","GES","Equipo","Saber +"],
+    contenido: () => `
+        <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo-principal">Descripción</div>
+        <p class="pagina-texto">Aquí va el texto de descripción del programa.</p>
+      </div>
+        <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo-principal">Prestaciones</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Primera prestación.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Segunda prestación.</span></div>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora de ingreso')}
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo-principal">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Segundo requisito aquí.</span></div>
+      </div>
+        <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo-principal">Acceder</div>
+        <p class="pagina-texto">Texto explicando cómo acceder al programa.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora de ingreso al programa')}
+        ${enlaceTarjeta('hora-presentacion','Hora de Presentación','Llegar 15 minutos antes de la cita')}
+      </div>
+            <div class="pagina-seccion" id="sec-Horario">
+        <div class="pagina-seccion-titulo-principal">Horario</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a viernes: 08:30 – 17:00</span></div>
+      </div>
+        <div class="pagina-seccion" id="sec-GES">
+        <div class="pagina-seccion-titulo-principal">Garantías Explícitas en Salud (GES)</div>
+        <p class="pagina-texto">Texto explicando la cobertura GES.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Equipo">
+        <div class="pagina-seccion-titulo-principal">Equipo</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Psicólogo/a</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Asistente Social</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Saber +">
+        <div class="pagina-seccion-titulo-principal">Saber +</div>
+        <p class="pagina-texto" style="color:var(--texto-suave); font-style:italic;">Pronto más información.</p>
+      </div>
+        `
+    },
 
   "asistente-social": {
     id: "asistente-social",
