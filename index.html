@@ -101,6 +101,52 @@
   .sin-resultados p { font-size: 14px; color: var(--texto-suave); line-height: 1.6; }
   .sin-resultados strong { color: var(--texto); }
   .sin-resultados .tip { margin-top: 14px; font-size: 13px; color: var(--verde); }
+  /* ── Botón preventivo destacado ── */
+  .btn-preventivo { display:flex; align-items:center; gap:12px; width:100%; max-width:480px; margin:0 auto 20px; padding:14px 18px; background:linear-gradient(135deg,#2D6A4F,#3B5F7A); color:white; border:none; border-radius:14px; font-family:var(--font); cursor:pointer; text-align:left; box-shadow:0 3px 12px rgba(45,106,79,0.28); transition:transform 0.15s,box-shadow 0.15s; }
+  .btn-preventivo:active { transform:scale(0.98); box-shadow:0 1px 6px rgba(45,106,79,0.18); }
+  .btn-preventivo-icon { font-size:28px; flex-shrink:0; }
+  .btn-preventivo-texto strong { display:block; font-size:15px; font-weight:700; line-height:1.2; }
+  .btn-preventivo-texto span { font-size:12px; opacity:0.82; margin-top:2px; display:block; }
+  .btn-preventivo-arrow { margin-left:auto; opacity:0.7; flex-shrink:0; }
+  .sin-resultados .reportar-btn { display:inline-flex; align-items:center; gap:6px; margin-top:16px; padding:9px 18px; background:var(--verde); color:white; border:none; border-radius:var(--radio-sm); font-size:13px; font-family:var(--font); font-weight:500; cursor:pointer; }
+  /* ── Ícono ℹ️ en encabezado ── */
+  .header-info-btn { background:rgba(255,255,255,0.15); border:none; color:white; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; margin-left:auto; flex-shrink:0; transition:background 0.2s; }
+  .header-info-btn:active { background:rgba(255,255,255,0.28); }
+  .header-info-btn svg { width:18px; height:18px; }
+  /* ── Panel Quiénes somos ── */
+  #panel-quienes { position:fixed; top:0; left:0; right:0; bottom:0; z-index:300; display:none; }
+  #panel-quienes.visible { display:flex; flex-direction:column; }
+  .panel-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.4); }
+  .panel-sheet { position:absolute; bottom:0; left:0; right:0; background:white; border-radius:20px 20px 0 0; max-height:88vh; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:24px 20px 40px; }
+  .panel-handle { width:40px; height:4px; background:var(--borde); border-radius:2px; margin:0 auto 20px; }
+  .panel-titulo { font-size:18px; font-weight:700; color:var(--verde); margin-bottom:14px; }
+  .panel-cierre { position:absolute; top:18px; right:18px; background:var(--fondo); border:none; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; cursor:pointer; }
+  .panel-cierre svg { width:14px; height:14px; stroke:var(--texto-suave); }
+  .panel-texto { font-size:14px; color:var(--texto); line-height:1.65; margin-bottom:10px; }
+  .panel-equipo { margin-top:16px; }
+  .panel-equipo-titulo { font-size:12px; font-weight:600; color:var(--verde); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px; }
+  .panel-miembro { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--borde); font-size:13px; color:var(--texto); }
+  .panel-miembro:last-child { border-bottom:none; }
+  .panel-miembro-rol { font-size:11px; color:var(--texto-suave); margin-top:2px; }
+  /* ── Pulgar por página ── */
+  .util-bar { display:flex; align-items:center; justify-content:center; gap:12px; margin:24px 0 8px; padding:14px; background:var(--fondo); border-radius:var(--radio-sm); }
+  .util-bar p { font-size:13px; color:var(--texto-suave); }
+  .util-btn { background:none; border:1.5px solid var(--borde); border-radius:8px; padding:6px 14px; font-size:20px; cursor:pointer; transition:all 0.15s; }
+  .util-btn:hover { border-color:var(--verde); background:var(--verde-claro); }
+  .util-btn.votado { background:var(--verde-claro); border-color:var(--verde); }
+  .util-gracias { font-size:13px; color:var(--verde); text-align:center; margin-bottom:8px; display:none; }
+  /* ── NPS flotante ── */
+  #nps-panel { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:calc(100% - 32px); max-width:440px; background:white; border-radius:16px; box-shadow:0 4px 24px rgba(0,0,0,0.14); padding:18px; z-index:200; display:none; }
+  #nps-panel.visible { display:block; }
+  .nps-titulo { font-size:14px; font-weight:600; color:var(--texto); margin-bottom:12px; }
+  .nps-estrellas { display:flex; gap:6px; justify-content:center; margin-bottom:14px; }
+  .nps-star { font-size:26px; cursor:pointer; opacity:0.35; transition:opacity 0.15s,transform 0.15s; }
+  .nps-star.on { opacity:1; transform:scale(1.15); }
+  .nps-comentario { width:100%; box-sizing:border-box; border:1px solid var(--borde); border-radius:8px; padding:8px 10px; font-size:13px; font-family:var(--font); resize:none; height:60px; color:var(--texto); margin-bottom:10px; }
+  .nps-footer { display:flex; justify-content:space-between; align-items:center; }
+  .nps-enviar { background:var(--verde); color:white; border:none; border-radius:8px; padding:8px 18px; font-size:13px; font-family:var(--font); font-weight:500; cursor:pointer; }
+  .nps-cerrar { background:none; border:none; font-size:12px; color:var(--texto-suave); cursor:pointer; }
+  .nps-gracias { text-align:center; font-size:14px; color:var(--verde); font-weight:500; display:none; padding:8px 0; }
 
   /* ── ÍNDICE ── */
   #view-indice { position: fixed; top: var(--header-h); bottom: 0; left: 0; right: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; }
@@ -415,6 +461,9 @@
       <h1>CESFAM N°5</h1>
       <p>Guía de Autoconsulta</p>
     </div>
+    <button class="header-info-btn" onclick="abrirQuienesSomos()" aria-label="Quiénes somos">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    </button>
   </div>
   <div class="tabs">
     <button class="tab active" onclick="switchTab('buscar',this)">Buscar</button>
@@ -423,12 +472,77 @@
   </div>
 </header>
 
+<!-- ══════════ PANEL QUIÉNES SOMOS ══════════ -->
+<div id="panel-quienes">
+  <div class="panel-overlay" onclick="cerrarQuienesSomos()"></div>
+  <div class="panel-sheet">
+    <div class="panel-handle"></div>
+    <button class="panel-cierre" onclick="cerrarQuienesSomos()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="panel-titulo">Quiénes somos</div>
+    <p class="panel-texto">Esta guía es un recurso de autoconsulta desarrollado por el <strong>CESFAM N°5</strong>, perteneciente a la Dirección de Atención Primaria, DAP, del Servicio de Salud Metropolitano Central, con el objetivo de orientar a nuestros usuarios sobre las prestaciones, profesionales, programas y trámites disponibles en el establecimiento.</p>
+    <p class="panel-texto">Aquí puedes buscar información sobre cómo acceder a una atención, qué requisitos necesitas y en qué horarios operamos. No reemplaza la orientación presencial de nuestro equipo, pero es un primer paso para que llegues mejor preparado/a.</p>
+    <div class="panel-equipo">
+      <div class="panel-equipo-titulo">Contacto y ubicación</div>
+      <div class="panel-miembro">
+        <div>
+          <div>Rodulfo Philippi 91, Santiago</div>
+          <div class="panel-miembro-rol">Dirección</div>
+        </div>
+      </div>
+      <div class="panel-miembro">
+        <div>
+          <div>Lunes a viernes · 08:00 – 17:00</div>
+          <div class="panel-miembro-rol">Horario de atención general</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-equipo" style="margin-top:18px;">
+      <div class="panel-equipo-titulo">Esta guía fue desarrollada por</div>
+      <div class="panel-miembro">
+        <div>
+          <div>Programa de Participación Social · CESFAM N°5</div>
+          <div class="panel-miembro-rol">Desarrollo y mantención</div>
+        </div>
+      </div>
+    </div>
+    <p class="panel-texto" style="margin-top:18px; font-size:12px; color:var(--texto-suave);">¿Encontraste un error o tienes una sugerencia? Puedes reportarlo en la sección <strong>Buscar</strong> cuando no encuentres un resultado.</p>
+  </div>
+</div>
+
+<!-- ══════════ PANEL NPS ══════════ -->
+<div id="nps-panel">
+  <div class="nps-titulo">¿Qué tan útil te resultó esta guía? ⭐</div>
+  <div class="nps-estrellas">
+    <span class="nps-star" data-v="1">★</span>
+    <span class="nps-star" data-v="2">★</span>
+    <span class="nps-star" data-v="3">★</span>
+    <span class="nps-star" data-v="4">★</span>
+    <span class="nps-star" data-v="5">★</span>
+  </div>
+  <textarea class="nps-comentario" placeholder="Comentario opcional..." id="nps-comentario"></textarea>
+  <div class="nps-footer">
+    <button class="nps-cerrar" onclick="cerrarNPS()">Ahora no</button>
+    <button class="nps-enviar" onclick="enviarNPS()">Enviar</button>
+  </div>
+  <div class="nps-gracias" id="nps-gracias">¡Gracias por tu opinión! 🙌</div>
+</div>
+
 <!-- ══════════ BUSCADOR ══════════ -->
 <div id="view-buscar" class="view active">
   <div class="buscar-scroll">
     <div class="buscar-inner">
 
       <div class="bienvenida" id="bienvenidaPanel">
+        <button class="btn-preventivo" onclick="abrirPagina('atenciones-preventivas')">
+          <span class="btn-preventivo-icon">🌿</span>
+          <span class="btn-preventivo-texto">
+            <strong>Atenciones preventivas según su edad</strong>
+            <span>Sepa qué controles le corresponden a usted y su familia</span>
+          </span>
+          <svg class="btn-preventivo-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
         <div class="bienvenida-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#1a6b4a" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </div>
@@ -522,6 +636,7 @@ const TEMAS = [
   {letra:"A",nombre:"Apoyo a la Identidad de Género",url:"/a/apoyo-a-la-identidad-de-género",categoria:"Programa",tags:"identidad género trans transgénero diversidad sexual lgbtq",pagina:"paig"},
   {letra:"A",nombre:"Apoyo Clínico",url:"/a/apoyo-clínico",categoria:"Servicio",tags:"apoyo clínico laboratorio vacunatorio inyectable electrocardiograma herida curación tuberculosis samu",pagina:"apoyo-clinico"},
   {letra:"A",nombre:"Asma",url:"/a/asma",categoria:"Programa",tags:"asma respiratorio pulmón enfermedad crónica silbidos tos dificultad respirar sibilancias crisis GES",pagina:"asma"},
+  {letra:"A",nombre:"Atenciones preventivas",url:"/a/atenciones-preventivas",categoria:"Información",tags:"preventivo prevención control niño adulto mayor adolescente joven mujer hombre vacuna mamografía pap cardiovascular diabetes hipertensión",pagina:"atenciones-preventivas"},
   {letra:"A",nombre:"Acompañamiento psicosocial, Programa",url:"/a/acompanamiento-psicosocial",categoria:"Programa",tags:"acompañamiento psicosocial apoyo familiar vulnerabilidad riesgo social salud mental programa",pagina:"acompanamiento-psicosocial"},
   {letra:"A",nombre:"Asistente Social",url:"/a/asistente-social",categoria:"Profesional",tags:"asistente social trabajadora social beneficio subsidio ayuda trámite pobreza",pagina:"asistente-social"},
   {letra:"A",nombre:"Atención Domiciliaria",url:"/a/atención-domiciliaria-a-personas-con-dependencia-severa-programa-de",categoria:"Programa",tags:"visita domicilio casa postrado dependiente discapacidad crónica",pagina:"atencion-domiciliaria"},
@@ -697,7 +812,7 @@ function renderResultados(query, res){
     Volver al inicio
   </button>`;
   if(!res.length){
-    p.innerHTML=volverBtn+`<div class="sin-resultados"><p>No encontré resultados para <strong>"${query}"</strong>.<br>Intenta con otras palabras o revisa el Índice A–Z.</p><p class="tip">También puedes consultar en el mesón del CESFAM.</p></div>`;
+    p.innerHTML=volverBtn+`<div class="sin-resultados"><p>No encontré resultados para <strong>"${query}"</strong>.<br>Intenta con otras palabras o revisa el Índice A–Z.</p><p class="tip">También puedes consultar en el mesón del CESFAM.</p><button class="reportar-btn" onclick="reportarBusqueda('${query.replace(/'/g,"\\'")}')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Reportar búsqueda sin resultado</button></div>`;
     return;
   }
   p.innerHTML=volverBtn
@@ -3746,6 +3861,85 @@ const PAGINAS = {
         `
     },
 
+  "atenciones-preventivas": {
+    id: "atenciones-preventivas",
+    nombre: "Atenciones preventivas",
+    titulo: "Atenciones preventivas",
+    categoria: "Información",
+    actualizacion: "07/06/2026",
+    nav: ["Niñas y niños","Adolescentes","Mujer adulta","Hombre adulto","Adulto mayor"],
+    contenido: () => `
+      <div style="background:linear-gradient(135deg,#2D6A4F,#3B5F7A);border-radius:14px;padding:20px 18px;margin-bottom:20px;color:white;">
+        <p style="font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;">Prevenir es<br>(mucho) mejor que curar</p>
+        <p style="font-size:13px;opacity:0.88;line-height:1.5;">Conozca y acceda a las atenciones preventivas en salud para usted y toda su familia. Muchas de estas prestaciones son gratuitas y están disponibles en el CESFAM.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Niñas y niños">
+        <div class="pagina-seccion-titulo-principal">👶 Niñas y niños</div>
+        <p class="pagina-texto" style="font-size:13px;color:var(--texto-suave);margin-bottom:12px;">Desde el nacimiento hasta los 9 años</p>
+        ${enlaceTarjeta('control-nino-sano','Control del Niño Sano','Controles de salud, crecimiento y desarrollo según edad')}
+        ${enlaceTarjeta('vacunas','Vacunas','Programa Nacional de Inmunizaciones — calendario vigente')}
+        ${enlaceTarjeta('pnac','PNAC — Programa Nacional de Alimentación Complementaria','Leche y alimentos para niños según edad y condición')}
+        ${enlaceTarjeta('salud-bucal','Salud Bucal, Programa','Control dental preventivo desde los 2 años')}
+        ${enlaceTarjeta('kinesiologa','Kinesiólogo','Evaluación y rehabilitación motora')}
+        ${enlaceTarjeta('nutricionista','Nutricionista','Control de peso, talla y hábitos alimentarios')}
+        ${enlaceTarjeta('oftalmologia','Oftalmólogo','Evaluación de la visión')}
+      </div>
+
+      <div class="pagina-seccion" id="sec-Adolescentes">
+        <div class="pagina-seccion-titulo-principal">🧑 Adolescentes y jóvenes</div>
+        <p class="pagina-texto" style="font-size:13px;color:var(--texto-suave);margin-bottom:12px;">De 10 a 24 años</p>
+        ${enlaceTarjeta('salud-mental','Salud Mental','Atención psicológica y psiquiátrica')}
+        ${enlaceTarjeta('conducta-suicida','Conducta Suicida','Señales de alerta y dónde buscar ayuda')}
+        ${enlaceTarjeta('salud-sexual','Salud Sexual y Reproductiva','Orientación, métodos anticonceptivos y más')}
+        ${enlaceTarjeta('vacunas','Vacunas','Vacunas del calendario vigente para adolescentes')}
+        ${enlaceTarjeta('salud-bucal','Salud Bucal, Programa','Control dental')}
+        ${enlaceTarjeta('nutricionista','Nutricionista','Alimentación saludable y control de peso')}
+        ${enlaceTarjeta('odontologo','Odontólogo','Atención dental')}
+      </div>
+
+      <div class="pagina-seccion" id="sec-Mujer adulta">
+        <div class="pagina-seccion-titulo-principal">👩 Mujer adulta</div>
+        <p class="pagina-texto" style="font-size:13px;color:var(--texto-suave);margin-bottom:12px;">De 25 a 59 años</p>
+        ${enlaceTarjeta('matrona','Matrona — Salud de la Mujer','Control ginecológico, PAP y métodos anticonceptivos')}
+        ${enlaceTarjeta('embarazo','Embarazo — Control Prenatal','Controles y seguimiento durante el embarazo')}
+        ${enlaceTarjeta('cardiovascular','Programa Cardiovascular','Control de hipertensión, colesterol y riesgo cardíaco')}
+        ${enlaceTarjeta('diabetes','Programa de Diabetes','Control y seguimiento de diabetes tipo 2')}
+        ${enlaceTarjeta('salud-mental','Salud Mental','Apoyo psicológico y psiquiátrico')}
+        ${enlaceTarjeta('nutricionista','Nutricionista','Alimentación y control de peso')}
+        ${enlaceTarjeta('salud-bucal','Salud Bucal, Programa','Control dental preventivo')}
+        ${enlaceTarjeta('vacunas','Vacunas','Vacunas recomendadas para adultos')}
+      </div>
+
+      <div class="pagina-seccion" id="sec-Hombre adulto">
+        <div class="pagina-seccion-titulo-principal">👨 Hombre adulto</div>
+        <p class="pagina-texto" style="font-size:13px;color:var(--texto-suave);margin-bottom:12px;">De 25 a 59 años</p>
+        ${enlaceTarjeta('cardiovascular','Programa Cardiovascular','Control de hipertensión, colesterol y riesgo cardíaco')}
+        ${enlaceTarjeta('diabetes','Programa de Diabetes','Control y seguimiento de diabetes tipo 2')}
+        ${enlaceTarjeta('salud-mental','Salud Mental','Apoyo psicológico y psiquiátrico')}
+        ${enlaceTarjeta('kinesiologa','Kinesiólogo','Rehabilitación y evaluación motora')}
+        ${enlaceTarjeta('nutricionista','Nutricionista','Alimentación saludable y control de peso')}
+        ${enlaceTarjeta('salud-bucal','Salud Bucal, Programa','Control dental preventivo')}
+        ${enlaceTarjeta('vacunas','Vacunas','Vacunas recomendadas para adultos')}
+      </div>
+
+      <div class="pagina-seccion" id="sec-Adulto mayor">
+        <div class="pagina-seccion-titulo-principal">🧓 Adulto mayor</div>
+        <p class="pagina-texto" style="font-size:13px;color:var(--texto-suave);margin-bottom:12px;">De 60 años en adelante</p>
+        ${enlaceTarjeta('cardiovascular','Programa Cardiovascular','Control de hipertensión, colesterol y riesgo cardíaco')}
+        ${enlaceTarjeta('diabetes','Programa de Diabetes','Control y seguimiento de diabetes tipo 2')}
+        ${enlaceTarjeta('mamav','Programa MAMAV','Más Adultos Mayores Autovalentes — evaluación funcional')}
+        ${enlaceTarjeta('vacunas','Vacunas','Influenza,neumococo y otras vacunas del adulto mayor')}
+        ${enlaceTarjeta('salud-mental','Salud Mental','Apoyo psicológico y psiquiátrico')}
+        ${enlaceTarjeta('kinesiologa','Kinesiólogo','Rehabilitación, equilibrio y movilidad')}
+        ${enlaceTarjeta('nutricionista','Nutricionista','Alimentación y control de peso')}
+        ${enlaceTarjeta('oftalmologia','Oftalmólogo','Evaluación de la visión')}
+        ${enlaceTarjeta('salud-bucal','Salud Bucal, Programa','Control dental preventivo')}
+        ${enlaceTarjeta('pacam','PACAM — Programa de Alimentación del Adulto Mayor','Complemento alimentario para mayores de 70')}
+      </div>
+    `
+  },
+
   "asistente-social": {
     id: "asistente-social",
     nombre: "Asistente Social",
@@ -5592,6 +5786,12 @@ function abrirPagina(id) {
     <p class="pagina-fecha">Actualización: ${pagina.actualizacion}</p>
     <div class="pagina-nav">${nav}</div>
     ${pagina.contenido()}
+    <div class="util-bar" id="util-bar-${id}">
+      <p>¿Te fue útil esta página?</p>
+      <button class="util-btn" onclick="votarUtil('${id}',1)" id="util-si-${id}">👍</button>
+      <button class="util-btn" onclick="votarUtil('${id}',-1)" id="util-no-${id}">👎</button>
+    </div>
+    <p class="util-gracias" id="util-gracias-${id}">¡Gracias por tu opinión!</p>
   `;
 
   // Mostrar
@@ -5624,6 +5824,92 @@ window.addEventListener('popstate', function(e) {
     volverInicio();
   }
 });
+
+// ══════════ QUIÉNES SOMOS ══════════
+function abrirQuienesSomos() {
+  document.getElementById('panel-quienes').classList.add('visible');
+}
+function cerrarQuienesSomos() {
+  document.getElementById('panel-quienes').classList.remove('visible');
+}
+
+// ══════════ REPORTAR BÚSQUEDA SIN RESULTADO ══════════
+function reportarBusqueda(query) {
+  const url = 'https://docs.google.com/forms/d/e/REEMPLAZAR_CON_TU_ID_DE_FORM/formResponse'
+    + '?entry.REEMPLAZAR_CON_ID_CAMPO=' + encodeURIComponent(query)
+    + '&submit=Submit';
+  // Envío silencioso vía fetch (no abre ventana)
+  fetch(url, { method:'GET', mode:'no-cors' }).catch(()=>{});
+  // Feedback visual inmediato
+  const btn = event.target.closest('.reportar-btn');
+  if(btn){ btn.textContent = '✓ Reportado, ¡gracias!'; btn.disabled = true; }
+}
+
+// ══════════ PULGAR POR PÁGINA ══════════
+function votarUtil(id, voto) {
+  const bar = document.getElementById('util-bar-'+id);
+  const gracias = document.getElementById('util-gracias-'+id);
+  if(!bar || !gracias) return;
+  // Guardar en localStorage para no repetir
+  const clave = 'util_'+id;
+  if(localStorage.getItem(clave)) return;
+  localStorage.setItem(clave, voto);
+  // Marcar botón activo
+  const btnId = voto===1 ? 'util-si-'+id : 'util-no-'+id;
+  document.getElementById(btnId)?.classList.add('votado');
+  // Envío silencioso (mismo Google Form o distinto)
+  // fetch con no-cors — reemplazar URL con tu formulario
+  const url = 'https://docs.google.com/forms/d/e/REEMPLAZAR_CON_TU_ID_DE_FORM/formResponse'
+    + '?entry.REEMPLAZAR_CON_ID_PAGINA=' + encodeURIComponent(id)
+    + '&entry.REEMPLAZAR_CON_ID_VOTO=' + (voto===1?'Útil':'No útil')
+    + '&submit=Submit';
+  fetch(url, { method:'GET', mode:'no-cors' }).catch(()=>{});
+  // Mostrar gracias
+  setTimeout(()=>{ bar.style.display='none'; gracias.style.display='block'; }, 400);
+}
+
+// ══════════ NPS ══════════
+let npsValor = 0;
+(function iniciarNPS(){
+  const KEY = 'nps_mostrado';
+  const ultima = localStorage.getItem(KEY);
+  const hoy = new Date().toISOString().slice(0,7); // año-mes
+  if(ultima === hoy) return;
+  // Mostrar después de 40 segundos en la página
+  setTimeout(()=>{
+    document.getElementById('nps-panel').classList.add('visible');
+  }, 40000);
+})();
+
+document.querySelectorAll('.nps-star').forEach(star => {
+  star.addEventListener('click', ()=>{
+    npsValor = parseInt(star.dataset.v);
+    document.querySelectorAll('.nps-star').forEach((s,i)=>{
+      s.classList.toggle('on', i < npsValor);
+    });
+  });
+});
+
+function enviarNPS() {
+  if(!npsValor) return;
+  const comentario = document.getElementById('nps-comentario').value;
+  const url = 'https://docs.google.com/forms/d/e/REEMPLAZAR_CON_TU_ID_DE_FORM/formResponse'
+    + '?entry.REEMPLAZAR_CON_ID_PUNTUACION=' + npsValor
+    + '&entry.REEMPLAZAR_CON_ID_COMENTARIO=' + encodeURIComponent(comentario)
+    + '&submit=Submit';
+  fetch(url, { method:'GET', mode:'no-cors' }).catch(()=>{});
+  localStorage.setItem('nps_mostrado', new Date().toISOString().slice(0,7));
+  document.querySelector('.nps-footer').style.display='none';
+  document.querySelector('.nps-estrellas').style.display='none';
+  document.querySelector('.nps-comentario').style.display='none';
+  document.getElementById('nps-gracias').style.display='block';
+  setTimeout(cerrarNPS, 2500);
+}
+
+function cerrarNPS() {
+  document.getElementById('nps-panel').classList.remove('visible');
+  localStorage.setItem('nps_mostrado', new Date().toISOString().slice(0,7));
+}
 
 </script>
 <!-- ══════════ VISTA PÁGINA DE CONTENIDO ══════════ -->
@@ -5678,4 +5964,4 @@ function cerrarMapaSiOverlay(e){
 }
 </script>
 </body>
-</html>
+</htmlc
