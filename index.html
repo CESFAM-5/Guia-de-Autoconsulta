@@ -713,10 +713,12 @@ const TEMAS = [
   {letra:"J",nombre:"Jefas de sector",url:"/j/jefaturas",categoria:"Información",tags:"jefas sector jefatura jefe encargada cargo lila rojo verde",pagina:"jefaturas"},
   {letra:"J",nombre:"Jóvenes",url:"/a/adolescentes-y-jóvenes",categoria:"Programa",tags:"jóvenes adolescente joven programa salud integral",pagina:"adolescentes-jovenes"},
   {letra:"K",nombre:"Kinesiólogo",url:"/k/kine",categoria:"Profesional",tags:"kinesiólogo kinesiología rehabilitación dolor espalda rodilla fisioterapia",exclude_tags:"dental diente muela dentista odontólogo boca caries",pagina:"kinesiologa"},
-  {letra:"L",nombre:"Ley Dominga",url:"/d/dominga-ley",categoria:"Información",tags:"ley dominga muerte gestacional perinatal duelo neonatal",pagina:"ley-dominga"},
+  {letra:"L",nombre:"Leche",url:"/a/alimentación-complementaria-programa-nacional-de-pnac",categoria:"Programa",tags:"leche pnac alimento complementario niño embarazada lactante purita fórmula",pagina:"pnac"},  
+{letra:"L",nombre:"Ley Dominga",url:"/d/dominga-ley",categoria:"Información",tags:"ley dominga muerte gestacional perinatal duelo neonatal",pagina:"ley-dominga"},
   {letra:"L",nombre:"Ley Mila",url:"/m/mila-ley",categoria:"Información",tags:"ley mila donación órganos trasplante",pagina:"ley-mila"},
-  {letra:"L",nombre:"Ley IVE — Interrupción Voluntaria del Embarazo",url:"/i/interrupción-voluntaria-del-embarazoive-ley",categoria:"Información",tags:"ley ive interrupción voluntaria embarazo aborto tres causales",exclude_tags:"matrona control prenatal parto ecografía semana gestación",pagina:"ley-ive"},
-  {letra:"L",nombre:"Leche",url:"/a/alimentación-complementaria-programa-nacional-de-pnac",categoria:"Programa",tags:"leche pnac alimento complementario niño embarazada lactante purita fórmula",pagina:"pnac"},
+  {letra:"L",nombre:"Ley de Interrupción Voluntaria del Embarazo",url:"/i/interrupción-voluntaria-del-embarazoive-ley",categoria:"Información",tags:"ley ive interrupción voluntaria 
+embarazo aborto tres causales",exclude_tags:"matrona control prenatal parto ecografía semana gestación",pagina:"ley-ive"},
+  {letra:"L",nombre:"Ley de Urgencia",url:"/l/ley-urgencia",categoria:"Informacion",tags:"ley garantiza atencion medica inmediata",pagina:"ley-urgencia"},
   {letra:"R",nombre:"Rojo, Sector",url:"/r/sector-rojo",categoria:"Información",tags:"sector rojo equipo cabecera jefa some satélite preparación",pagina:"sector-rojo"},
   {letra:"V",nombre:"Verde, Sector",url:"/v/sector-verde",categoria:"Información",tags:"sector verde equipo cabecera jefa some satélite preparación",pagina:"sector-verde"},
   {letra:"L",nombre:"Lila, Sector",url:"/l/lila-sector",categoria:"Información",tags:"sector lila equipo cabecera área geográfica",pagina:"sector-lila"},
@@ -1936,6 +1938,42 @@ const PAGINAS = {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Equipo Ley Dominga — Hospital Clínico San Borja-Arriarán
         </a>
+      </div>
+    `
+  },
+
+  "ley-urgencia": {
+    id: "le-urgencia",
+    nombre: "Ley de Urgencia",
+    titulo: "Ley de Urgencia",
+    categoria: "Información",
+    actualizacion: "05/06/2026",
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Saber +"],
+    contenido: () => `
+      <div class="pagina-seccion" id="sec-Descripción">
+      <div class="pagina-seccion-titulo-principal">Descripción</div>
+      <p class="pagina-texto">Aquí va el texto de descripción de la ley.</p>
+      </div>
+      <div class="pagina-seccion" id="sec-Prestaciones">
+      <div class="pagina-seccion-titulo-principal">Prestaciones</div>
+      <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Primera prestación.</span></div>
+      <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Segunda prestación.</span></div>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora de ingreso')}
+      </div>
+      <div class="pagina-seccion" id="sec-Requisitos">
+      <div class="pagina-seccion-titulo-principal">Requisitos</div>
+      <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+      <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Segundo requisito aquí.</span></div>
+      </div>
+      <div class="pagina-seccion" id="sec-Acceder">
+      <div class="pagina-seccion-titulo-principal">Acceder</div>
+      <p class="pagina-texto">Texto explicando cómo acceder al programa.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora de ingreso al programa')}
+        ${enlaceTarjeta('hora-presentacion','Hora de Presentación','Llegar 15 minutos antes de la cita')}
+      </div>
+      <div class="pagina-seccion" id="sec-Saber +">
+      <div class="pagina-seccion-titulo-principal">Saber +</div>
+      <p class="pagina-texto" style="color:var(--texto-suave); font-style:italic;">Pronto más información.</p>
       </div>
     `
   },
