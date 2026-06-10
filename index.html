@@ -4532,7 +4532,7 @@ const PAGINAS = {
     titulo: "Vacunatorio",
     categoria: "Servicio",
     actualizacion: "",
-    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Horario"],
+    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Horario","Saber +"],
     contenido: () => `
       <div class="pagina-seccion" id="sec-Descripción">
         <div class="pagina-seccion-titulo-principal">Descripción</div>
@@ -4565,13 +4565,35 @@ const PAGINAS = {
         <div class="pagina-seccion-titulo-principal">Acceder</div>
         
         <p class="pagina-texto">Acuda directamente al vacunatorio en su horario de atención. Para vacunas especiales o fuera del calendario puede requerirse indicación médica previa.</p>
-        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora si su vacuna lo requiere')}
       </div>
       <div class="pagina-seccion" id="sec-Horario">
         <div class="pagina-seccion-titulo-principal">Horario</div>
         
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Lunes a viernes:</strong> 08:30 – 16:30 hrs.</span></div>
         <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:8px;">Sin necesidad de hora previa para vacunas del calendario oficial.</p>
+        
+      </div>
+      <div class="pagina-seccion" id="sec-Saber +">
+        <div class="pagina-seccion-titulo-principal">Saber +</div>
+        <a href="https://vacunas.minsal.cl/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Vacunas MINSAL
+        </a><br>
+        <a href="https://www.ispch.gob.cl/anamed/farmacovigilancia/vacunas/preguntas-frecuentes-fv/faq-beneficios/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-top:6px; margin-bottom:8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Beneficios de las vacunas
+        </a><br>
+        <a href="https://vacunas.minsal.cl/enfermedades-inmunoprevenibles/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-top:6px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Enfermedades Inmunoprevenibles
+</a><br>
+      <a href="https://diprece.minsal.cl/wp-content/uploads/2024/02/puntos-vacunacion.html" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-top:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Puntos de vacunación
+</a><br>
+      <a href="https://portalpaciente.minsal.cl/ target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-top:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Certificado de vacunas
       </div>
     `
   },
