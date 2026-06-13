@@ -657,7 +657,6 @@ const TEMAS = [
   {letra:"C",nombre:"Chile Crece Contigo",url:"/c/chile-crece-contigo",categoria:"Programa",tags:"chile crece contigo embarazo bebé niño primera infancia crianza apoyo",pagina:"chile-crece-contigo"},
   {letra:"C",nombre:"Cojín antiescaras",url:"/a/ayudas-técnicas",categoria:"Servicio",tags:"cojín antiescaras escaras silla ruedas discapacidad ayuda técnica",pagina:"ayudas-tecnicas"},
   {letra:"C",nombre:"Conducta Suicida",url:"/c/conducta-suicida",categoria:"Información",tags:"suicidio suicida conducta autolesión ideación intento muerte desesperanza señales alerta prevención salud mental apoyo ayuda",pagina:"conducta-suicida"},
-  {letra:"C",nombre:"Consumo Alcohol y Drogas — Orientación y Atención",url:"/c/consumo-alcohol-drogas",categoria:"Programa",tags:"alcohol drogas consumo problemático dependencia adicción orientación tratamiento cesáfam",pagina:"consumo-alcohol-drogas"},
   {letra:"C",nombre:"Colchón antiescaras",url:"/a/ayudas-técnicas",categoria:"Servicio",tags:"colchón antiescaras escaras cama postrado discapacidad ayuda técnica",pagina:"ayudas-tecnicas"},
   {letra:"C",nombre:"Consejo de Desarrollo Local de Salud, CDL",url:"/c/consejo-de-desarrollo-local-de-salud",categoria:"Información",tags:"cdl consejo desarrollo local salud participación ciudadana comunidad directiva",pagina:"cdl"},
   {letra:"C",nombre:"Consulta Ciudadana",url:"/c/consulta-ciudadana",categoria:"Servicio",tags:"consulta ciudadana reclamo sugerencia felicitación solicitud oirs participación opinión",pagina:"consulta-ciudadana"},
@@ -1215,7 +1214,7 @@ const PAGINAS = {
     nombre: "Salud Bucal, Programa Nacional de",
     titulo: "Programa de Salud Bucal",
     categoria: "Programa",
-    actualizacion: "04/06/2026",
+    actualizacion: "12/06/2026",
     nav: ["Descripción","Prestaciones","Requisitos","Acceder","Horario","GES","Saber +"],
     contenido: () => `
       <div class="pagina-seccion" id="sec-Descripción">
@@ -1276,8 +1275,80 @@ const PAGINAS = {
       </div>
 
         <div class="pagina-seccion" id="sec-GES">
-        <div class="pagina-seccion-titulo-principal">GES</div>
-        <p class="pagina-texto">Conozca la cobertura de <strong>Ley de Garantías Explícitas en Salud, GES</strong>.</p>
+        <div class="pagina-seccion-titulo-principal">GES — Garantías Explícitas en Salud</div>
+        <p class="pagina-texto">Hay tres Garantías Explícitas en Salud (GES) que cubren atención dental integral para grupos prioritarios. Todas son gratuitas para beneficiarios FONASA.</p>
+
+        <div class="pagina-seccion-subtitulo" style="margin-top:18px;">🤰 GES Nº 66: Salud oral integral de la persona gestante</div>
+        <p class="pagina-texto" style="font-size:13px;color:var(--texto-suave);margin-bottom:12px;">Toda persona gestante de cualquier edad</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">¿Quién puede acceder?</p>
+        <p class="pagina-texto">Toda persona gestante de cualquier edad que requiera atención odontológica, dirigida a educar, prevenir, recuperar y rehabilitar la salud bucal durante el embarazo.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Qué se cubre?</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Medicamentos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Insumos odontológicos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Exámenes diagnósticos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tratamientos preventivos, curativos y rehabilitadores</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Plazo de atención</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Inicio de tratamiento:</strong> máximo 21 días desde solicitud</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Fin del tratamiento:</strong> máximo 15 meses desde primera atención</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Costo</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>FONASA A, B, C, D:</strong> 0% (gratuito)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>ISAPRE:</strong> 20% copago</span></div>
+        
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/salud-oral-integral-de-la-persona-gestante/" target="_blank" rel="noopener" class="link-externo" style="margin-top:10px; margin-bottom:18px; display:inline-flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Más información — SuperDESALUD GES Nº 66
+        </a>
+
+        <div class="pagina-seccion-subtitulo" style="margin-top:18px;">👶 GES Nº 23: Salud oral integral para niños y niñas de 6 años</div>
+        <p class="pagina-texto" style="font-size:13px;color:var(--texto-suave);margin-bottom:12px;">Todo niño y niña de 6 años tiene derecho a atención dental integral garantizada</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">¿Quién puede acceder?</p>
+        <p class="pagina-texto">Niñas y niños de 6 años. El acceso al primer control debe realizarse mientras la persona beneficiaria tenga 6 años. El alta se otorga una vez que salen los 4 primeros molares definitivos.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Qué se cubre?</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Insumos odontológicos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Exámenes diagnósticos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tratamientos preventivos y curativos</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Plazo de atención</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tratamiento:</strong> máximo 90 días desde solicitud</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Costo</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>FONASA A, B, C, D:</strong> 0% (gratuito)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>ISAPRE:</strong> 20% copago</span></div>
+        
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/salud-oral-integral-para-ninos-y-ninas-de-6-anos/" target="_blank" rel="noopener" class="link-externo" style="margin-top:10px; margin-bottom:18px; display:inline-flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Más información — SuperDESALUD GES Nº 23
+        </a>
+
+        <div class="pagina-seccion-subtitulo" style="margin-top:18px;">🧓 GES Nº 47: Salud Oral Integral de personas de 60 años</div>
+        <p class="pagina-texto" style="font-size:13px;color:var(--texto-suave);margin-bottom:12px;">Toda persona de 60 años tiene garantía de atención dental integral preventiva, recuperativa y rehabilitadora</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">¿Quién puede acceder?</p>
+        <p class="pagina-texto">Personas de 60 años. La solicitud de atención odontológica debe realizarse mientras la persona beneficiaria tenga 60 años. El alta se otorga una vez que se ha completado la promoción, prevención, recuperación y rehabilitación que requiera.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Qué se cubre?</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Insumos odontológicos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Exámenes diagnósticos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tratamientos preventivos, curativos y rehabilitadores</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Prótesis dentales (cuando sea necesario)</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Plazo de atención</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tratamiento:</strong> máximo 90 días desde solicitud</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Costo</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>FONASA A, B, C, D:</strong> 0% (gratuito)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>ISAPRE:</strong> 20% copago</span></div>
+        
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/salud-oral-integral-de-personas-de-60-anos/" target="_blank" rel="noopener" class="link-externo" style="margin-top:10px; margin-bottom:18px; display:inline-flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Más información — SuperDESALUD GES Nº 47
+        </a>
       </div>
       
         <div class="pagina-seccion" id="sec-Equipo">
@@ -1304,6 +1375,21 @@ const PAGINAS = {
         <a href="https://saludresponde.minsal.cl/programas-odontologicos/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Programas Odontológicos — MINSAL
+        </a><br>
+        
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/salud-oral-integral-de-la-persona-gestante/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          GES Nº 66 — Salud oral gestantes — SuperDESALUD
+        </a><br>
+        
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/salud-oral-integral-para-ninos-y-ninas-de-6-anos/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          GES Nº 23 — Salud oral niños 6 años — SuperDESALUD
+        </a><br>
+        
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/salud-oral-integral-de-personas-de-60-anos/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          GES Nº 47 — Salud oral adulto mayor 60 años — SuperDESALUD
         </a><br>
     `
   },
@@ -1607,171 +1693,7 @@ const PAGINAS = {
       </div>
     `
   },
-  
-  "consumo-alcohol-drogas": {
-    id: "consumo-alcohol-drogas",
-    nombre: "Consumo Alcohol y Drogas — Orientación y Atención",
-    titulo: "Consumo de Alcohol y Drogas",
-    categoria: "Programa",
-    actualizacion: "11/06/2026",
-    nav: ["Descripción","Entender el problema","Prestaciones","Requisitos","Acceso","Horario","GES","Equipo","Saber +"],
-    contenido: () => `
-      <div style="background:linear-gradient(135deg,#8B3A62,#5A4A7F);border-radius:14px;padding:20px 18px;margin-bottom:20px;color:white;">
-        <p style="font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;">Consumo problemático es un problema de salud, no un problema moral</p>
-        <p style="font-size:13px;opacity:0.88;line-height:1.5;">Si tú o alguien cercano está enfrentando un problema de consumo, hay ayuda disponible. Es tratable, prevenible y compatible con una vida plena.</p>
-      </div>
 
-      <div class="pagina-seccion" id="sec-Descripción">
-        <div class="pagina-seccion-titulo-principal">Descripción</div>
-        <p class="pagina-texto">El consumo de alcohol y drogas es una realidad en muchas comunidades. No se trata de un problema moral ni de debilidad de carácter, sino de un <strong>problema de salud</strong> que afecta el bienestar físico, mental, social y laboral de las personas.</p>
-        <p class="pagina-texto">El CESFAM N°5 ofrece orientación, evaluación y atención a personas que enfrentan consumo problemático, ya sea consumo de riesgo, consumo perjudicial o dependencia. El objetivo es reducir daños, apoyar el cambio y restablecer la calidad de vida.</p>
-        <p class="pagina-texto">Esta es una atención <strong>sin juzgamiento</strong>, confidencial y basada en respeto por tu autonomía y decisiones.</p>
-      </div>
-
-      <div class="pagina-seccion" id="sec-Entender el problema">
-        <div class="pagina-seccion-titulo-principal">Entender el consumo problemático</div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Qué es consumo de riesgo?</p>
-        <p class="pagina-texto">Consumo moderado que aún no ha generado daños, pero que tiene riesgo de causarlos si continúa. Ejemplos:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Beber más de 2 tragos el mismo día, o más de 3 días a la semana.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Fumar cigarrillos de forma habitual o usar marihuana regularmente.</span></div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Qué es consumo perjudicial?</p>
-        <p class="pagina-texto">Consumo que ya ha generado problemas claros en tu salud, familia, trabajo, o situación legal. Ejemplos:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Problemas en el trabajo, escuela o familia por culpa del consumo.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Accidentes, lesiones o conductas de riesgo bajo la influencia.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Efectos en tu salud: problemas hepáticos, digestivos, respiratorios, entre otros.</span></div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Qué es dependencia?</p>
-        <p class="pagina-texto">Pérdida de control sobre el consumo, donde la sustancia se vuelve central en tu vida. Señales:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>No puedes dejar de consumir aunque quieras.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Necesitas más cantidad para sentir el mismo efecto.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Te sientes mal (ansiedad, irritabilidad, malestar) cuando dejas de consumir.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>El consumo domina tu tiempo y dinero.</span></div>
-
-        <div style="background:#FFF5E6; border-left:4px solid #D97706; padding:12px 14px; margin-top:14px; border-radius:6px;">
-          <strong style="color:#92400E;">💡 Punto importante:</strong>
-          <p style="font-size:13px; color:#78350F; margin:6px 0 0 0;">El consumo problemático es <strong>prevenible y tratable</strong>. Muchas personas logran recuperarse completamente con apoyo apropiado. La motivación, el tiempo y el tratamiento correcto hacen la diferencia.</p>
-        </div>
-      </div>
-
-      <div class="pagina-seccion" id="sec-Prestaciones">
-        <div class="pagina-seccion-titulo-principal">Prestaciones</div>
-        <p class="pagina-texto">El CESFAM N°5 ofrece:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Evaluación inicial:</strong> entrevista confidencial para entender tu situación y evaluar el nivel de riesgo.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Orientación y consejería:</strong> información sobre riesgos, consecuencias y opciones de cambio, sin presión.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Intervención breve:</strong> sesiones cortas de apoyo para personas con consumo de riesgo.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tratamiento farmacológico:</strong> cuando corresponde, para apoyar la abstinencia o reducir ansia.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Atención psicológica:</strong> apoyo profesional para trabajar motivación, emociones y estrategias de cambio.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Intervenciones grupales:</strong> talleres y grupos de apoyo con personas en situación similar.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Atención familiar:</strong> orientación a familiares y cuidadores sobre cómo apoyar.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Derivación a especialidad:</strong> si requieres un nivel de complejidad mayor, se coordina tu derivación a un COSAM o centro especializado.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Seguimiento continuo:</strong> revisiones periódicas para evaluar avances y ajustar el plan de tratamiento.</span></div>
-      </div>
-
-      <div class="pagina-seccion" id="sec-Requisitos">
-        <div class="pagina-seccion-titulo-principal">Requisitos</div>
-        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
-        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Tener interés o voluntad de recibir orientación, evaluación y/o tratamiento. La motivación crece durante el proceso.</span></div>
-        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">No hay una edad mínima específica, pero la atención es especializada según ciclo vital.</span></div>
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">✓ <strong>Confidencialidad garantizada:</strong> Toda la información es confidencial según leyes de privacidad en salud. Lo que compartas en la consulta está protegido.</p>
-      </div>
-
-      <div class="pagina-seccion" id="sec-Acceso">
-        <div class="pagina-seccion-titulo-principal">Acceso</div>
-        <p class="pagina-texto">Hay dos formas de acceder:</p>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">1. A través del SOME (Sacar Hora)</p>
-        <p class="pagina-texto">Solicita hora en el SOME Satélite de tu sector indicando que necesitas "Orientación en consumo de alcohol y drogas" o "Consulta con Salud Mental".</p>
-        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora para consumo problemático')}
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">2. Consulta directa</p>
-        <p class="pagina-texto">Puedes presentarte directamente en el CESFAM y solicitar una evaluación en el área de Salud Mental. No necesitas explicar en detalle por qué llamas; es suficiente con decir que buscas apoyo.</p>
-        
-        <div style="background:#E8F5E9; border-left:4px solid #388E3C; padding:12px 14px; margin-top:14px; border-radius:6px;">
-          <strong style="color:#1B5E20;">📞 Llamadas confidenciales</strong>
-          <p style="font-size:13px; color:#2E7D32; margin:6px 0 0 0;">Puedes llamar al servicio Fono Drogas <strong>1412</strong> del Servicio Nacional para la Prevención y Rehabilitación del Consumo de Drogas y Alcohol.</p>
-        </div>
-      </div>
-
-      <div class="pagina-seccion" id="sec-Horario">
-        <div class="pagina-seccion-titulo-principal">Horario de atención</div>
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Atención general del CESFAM:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lunes a viernes: 08:00 a 17:00 horas</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sábados: consultar (servicio limitado)</span></div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Atención de Salud Mental:</p>
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Dentro del horario general del CESFAM. Se recomienda solicitar hora con anticipación para asegurar disponibilidad del equipo.</p>
-      </div>
-
-      <div class="pagina-seccion" id="sec-GES">
-        <div class="pagina-seccion-titulo-principal">GES — Garantía Explícita en Salud</div>
-        <p class="pagina-texto">El tratamiento para el consumo de alcohol y drogas está incluida en el sistema de <strong>Garantías Explícitas en Salud (GES)</strong>, lo que significa que FONASA e ISAPREs están obligadas a cubrir su diagnóstico, tratamiento y seguimiento.</p>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">¿Es consumo de alcohol y drogas una prestación GES?</p>
-        <p class="pagina-texto">Sí, pero solo para <strong>menores de 20 años</strong> con consumo perjudicial o dependencia de riesgo bajo a moderado.</p>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">¿Qué cubre GES para menores de 20 años?</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Diagnóstico confirmado por médico</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tratamiento y seguimiento en CESFAM/CECOSF o COSAM</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Medicamentos necesarios</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Exámenes y evaluaciones</span></div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Costo y plazo</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Si estás en FONASA:</strong> 0% (totalmente gratuito)</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Si estás en ISAPRE:</strong> 20% de copago</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Plazo de atención:</strong> Máximo 10 días desde la confirmación diagnóstica para iniciar tratamiento</span></div>
-
-        <p class="pagina-texto" style="margin-top:10px;"><a href="https://www.superdesalud.gob.cl/orientacion-en-salud/consumo-perjudicial-o-dependencia-de-riesgo-bajo-a-moderado-de-alcohol-y-drogas-en-personas-menores-de-20-anos/" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver detalles en Superintendencia de Salud →</a></p>
-        
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">📌 <strong>Para mayores de 20 años:</strong> La atención en Salud Mental por consumo también está disponible en el CESFAM, pero debe ser solicitada como prestación general sin garantía GES.</p>
-      </div>
-
-      <div class="pagina-seccion" id="sec-Equipo">
-        <div class="pagina-seccion-titulo-principal">Equipo de Salud Mental</div>
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px;">Sector Rojo</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Rocío Ocaña L. — Box 112</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Mariela Balza C. — Box 109</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Javiera Chávez V. — Box 114</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Ps. Claudia Jofré E. — Box 111</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tr. Soc. Francisco Muñoz T. — Box 108</span></div>
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:12px; margin-bottom:6px;">Sector Lila</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Constanza Labrin F. — Box 2..</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Paula Rivera B. — Box 2..</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Inés Guerrero M. — Box 2..</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Ps. Carolina Vargas V. — Box 2..</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tr. Soc. Matías Valenzuela R. — Box 2..</span></div>
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:12px; margin-bottom:6px;">Sector Verde</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dr. Nicolás Alcalde M. — Box 2..</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dr. Benjamín Saavedra C. — Box 2..</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Lucy Guerrero V. — Box 2..</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Ps. Jerludith Sáez M. — Box 2..</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tr. Soc. Catalina Tiznado C. — Box 2..</span></div>
-      </div>
-
-      <div class="pagina-seccion" id="sec-Saber +">
-        <div class="pagina-seccion-titulo-principal">Saber +</div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Información confiable sobre alcohol y drogas</p>
-        <a href="https://diprece.minsal.cl/informacion-para-la-comunidad-alcohol-y-otras-drogas/" target="_blank" rel="noopener" class="link-externo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          DIPRECE — Información para la comunidad sobre alcohol y drogas
-        </a>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Derechos de las personas menores de 20 años con consumo problemático</p>
-        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/consumo-perjudicial-o-dependencia-de-riesgo-bajo-a-moderado-de-alcohol-y-drogas-en-personas-menores-de-20-anos/" target="_blank" rel="noopener" class="link-externo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          SuperDESALUD — Orientación en Salud
-        </a>
-        
-      <div style="background:#FFF3E0; border-left:4px solid #F57C00; padding:14px 16px; margin-top:18px; border-radius:6px;">
-        <p style="font-size:13px; color:#E65100; margin:0; line-height:1.6;">
-          <strong>💙 Recuerda:</strong> Buscar ayuda es un acto de valentía, no de debilidad. Muchas personas han recuperado su vida y logrado sus metas con apoyo profesional. El primer paso es siempre comunicarte con el CESFAM. Estamos aquí para apoyarte sin juzgamiento.
-        </p>
-      </div>
-    `
-  },
-  
   "control-sano": {
     id: "control-sano",
     nombre: "Control Sano",
@@ -2435,7 +2357,7 @@ const PAGINAS = {
     nombre: "Epilepsia, Programa",
     titulo: "Programa de Epilepsia",
     categoria: "Programa",
-    actualizacion: "01/06/2026",
+    actualizacion: "",
     nav: ["Descripción","Síntomas","Prestaciones","Requisitos","Acceder","GES"],
     contenido: () => `
       <div class="pagina-seccion" id="sec-Descripción">
@@ -2488,7 +2410,7 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Plazo garantizado:</strong> inicio de tratamiento dentro de 30 días desde la confirmación diagnóstica.</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Copago:</strong> sin costo si tienes FONASA; 20% si tienes ISAPRE.</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Profesionales:</strong> médico/a de APS, neurólogo/a en caso de derivación.</span></div>
-        <p class="pagina-texto" style="margin-top:10px;"><a href="https://www.superdesalud.gob.cl/orientacion-en-salud/epilepsia-no-refractaria-en-personas-de-15-anos-y-mas/" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver detalles en Superintendencia de Salud →</a></p>
+        <p class="pagina-texto" style="margin-top:10px;"><a href="https://www.superdesalud.gob.cl/orientacion-en-salud/epilepsia-no-refractaria-en-personas-desde-1-ano-de-edad/" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver detalles en Superintendencia de Salud →</a></p>
 
         <div style="background:var(--verde-claro); padding:12px; border-radius:var(--radio-sm); margin-top:14px;">
           <p class="pagina-texto" style="margin:0; font-size:13px; color:var(--verde);">📌 <strong>¿Qué significa GES?</strong> Son garantías que obliga a FONASA e ISAPREs a cubrir estas enfermedades. Si te diagnostican una patología GES, tienes derecho a: acceso asegurado, plazo máximo de atención, prestadores autorizados y protección económica.</p>
@@ -4094,6 +4016,7 @@ const PAGINAS = {
         ${enlaceTarjeta('vacunatorio','Vacunas','Programa Nacional de Inmunizaciones — calendario vigente')}
         ${enlaceTarjeta('pnac','PNAC — Programa Nacional de Alimentación Complementaria','Leche y alimentos para niños según edad y condición')}
         ${enlaceTarjeta('salud-bucal','Programa de Salud Bucal','Control dental preventivo desde los 6 meses de vida')}
+        ${enlaceTarjeta('salud-bucal','GES N°23: Salud oral a los 6 años','Atención dental integral garantizada — Costo: FONASA 0% | ISAPRE 20%')}
         ${enlaceTarjeta('kinesiologa','Kinesiólogo','Evaluación y rehabilitación motora')}
         ${enlaceTarjeta('nutricionista','Nutricionista','Control de peso, talla y hábitos alimentarios')}
       </div>
@@ -4117,6 +4040,7 @@ const PAGINAS = {
         ${enlaceTarjeta('empa','EMPA — Examen Preventivo','Evaluación de salud integral')}
         ${enlaceTarjeta('matrona','Matrona — Salud de la Mujer','Control ginecológico, PAP y métodos anticonceptivos')}
         ${enlaceTarjeta('embarazo','Embarazo — Control Prenatal','Controles y seguimiento durante el embarazo')}
+        ${enlaceTarjeta('salud-bucal','GES N°66: Salud oral en gestación','Atención dental integral durante el embarazo — Costo: FONASA 0% | ISAPRE 20%')}
         ${enlaceTarjeta('cardiovascular','Programa Cardiovascular','Control de hipertensión, colesterol y riesgo cardíaco')}
         ${enlaceTarjeta('salud-mental','Programa de Salud Mental','Apoyo psicológico y psiquiátrico')}
         ${enlaceTarjeta('nutricionista','Nutricionista','Alimentación y control de peso')}
@@ -4147,6 +4071,7 @@ const PAGINAS = {
         ${enlaceTarjeta('nutricionista','Nutricionista','Alimentación y control de peso')}
         ${enlaceTarjeta('oftalmologia','Oftalmólogo','Evaluación de la visión')}
         ${enlaceTarjeta('salud-bucal','Programa de Salud Bucal','Control dental preventivo')}
+        ${enlaceTarjeta('salud-bucal','GES N°47: Salud oral a los 60 años','Atención dental integral garantizada — Costo: FONASA 0% | ISAPRE 20%')}
       </div>
     `
   },
