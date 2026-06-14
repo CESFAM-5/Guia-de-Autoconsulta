@@ -1127,7 +1127,6 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Demencia mixta:</strong> combinación de demencia degenerativa y vascular</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Otras demencias secundarias:</strong> causadas por otras enfermedades tratables</span></div>
         
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">📊 En Chile, el 7% de personas de 60+ años tiene demencia. Es la 18ª causa de años de vida saludable perdidos.</p>
       </div>
 
       <div class="pagina-seccion" id="sec-¿Quién accede?">
@@ -1171,62 +1170,42 @@ const PAGINAS = {
 
       <div class="pagina-seccion" id="sec-Requisitos">
         <div class="pagina-seccion-titulo-principal">Requisitos</div>
-        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Tener sospecha o diagnóstico de demencia realizada por médico.</span></div>
-        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Ser beneficiario/a de FONASA o ISAPRE.</span></div>
-        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en un Centro de Salud (para FONASA) o designar Prestador GES (para ISAPRE).</span></div>
+        <div class="pagina-requisito">
+          <span class="pagina-req-check">✓</span>
+          <span class="pagina-req-texto">Estar inscrita/o en el CESFAM N° 5
+            ${enlaceInterno('inscripcion','¿Cómo inscribirse?')}
+          </span>
+        </div>
         
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px; font-weight:600;">Documentación necesaria:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Certificado o informe médico con sospecha o diagnóstico de demencia</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Carné de identidad y credencial de FONASA o ISAPRE</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Historial de medicamentos actuales</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Antecedentes médicos relevantes</span></div>
-      </div>
-
       <div class="pagina-seccion" id="sec-Acceso">
         <div class="pagina-seccion-titulo-principal">Cómo Acceder</div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Si eres Beneficiario FONASA:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Acude a tu Centro de Salud (CESFAM, consultorio) inscrito</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lleva el diagnóstico médico de tu médico tratante</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Solicita ser ingresado/a al GES N°85</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Automáticamente accederás a todas las prestaciones garantizadas</span></div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Si eres Beneficiario ISAPRE:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Concurre a las oficinas de tu ISAPRE con el diagnóstico médico</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Solicita tu ingreso al GES N°85</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>La ISAPRE te designará un Prestador acreditado para la red GES</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Deberás atenderte en ese prestador designado para usar las garantías</span></div>
-        
-        <div style="background:#E8F5E9; border-left:4px solid #388E3C; padding:12px 14px; margin-top:14px; border-radius:6px;">
-          <strong style="color:#1B5E20;">🔑 Acceso desde Sospecha</strong>
-          <p style="font-size:13px; color:#2E7D32; margin:6px 0 0 0;">No necesitas diagnóstico confirmado. El GES inicia desde el momento que el médico sospecha demencia. Esto te garantiza acceso a tiempo para confirmación diagnóstica rápida.</p>
-        </div>
+        <p class="pagina-texto">La/el usuaria/o solicitante debe recibir la evaluación de un/a médico del CESFAM a través de una hora de atención de <strong>Consulta de Morbilidad</strong>, las que son entregadas de lunes a viernes en el <strong>SOME Central</strong> a partir de las 07:30 horas.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Consulta de Morbilidad desde las 07:30 hrs')}
       </div>
-
+        
       <div class="pagina-seccion" id="sec-Horario">
         <div class="pagina-seccion-titulo-principal">Horarios de Atención</div>
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Atención Primaria (CESFAM/Consultorio):</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Lunes a viernes:</strong> 08:00 a 17:00 horas</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Atención de demanda:</strong> según disponibilidad del centro</span></div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Horario diurno:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Lunes a jueves:</strong> 08:00 a 17:00 horas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Viernes:</strong> 08:00 a 16:00 horas</span></div>
+
         
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Atención de Especialidad:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Unidades de Memoria y Centro de Apoyo Comunitario:</strong> variado, consulta con tu prestador</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Hospital:</strong> según protocolo de atención especializada</span></div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Horario de Extensión:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Lunes a viernes:</strong> 17:00 a 20:00 horas</span></div>
         
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">💡 Solicita tu hora con anticipación. Algunos centros especializados tienen listas de espera.</p>
       </div>
 
       <div class="pagina-seccion" id="sec-GES">
-        <div class="pagina-seccion-titulo-principal">Garantías GES Nº 85</div>
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-bottom:12px;">Incorporado al GES: 1 de octubre de 2019</p>
+        <div class="pagina-seccion-titulo-principal">GES Nº 85</div>
+        <p class="pagina-texto">La enfermedad de Alzheimer y otras Demencias está incluida en el sistema de <strong>Garantías Explícitas en Salud (GES)</strong>, lo que significa que tienes derecho a acceso, plazo, calidad y protección económica garantizados.</p>
                     
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">¿Qué cubre la protección financiera?</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Consultas médicas y de especialistas</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Todos los medicamentos prescritos para demencia</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Exámenes de laboratorio y de imagen</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Intervenciones psicosociales</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Implementos técnicos necesarios</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Cobertura:</strong> diagnóstico, tratamiento farmacológico, seguimiento y educación al paciente y su familia.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Plazo garantizado:</strong> inicio de tratamiento dentro de 60 días desde la confirmación diagnóstica.</span></div>
       </div>
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/enfermedad-de-alzheimer-y-otras-demencias-2/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Superintendencia de Salud — GES Nº 85 Detalles y Garantías
+        </a><br>
 
       <div class="pagina-seccion" id="sec-Equipo">
         <div class="pagina-seccion-titulo-principal">Equipo Multidisciplinario</div>
@@ -1238,35 +1217,20 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Terapeuta Ocupacional:</strong> evaluación funcional, adaptaciones en el hogar</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Psicólogo:</strong> evaluación cognitiva, apoyo emocional</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Trabajador Social:</strong> recursos comunitarios, apoyo a cuidadores</span></div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">En Atención Especializada:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Neurólogo:</strong> diagnóstico diferencial, comorbilidades neurológicas</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Psiquiatra:</strong> síntomas conductuales y psicológicos</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Geriatra:</strong> manejo integral en adultos mayores</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Neuropsicólogo:</strong> evaluación cognitiva especializada</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Fonoaudiólogo:</strong> problemas de lenguaje y deglución</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Kinésiologo:</strong> mobilidad y prevención de caídas</span></div>
-        
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">El equipo trabaja de forma coordinada entre APS y especialidad, manteniendo comunicación continua.</p>
+
       </div>
 
       <div class="pagina-seccion" id="sec-Saber +">
         <div class="pagina-seccion-titulo-principal">Saber +</div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Fuentes oficiales</p>
-        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/enfermedad-de-alzheimer-y-otras-demencias-2/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          SuperDESALUD — GES Nº 85 Detalles y Garantías
-        </a><br>
-        
+               
         <a href="https://diprece.minsal.cl/wp-content/uploads/2023/10/2023.07.21-OOTT-GES-Alzheimer-y-otras-Demencias-RV2.pdf" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           DIPRECE — Orientaciones Técnicas Completas (PDF)
         </a><br>
         
-        <a href="https://diprece.minsal.cl/programas-de-salud/programas-ciclo-vital/salud-integral-de-personas-mayores/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+        <a href="https://www.senama.gob.cl/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          MINSAL — Programa Salud Integral Personas Mayores
+          Servicio Nacional del Adulto Mayor, SENAMA
         </a><br>
         
         <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Etapas de la demencia (referencia)</p>
@@ -1523,7 +1487,7 @@ const PAGINAS = {
         
         <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/salud-oral-integral-para-ninos-y-ninas-de-6-anos/" target="_blank" rel="noopener" class="link-externo" style="margin-top:10px; margin-bottom:18px; display:inline-flex;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Más información — SuperDESALUD GES Nº 23
+          Más información — Superintendencia de Salud GES Nº 23
         </a>
 
         <div class="pagina-seccion-subtitulo" style="margin-top:18px;">🧓 GES Nº 47: Salud Oral Integral de personas de 60 años</div>
@@ -1547,7 +1511,7 @@ const PAGINAS = {
         
         <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/salud-oral-integral-de-personas-de-60-anos/" target="_blank" rel="noopener" class="link-externo" style="margin-top:10px; margin-bottom:18px; display:inline-flex;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Más información — SuperDESALUD GES Nº 47
+          Más información — Superintendencia de Salud GES Nº 47
         </a>
       </div>
       
