@@ -2861,11 +2861,6 @@ const PAGINAS = {
     actualizacion: "12/06/2026",
     nav: ["Descripción","¿Quién accede?","Prestaciones","Requisitos","Acceso","Horario","GES","Equipo","Saber +"],
     contenido: () => `
-      <div style="background:linear-gradient(135deg,#2E5266,#6E8898);border-radius:14px;padding:20px 18px;margin-bottom:20px;color:white;">
-        <p style="font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;">Hipotiroidismo es tratable y controlable</p>
-        <p style="font-size:13px;opacity:0.88;line-height:1.5;">Con el tratamiento correcto, puedes llevar una vida normal. Un simple análisis de sangre puede detectarlo, y la medicación es económica y accesible en el CESFAM.</p>
-      </div>
-
       <div class="pagina-seccion" id="sec-Descripción">
         <div class="pagina-seccion-titulo-principal">Descripción</div>
         <p class="pagina-texto">El hipotiroidismo es una condición en la que la glándula tiroidea no produce suficientes hormonas tiroideas (T4 libre). Esto ralentiza el metabolismo del cuerpo, afectando energía, temperatura corporal, peso y bienestar general.</p>
@@ -2934,17 +2929,13 @@ const PAGINAS = {
         <div class="pagina-seccion-titulo-principal">Acceso</div>
         <p class="pagina-texto">Hay dos formas de acceder:</p>
         
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">1. Sacar hora en el SOME</p>
-        <p class="pagina-texto">Solicita una hora para "Control de hipotiroidismo" o "Evaluación de síntomas de tiroides" en el <strong>SOME Satélite</strong> de tu sector.</p>
-        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora para evaluación de hipotiroidismo')}
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">1. Atención de medicina general</p>
+        <p class="pagina-texto">Solicita una hora para atención de medicina general ("morbilidad") en SOME Central, 1er piso.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Lunes a viernes a las 07:30 hrs por orden de llegada')}
         
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">2. Atención de demanda (si tienes síntomas urgentes)</p>
-        <p class="pagina-texto">Puedes presentarte en el CESFAM y solicitar ser evaluado/a por un médico general para sospecha de hipotiroidismo.</p>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">2. Control programas crónicos</p>
+        <p class="pagina-texto">Si se confirma su diagnóstivo de Hipotiroidismo, recibirá controles médicos regularmente. Sus horas de atención debe solicitarlas en el SOME de su sector.</p>
         
-        <div style="background:#E8F5E9; border-left:4px solid #388E3C; padding:12px 14px; margin-top:14px; border-radius:6px;">
-          <strong style="color:#1B5E20;">💚 Acceso garantizado</strong>
-          <p style="font-size:13px; color:#2E7D32; margin:6px 0 0 0;">El diagnóstico y tratamiento del hipotiroidismo están GARANTIZADOS por GES Nº 76. Tienes derecho a acceso, diagnóstico y tratamiento sin discriminación.</p>
-        </div>
       </div>
 
       <div class="pagina-seccion" id="sec-Horario">
@@ -2953,8 +2944,6 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Lunes a viernes:</strong> 08:00 a 17:00 horas</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Sábado:</strong> 09:00 a 13:00 (horario limitado)</span></div>
         
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Atención médica general (donde se evalúa hipotiroidismo):</p>
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Dentro del horario general. Se recomienda solicitar hora con anticipación para asegurar disponibilidad.</p>
       </div>
 
       <div class="pagina-seccion" id="sec-GES">
@@ -2979,29 +2968,27 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>FONASA A, B, C, D:</strong> 0% — completamente gratuito</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>ISAPRE:</strong> 20% copago (según la modalidad y cobertura del plan)</span></div>
         
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">📌 <strong>Ejemplo:</strong> Si la prestación "Tratamiento hipotiroidismo primer año ambulatorio" tiene un arancel de $3.150:</p>
-        <div class="pagina-bullet" style="margin-top:8px;"><div class="pagina-bullet-dot"></div><span>FONASA paga: $0</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>ISAPRE paga: $630 (20%)</span></div>
       </div>
 
       <div class="pagina-seccion" id="sec-Equipo">
         <div class="pagina-seccion-titulo-principal">Equipo de Atención</div>
-        <p class="pagina-texto">El hipotiroidismo es atendido principalmente a nivel primario por:</p>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">Médico General/Médica General</p>
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Responsable del diagnóstico, tratamiento y seguimiento de hipotiroidismo no complicado.</p>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">Enfermería</p>
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Educación sobre medicamentos, apoyo en seguimiento y monitoreo.</p>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">Endocrinólogo (derivación)</p>
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Especialista al que se refieren casos complejos:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Embarazadas</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Pacientes con cardiopatía coronaria</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Insuficiencia cardíaca</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Cuando la medicación no ajusta después de 2 controles</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Hipotiroidismo muy severo</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Antecedente de cáncer tiroideo</span></div>
+ <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px;">Sector Lila</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Olga Aguilar M. — Box 231</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Inés Guerrero M. (Pediatra) — Box 227</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Constanza Labrín F.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Paula Rivera B. — Box 225</span></div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:12px; margin-bottom:6px;">Sector Rojo</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Mariela Balza C. — Box 108</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Diana Munizaga F. — Box 109</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dr. Andrés Hernández L. — Box 111B</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Rocío Ocaña L. — Box 113A</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Javiera Chávez V. — Box 114</span></div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-top:12px; margin-bottom:6px;">Sector Verde</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Lucy Guerrero V. (Pediatra) — Box 206</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dr. Nicolás Alcalde M. — Box 203</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dra. Eyleen Quezada T. — Box 204</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dr. Benjamín Saavedra C. — Box 203</span></div>        
+
       </div>
 
       <div class="pagina-seccion" id="sec-Saber +">
@@ -3018,23 +3005,11 @@ const PAGINAS = {
           AUGE — Información sobre GES Nº 76
         </a><br>
         
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Guía clínica para profesionales</p>
-        <a href="https://diprece.minsal.cl/wrdprss_minsal/wp-content/uploads/2014/09/Hipotiroidismo-personas-de-15-a%C3%B1os-y-m%C3%A1s.pdf" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          DIPRECE — Guía clínica hipotiroidismo (PDF)
-        </a><br>
-        
         <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Preguntas frecuentes</p>
         <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);"><strong>¿El hipotiroidismo es hereditario?</strong> Sí, la tiroiditis autoinmune (causa más común) tiende a presentarse en familias.</p>
         <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">​<strong>¿Necesito tomar levotiroxina de por vida?</strong> Generalmente sí. El tratamiento es permanente, pero es seguro y económico.</p>
         <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">​<strong>¿Puedo quedar embarazada con hipotiroidismo?</strong> Sí, pero es muy importante tener la tiroides bien controlada ANTES de quedar embarazada. Informa a tu médico si planeas embarazo.</p>
         <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">​<strong>¿Hay efectos secundarios de la levotiroxina?</strong> Es muy bien tolerada. Si tomas mucha dosis, puedes sentir palpitaciones o ansiedad — es por eso que el médico ajusta la dosis.</p>
-      </div>
-
-      <div style="background:#FFF3E0; border-left:4px solid #F57C00; padding:14px 16px; margin-top:18px; border-radius:6px;">
-        <p style="font-size:13px; color:#E65100; margin:0; line-height:1.6;">
-          <strong>📋 Próximos pasos:</strong> Si tienes síntomas de hipotiroidismo, solicita una hora en el SOME para evaluación. Un análisis de sangre simple confirma el diagnóstico. Con tratamiento, puedes llevar una vida completamente normal.
-        </p>
       </div>
     `
   },
