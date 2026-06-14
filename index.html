@@ -660,6 +660,7 @@ const TEMAS = [
   {letra:"C",nombre:"Colchón antiescaras",url:"/a/ayudas-técnicas",categoria:"Servicio",tags:"colchón antiescaras escaras cama postrado discapacidad ayuda técnica",pagina:"ayudas-tecnicas"},
   {letra:"C",nombre:"Consejo de Desarrollo Local de Salud, CDL",url:"/c/consejo-de-desarrollo-local-de-salud",categoria:"Información",tags:"cdl consejo desarrollo local salud participación ciudadana comunidad directiva",pagina:"cdl"},
   {letra:"C",nombre:"Consulta Ciudadana",url:"/c/consulta-ciudadana",categoria:"Servicio",tags:"consulta ciudadana reclamo sugerencia felicitación solicitud oirs participación opinión",pagina:"consulta-ciudadana"},
+  {letra:"C",nombre:"Control de Salud Integral Adolescente",url:"/c/control-salud-adolescente",categoria:"Programa",tags:"control adolescente salud mental sexualidad vacunas integración emocional",pagina:"control-salud-adolescente"},
   {letra:"C",nombre:"Control Sano",url:"/c/control-sano",categoria:"Servicio",tags:"control sano niño bebé crecimiento desarrollo peso talla pediatra enfermera",pagina:"control-sano"},
   {letra:"C",nombre:"Credencial de Discapacidad",url:"/c/credencial-de-discapacidad",categoria:"Trámite",tags:"credencial discapacidad certificado registro compin senadis ivadec informe biomédico",pagina:"credencial-discapacidad"},
   {letra:"C",nombre:"Curaciones",url:"/c/curaciones",categoria:"Servicio",tags:"curación herida úlcera pie diabético apósito curar enfermera tens",pagina:"curaciones"},
@@ -1063,6 +1064,7 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Entregar información que promueva el uso de los servicios de salud y el autocuidado a través de guías anticipatorias para adolescentes y sus familias.</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Brindar la posibilidad y oportunidad de referir a consejerías.</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Indicar consulta y seguimiento si procede.</span></div>
+        ${enlaceTarjeta('control-salud-adolescente','Control de Salud Integral','Evaluación integral gratuita de tu salud — Gratuito y confidencial')}
       </div>
 
       <div class="pagina-seccion" id="sec-Requisitos">
@@ -1695,6 +1697,183 @@ const PAGINAS = {
     `
   },
 
+  "control-salud-adolescente": {
+    id: "control-salud-adolescente",
+    nombre: "Control de Salud Integral Adolescente",
+    titulo: "Control de Salud Integral para Adolescentes (10 a 19 años)",
+    categoria: "Programa",
+    actualizacion: "12/06/2026",
+    nav: ["Descripción","¿Para qué sirve?","Prestaciones","Requisitos","Acceso","Horario","Equipo","Saber +"],
+    contenido: () => `
+      <div style="background:linear-gradient(135deg,#6366F1,#8B5CF6);border-radius:14px;padding:20px 18px;margin-bottom:20px;color:white;">
+        <p style="font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;">Tu salud integral importa</p>
+        <p style="font-size:13px;opacity:0.88;line-height:1.5;">Este control es gratuito, confidencial y diseñado especialmente para ti. Un equipo capacitado te acompañará en esta etapa de cambios.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo-principal">Descripción</div>
+        <p class="pagina-texto">El Control de Salud Integral de Adolescentes es una <strong>prestación gratuita</strong> dirigida a personas de 10 a 19 años que busca evaluar tu estado de salud general, crecimiento, desarrollo y bienestar psicosocial.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Qué hace diferente este control?</p>
+        <p class="pagina-texto">No es sólo una revisión médica. Es un espacio <strong>seguro, confidencial y sin juzgamientos</strong> donde puedes hablar de:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tu crecimiento y cambios físicos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tu estado emocional y mental</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tus relaciones con familia y amigos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Preguntas sobre tu cuerpo y sexualidad</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Dudas sobre drogas, alcohol, tabaco</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Cualquier preocupación que tengas</span></div>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">Este es un espacio construido específicamente para <strong>ti</strong>, a tu ritmo y con respeto total a tu privacidad.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-¿Para qué sirve?">
+        <div class="pagina-seccion-titulo-principal">¿Para qué sirve este control?</div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Objetivos principales:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Evaluar tu salud:</strong> cómo estás creciendo, cómo te sientes física y emocionalmente</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Identificar fortalezas:</strong> qué cosas buenas tienes en tu vida que te protegen</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Detectar riesgos:</strong> si hay algo que pueda afectarte, para intervenir temprano</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Educar:</strong> entregarte información sobre salud, sexualidad, emociones, etc.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Vacunación:</strong> asegurar que estés al día con el calendario de vacunas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Hacer un plan:</strong> acordar contigo qué acciones tomar para tu bienestar</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">En resumen:</p>
+        <p class="pagina-texto">Es una oportunidad para que un profesional especializado en adolescentes <strong>te conozca, te entienda y te acompañe</strong> en esta etapa de cambios, asegurándose de que tienes las herramientas para cuidar tu salud.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo-principal">Prestaciones del Control</div>
+        <p class="pagina-texto">Durante el control recibirás:</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Entrevista clínica integral</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Conversación sobre tu vida, familia, escuela/trabajo, amigos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Preguntas sobre tu bienestar emocional y mental</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Evaluación de factores de protección y riesgo en tu vida</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Examen físico completo</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Medición de peso, talla y presión arterial</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Evaluación del desarrollo (cambios pubertales)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Revisión general del estado de salud</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Evaluación de salud mental y emocional</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Cómo te sientes contigo mismo/a</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Si tienes sentimientos de tristeza, ansiedad o preocupación</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Si has pensado en hacerte daño o en suicidio (importante detectarlo temprano)</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Consejería en temas importantes</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sexualidad y salud reproductiva (métodos anticonceptivos, ITS, VIH)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Consumo de tabaco, alcohol y drogas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Nutrición y hábitos saludables</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Violencia, bullying o cualquier situación que te afecte</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Vacunación</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Revisión del calendario de vacunas (especialmente VPH — muy importante)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Aplicación si corresponde</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Plan de cuidados personalizado</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Acuerdos sobre qué cosas puedes hacer para cuidar tu salud</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Derivación a especialistas si es necesario</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Información y recursos sobre dónde ir si necesitas ayuda</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo-principal">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Tener entre 10 y 19 años.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en un centro de salud (CESFAM, consultorio).</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Ser beneficiaria/o de FONASA (el control es gratuito).</span></div>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px; font-weight:600;">Importante:</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">✓ <strong>Puedes venir solo/a:</strong> No es obligatorio ir acompañado/a de tus padres. Si vienes solo/a, el profesional manejará la información con confidencialidad.</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">✓ <strong>Confidencialidad:</strong> Lo que hables en el control es completamente privado. No se dirá nada a tus padres ni a nadie más, exceto si hay riesgo de vida (para protegerte).</p>
+        ${enlaceTarjeta('inscripcion','Inscripción','¿Cómo inscribirse en un centro de salud?')}
+      </div>
+
+      <div class="pagina-seccion" id="sec-Acceso">
+        <div class="pagina-seccion-titulo-principal">Cómo acceder</div>
+        <p class="pagina-texto">Hay varias formas de hacer tu control:</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">1. En el CESFAM o Centro de Salud</p>
+        <p class="pagina-texto">Solicita hora en el SOME (Sistema de Orientación Médica Estándar) diciendo que necesitas "Control de Salud Integral" o "Control Adolescente".</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora para Control de Salud Integral')}
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">2. En un Espacio Amigable</p>
+        <p class="pagina-texto"><strong>¿Qué es?</strong> Espacios especiales dentro de centros de salud o a veces en tu escuela, diseñados específicamente para adolescentes. Son cómodos, seguros y amigables.</p>
+        <p class="pagina-texto"><strong>Ventajas:</strong> Atienden en horarios que te convienen (a veces hasta las 20:00), tienen profesionales especializados en adolescentes, es más cercano y fácil de acceder.</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Busca el Espacio Amigable más cercano a tu hogar o escuela.</p>
+        
+        <div style="background:#E8F5E9; border-left:4px solid #388E3C; padding:12px 14px; margin-top:14px; border-radius:6px;">
+          <strong style="color:#1B5E20;">✨ Lo importante</strong>
+          <p style="font-size:13px; color:#2E7D32; margin:6px 0 0 0;">El control es <strong>GRATUITO</strong> para ti. No tienes que pagar nada. Es tu derecho acceder a este servicio.</p>
+        </div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Horario">
+        <div class="pagina-seccion-titulo-principal">Horarios</div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">CESFAM/Centro de Salud</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Lunes a viernes:</strong> 08:00 a 17:00 horas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Sábado:</strong> Algunos tienen atención limitada (consulta)</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Espacios Amigables</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Horarios especiales para adolescentes:</strong> 16:00 a 20:00 horas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Frecuencia:</strong> Una o dos veces por semana</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Objetivo:</strong> Que puedas asistir después del colegio sin problema</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Equipo">
+        <div class="pagina-seccion-titulo-principal">Equipo que te atiende</div>
+        <p class="pagina-texto">El Control de Salud Integral es realizado por profesionales capacitados especialmente para adolescentes:</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">Médico/a General o Enfermero/a</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Responsable del examen físico, evaluación del crecimiento y desarrollo, y coordinación de tu atención integral.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">Psicólogo/a (en Espacios Amigables)</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Especialista en apoyo emocional, conversación sobre salud mental, depresión, ansiedad, y otros aspectos de tu bienestar psicosocial.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">Nutricionista (en algunos Espacios Amigables)</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Consejería sobre alimentación saludable, hábitos, imagen corporal.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">Trabajador/a Social</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Apoyo con recursos comunitarios, información sobre derechos, referencias a otros servicios.</p>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:14px;">⚡ <strong>Clave:</strong> El profesional que te atienda estará capacitado para escucharte sin juzgamientos, con respeto a tu privacidad y considerando todo lo que está pasando en tu vida.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Saber +">
+        <div class="pagina-seccion-titulo-principal">Saber +</div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Información oficial sobre el programa</p>
+        <a href="https://diprece.minsal.cl/programas-de-salud/programas-ciclo-vital/informacion-a-la-comunidad-salud-joven-y-adolescente/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          DIPRECE — Información para adolescentes y jóvenes
+        </a><br>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Orientaciones técnicas (para profesionales y padres)</p>
+        <a href="https://diprece.minsal.cl/wp-content/uploads/2022/11/OT-Control-Adolescente-v3.pdf" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Guía técnica para el Control de Salud Integral (PDF)
+        </a><br>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Si tienes dudas o necesitas ayuda</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Puedes llamar a tu CESFAM y preguntar sobre los horarios del Control o sobre dónde está el Espacio Amigable más cercano a ti.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Preguntas frecuentes</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);"><strong>¿Qué pasa si no voy acompañado de mis padres?</strong> No hay problema. El profesional mantendrá confidencialidad. Solo si hay un riesgo para tu vida, informará a tus padres.</p>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">​<strong>¿Puedo hablar de cosas íntimas sin que mis padres se enteren?</strong> Sí. Todo lo que hables es confidencial. Tú decides qué compartir con tus padres después.</p>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">​<strong>¿Cuánto dura el control?</strong> Aproximadamente 45-60 minutos, dependiendo de lo que necesites conversar.</p>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">​<strong>¿Es normal estar nervioso?</strong> Completamente normal. Los profesionales lo saben y te harán sentir cómodo/a.</p>
+      </div>
+
+      <div style="background:#FFF3E0; border-left:4px solid #F57C00; padding:14px 16px; margin-top:18px; border-radius:6px;">
+        <p style="font-size:13px; color:#E65100; margin:0; line-height:1.6;">
+          <strong>🎯 El Control de Salud Integral es tu oportunidad de:</strong> Hablar sin tabúes, ser escuchado/a, saber que no estás solo/a en los cambios que estás viviendo, y recibir apoyo personalizado. ¡Mereces estar bien!
+        </p>
+      </div>
+    `
+  },
+  
   "control-sano": {
     id: "control-sano",
     nombre: "Control Sano",
@@ -2955,19 +3134,7 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Medicamento levotiroxina para reemplazo hormonal</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Exámenes de seguimiento (TSH periódico)</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Consultas médicas de control y ajuste de dosis</span></div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Dónde se atiende?</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Si estás en FONASA:</strong> CESFAM/CECOSF o Consultorio de tu sector</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Si estás en ISAPRE:</strong> Centro Médico Privado o Clínica Privada (según contrato)</span></div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Plazo de atención</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Inicio del tratamiento:</strong> máximo 7 días desde la confirmación diagnóstica</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Primer control:</strong> 6 a 8 semanas después de iniciar medicamento</span></div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Costo</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>FONASA A, B, C, D:</strong> 0% — completamente gratuito</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>ISAPRE:</strong> 20% copago (según la modalidad y cobertura del plan)</span></div>
-        
+           
       </div>
 
       <div class="pagina-seccion" id="sec-Equipo">
