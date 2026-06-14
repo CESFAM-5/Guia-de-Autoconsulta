@@ -635,6 +635,7 @@ const TEMAS = [
   {letra:"A",nombre:"Adulto Mayor Autovalente",url:"/a/adulto-mayor-autovalente-programa",categoria:"Programa",tags:"adulto mayor anciano 60 años tercera edad programa autovalente",pagina:"adulto-mayor-autovalente"},
   {letra:"A",nombre:"Alimentación Complementaria — PNAC",url:"/a/alimentación-complementaria-programa-nacional-de-pnac",categoria:"Programa",tags:"leche pnac alimento niño embarazada lactante bebé formula purita",pagina:"pnac"},
   {letra:"A",nombre:"Alimentación Adulto Mayor, PACAM",url:"/a/alimentación-complementaria-del-adulto-mayor-programa-nacional-de-pacam",categoria:"Programa",tags:"pacam alimento adulto mayor leche nutrición anciano",pagina:"pacam"},
+  {letra:"A",nombre:"Alzheimer y otras Demencias",url:"/a/alzheimer-demencias",categoria:"GES",tags:"alzheimer demencia neurodegenerativa GES tratamiento diagnóstico memoria",pagina:"alzheimer-demencias"},
   {letra:"A",nombre:"Anular hora",url:"/a/anular-hora",categoria:"Trámite",tags:"anular cancelar hora cita médica some",pagina:"some"},
   {letra:"A",nombre:"Apoyo a la Identidad de Género",url:"/a/apoyo-a-la-identidad-de-género",categoria:"Programa",tags:"identidad género trans transgénero diversidad sexual lgbtq",pagina:"paig"},
   {letra:"A",nombre:"Apoyo Clínico",url:"/a/apoyo-clínico",categoria:"Servicio",tags:"apoyo clínico laboratorio vacunatorio inyectable electrocardiograma herida curación tuberculosis samu",pagina:"apoyo-clinico"},
@@ -1100,6 +1101,207 @@ const PAGINAS = {
 
   /* ── Agregar más temas aquí siguiendo el mismo patrón ── */
 
+  "alzheimer-demencias": {
+    id: "alzheimer-demencias",
+    nombre: "GES Nº 85: Enfermedad de Alzheimer y otras Demencias",
+    titulo: "Alzheimer y otras Demencias — Garantía Explícita en Salud",
+    categoria: "GES",
+    actualizacion: "12/06/2026",
+    nav: ["Descripción","¿Quién accede?","Prestaciones","Requisitos","Acceso","Horario","GES","Equipo","Saber +"],
+    contenido: () => `
+      <div style="background:linear-gradient(135deg,#D32F2F,#C62828);border-radius:14px;padding:20px 18px;margin-bottom:20px;color:white;">
+        <p style="font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;">Tu familia no está sola en esto</p>
+        <p style="font-size:13px;opacity:0.88;line-height:1.5;">La demencia es una enfermedad grave pero tratable. Acceso garantizado a diagnóstico y tratamiento integral para mejorar la calidad de vida.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo-principal">Descripción</div>
+        <p class="pagina-texto">Las demencias, incluida la enfermedad de Alzheimer, son un conjunto de enfermedades que afectan el funcionamiento del cerebro, causando pérdida progresiva de memoria, deterioro cognitivo y cambios de conducta.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Qué es la demencia?</p>
+        <p class="pagina-texto">Es una condición adquirida y crónica caracterizada por:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Deterioro cognitivo:</strong> problemas de memoria, atención, lenguaje, orientación temporal y espacial</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Cambios funcionales:</strong> dificultad progresiva para realizar actividades diarias</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Cambios conductuales:</strong> alteraciones del comportamiento, del ánimo y síntomas psicológicos</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Tipos de demencia incluidos en GES Nº85:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Alzheimer:</strong> 60-80% de los casos. Causa progresiva pérdida de memoria</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Demencia vascular:</strong> 20-30% de los casos. Por pequeños o grandes infartos cerebrales</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Cuerpos de Lewy:</strong> ~5% de los casos. Con síntomas parkinsonianos y alucinaciones</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Demencia frontotemporal:</strong> ~3% de casos en mayores de 65 años. Afecta conducta y lenguaje</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Demencia mixta:</strong> combinación de demencia degenerativa y vascular</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Otras demencias secundarias:</strong> causadas por otras enfermedades tratables</span></div>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">📊 En Chile, el 7% de personas de 60+ años tiene demencia. Es la 18ª causa de años de vida saludable perdidos.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-¿Quién accede?">
+        <div class="pagina-seccion-titulo-principal">¿Quién puede acceder?</div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Personas de cualquier edad con:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sospecha de demencia (detectada por médico)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Confirmación diagnóstica de demencia tipo Alzheimer o cualquier otro tipo de demencia</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Ser beneficiario/a de FONASA o ISAPRE</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Importante:</p>
+        <p class="pagina-texto">El acceso al GES N°85 es garantizado desde el momento que existe sospecha de demencia realizada por un médico, NO es necesario esperar a tener el diagnóstico confirmado.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo-principal">Prestaciones Garantizadas</div>
+        <p class="pagina-texto">El GES N°85 cubre un abordaje integral de la demencia en dos niveles: Atención Primaria (APS) y Especialidad.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Diagnóstico</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Confirmación diagnóstica:</strong> consultas médicas, tests cognitivos, exámenes de laboratorio (hemograma, perfil lipídico, vitamina B12, TSH, etc.)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Diagnóstico diferencial:</strong> resonancia magnética, tomografía axial computarizada, evaluación neuropsicológica especializada</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Tratamiento farmacológico</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Medicamentos antidemenciantes:</strong> donepezilo, rivastigmina, galantamina (para Alzheimer)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Medicamentos para síntomas conductuales:</strong> tratamiento de depresión, ansiedad, agitación</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Medicamentos para comorbilidades:</strong> presión, diabetes, colesterol (si las tiene)</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Tratamiento psicosocial integral</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Intervenciones grupales e individuales:</strong> con terapeuta ocupacional, psicólogo, kinésiologo</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Apoyo al cuidador:</strong> educación, consejería, manejo del estrés</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Visitas domiciliarias:</strong> evaluación en el hogar, recomendaciones de seguridad</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Exámenes y controles</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Laboratorios periódicos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Evaluación del estado nutricional</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Monitoreo de comorbilidades</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Implementos técnicos y ayudas</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Bastones, andadores, cojinetes antiescaras (según evaluación)</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo-principal">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Tener sospecha o diagnóstico de demencia realizada por médico.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Ser beneficiario/a de FONASA o ISAPRE.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en un Centro de Salud (para FONASA) o designar Prestador GES (para ISAPRE).</span></div>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px; font-weight:600;">Documentación necesaria:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Certificado o informe médico con sospecha o diagnóstico de demencia</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Carné de identidad y credencial de FONASA o ISAPRE</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Historial de medicamentos actuales</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Antecedentes médicos relevantes</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Acceso">
+        <div class="pagina-seccion-titulo-principal">Cómo Acceder</div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Si eres Beneficiario FONASA:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Acude a tu Centro de Salud (CESFAM, consultorio) inscrito</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lleva el diagnóstico médico de tu médico tratante</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Solicita ser ingresado/a al GES N°85</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Automáticamente accederás a todas las prestaciones garantizadas</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Si eres Beneficiario ISAPRE:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Concurre a las oficinas de tu ISAPRE con el diagnóstico médico</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Solicita tu ingreso al GES N°85</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>La ISAPRE te designará un Prestador acreditado para la red GES</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Deberás atenderte en ese prestador designado para usar las garantías</span></div>
+        
+        <div style="background:#E8F5E9; border-left:4px solid #388E3C; padding:12px 14px; margin-top:14px; border-radius:6px;">
+          <strong style="color:#1B5E20;">🔑 Acceso desde Sospecha</strong>
+          <p style="font-size:13px; color:#2E7D32; margin:6px 0 0 0;">No necesitas diagnóstico confirmado. El GES inicia desde el momento que el médico sospecha demencia. Esto te garantiza acceso a tiempo para confirmación diagnóstica rápida.</p>
+        </div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Horario">
+        <div class="pagina-seccion-titulo-principal">Horarios de Atención</div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Atención Primaria (CESFAM/Consultorio):</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Lunes a viernes:</strong> 08:00 a 17:00 horas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Atención de demanda:</strong> según disponibilidad del centro</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Atención de Especialidad:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Unidades de Memoria y Centro de Apoyo Comunitario:</strong> variado, consulta con tu prestador</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Hospital:</strong> según protocolo de atención especializada</span></div>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">💡 Solicita tu hora con anticipación. Algunos centros especializados tienen listas de espera.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-GES">
+        <div class="pagina-seccion-titulo-principal">Garantías GES Nº 85</div>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-bottom:12px;">Incorporado al GES: 1 de octubre de 2019</p>
+                    
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">¿Qué cubre la protección financiera?</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Consultas médicas y de especialistas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Todos los medicamentos prescritos para demencia</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Exámenes de laboratorio y de imagen</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Intervenciones psicosociales</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Implementos técnicos necesarios</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Equipo">
+        <div class="pagina-seccion-titulo-principal">Equipo Multidisciplinario</div>
+        <p class="pagina-texto">El tratamiento de demencia requiere un equipo integrado:</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">En Atención Primaria:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Médico General/Geriatra:</strong> diagnóstico, tratamiento farmacológico, coordinación</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Enfermera:</strong> educación, seguimiento, monitoreo</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Terapeuta Ocupacional:</strong> evaluación funcional, adaptaciones en el hogar</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Psicólogo:</strong> evaluación cognitiva, apoyo emocional</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Trabajador Social:</strong> recursos comunitarios, apoyo a cuidadores</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">En Atención Especializada:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Neurólogo:</strong> diagnóstico diferencial, comorbilidades neurológicas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Psiquiatra:</strong> síntomas conductuales y psicológicos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Geriatra:</strong> manejo integral en adultos mayores</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Neuropsicólogo:</strong> evaluación cognitiva especializada</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Fonoaudiólogo:</strong> problemas de lenguaje y deglución</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Kinésiologo:</strong> mobilidad y prevención de caídas</span></div>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">El equipo trabaja de forma coordinada entre APS y especialidad, manteniendo comunicación continua.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Saber +">
+        <div class="pagina-seccion-titulo-principal">Saber +</div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Fuentes oficiales</p>
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/enfermedad-de-alzheimer-y-otras-demencias-2/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          SuperDESALUD — GES Nº 85 Detalles y Garantías
+        </a><br>
+        
+        <a href="https://diprece.minsal.cl/wp-content/uploads/2023/10/2023.07.21-OOTT-GES-Alzheimer-y-otras-Demencias-RV2.pdf" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          DIPRECE — Orientaciones Técnicas Completas (PDF)
+        </a><br>
+        
+        <a href="https://diprece.minsal.cl/programas-de-salud/programas-ciclo-vital/salud-integral-de-personas-mayores/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          MINSAL — Programa Salud Integral Personas Mayores
+        </a><br>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Etapas de la demencia (referencia)</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);"><strong>Etapa Leve:</strong> Olvidos, dificultad en tareas complejas, la persona mantiene autonomía pero nota cambios</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">​<strong>Etapa Moderada:</strong> Mayor pérdida de memoria, dificultad para actividades básicas, requiere supervisión, posibles cambios conductuales</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">​<strong>Etapa Avanzada:</strong> Pérdida casi total de memoria, dependencia completa, cambios físicos significativos, necesita cuidado 24/7</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Impacto en cuidadores</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Estudio Cuídeme en Chile: 75% de cuidadores son mujeres (hijas, esposas, nueras). 40% dedica 7 días/semana. 47% tiene problemas de salud mental. 63% reporta sobrecarga severa.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Factores que aumentan riesgo de demencia</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Envejecimiento, antecedentes familiares, baja escolaridad, hipoacusia, hipertensión, diabetes, enfermedad cardiovascular, depresión, aislamiento social, inactividad física, contaminación, trauma encefalocraneano, consumo excesivo de alcohol.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Prevención y bienestar</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Mantenerse intelectualmente activo (lectura, acertijos, aprendizaje)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Actividad física regular</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Alimentación saludable (dieta mediterránea)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Conexión social y actividades comunitarias</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Control de presión arterial, colesterol y diabetes</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Audífonos si hay hipoacusia</span></div>
+      </div>
+
+      <div style="background:#FFF3E0; border-left:4px solid #F57C00; padding:14px 16px; margin-top:18px; border-radius:6px;">
+        <p style="font-size:13px; color:#E65100; margin:0; line-height:1.6;">
+          <strong>⏰ Acciones inmediatas:</strong> Si sospechas demencia en ti o en un familiar, consulta a tu médico. El GES garantiza diagnóstico en máximo 60 días y tratamiento en máximo 60 días desde diagnóstico. Mientras antes, mejor es el pronóstico.
+        </p>
+      </div>
+    `
+  },
+  
   "apoyo-clinico": {
     id: "apoyo-clinico",
     nombre: "Apoyo Clínico",
