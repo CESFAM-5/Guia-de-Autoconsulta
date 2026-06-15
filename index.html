@@ -5907,54 +5907,209 @@ const PAGINAS = {
 
   "vih-sida": {
     id: "vih-sida",
-    nombre: "VIH / SIDA",
+    nombre: "GES Nº 18: VIH / SIDA",
     titulo: "VIH / SIDA",
-    categoria: "Programa",
-    actualizacion: "",
-    nav: ["Descripción","Prestaciones","Requisitos","Acceder","Saber +"],
+    categoria: "GES",
+    actualizacion: "12/06/2026",
+    revision: "12/06/2026",
+    nav: ["Descripción","¿Quién accede?","Prestaciones","Requisitos","Acceso","Horario","GES","Equipo","Saber +"],
     contenido: () => `
+      <div style="background:linear-gradient(135deg,#1976D2,#1565C0);border-radius:14px;padding:20px 18px;margin-bottom:20px;color:white;">
+        <p style="font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;">Acceso garantizado a diagnóstico y tratamiento</p>
+        <p style="font-size:13px;opacity:0.88;line-height:1.5;">Desde la sospecha de VIH tienes derecho a examen gratuito, confidencial y oportuno. El tratamiento antirretroviral está garantizado y completamente gratuito.</p>
+      </div>
+
       <div class="pagina-seccion" id="sec-Descripción">
         <div class="pagina-seccion-titulo-principal">Descripción</div>
+        <p class="pagina-texto">El VIH (Virus de Inmunodeficiencia Humana) es un virus que ataca el sistema inmunológico. En Chile, el diagnóstico y tratamiento del VIH/SIDA es una prestación GES garantizada.</p>
         
-        <p class="pagina-texto">El VIH (Virus de Inmunodeficiencia Humana) es el virus que causa el SIDA. En Chile, el diagnóstico y tratamiento del VIH/SIDA es una prestación GES, lo que garantiza acceso oportuno y gratuito a la atención para las personas con diagnóstico confirmado.</p>
-        <p class="pagina-texto" style="margin-top:8px;">El CESFAM realiza el <strong>examen de detección (test de Elisa)</strong> de forma gratuita y confidencial.</p>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Qué es la infección por VIH?</p>
+        <p class="pagina-texto">La infección por VIH se caracteriza inicialmente por un período asintomático (sin síntomas), donde se mantiene un equilibrio entre la replicación viral y la respuesta del sistema inmunológico. Con el tiempo, si no se trata, este equilibrio se rompe, aumenta la carga viral y se deteriora la función inmune, permitiendo la aparición de infecciones oportunistas y tumores, llegando a lo que se conoce como SIDA (Síndrome de Inmunodeficiencia Adquirida).</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Por qué es importante el diagnóstico temprano?</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>El tratamiento antirretroviral moderno permite una vida larga y saludable</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Acceso rápido a medicamentos que suprimen la carga viral</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Prevención de transmisión a otras personas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Atención integral a la salud</span></div>
       </div>
+
+      <div class="pagina-seccion" id="sec-¿Quién accede?">
+        <div class="pagina-seccion-titulo-principal">¿Quién puede acceder?</div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Toda persona que:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tenga sospecha de infección por VIH (por exposición, síntomas o solicitud propia)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Sea beneficiaria de FONASA o ISAPRE</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Lo solicite directamente sin requisitos previos</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Importante:</p>
+        <p class="pagina-texto">El acceso al GES inicia desde la SOSPECHA, no requiere diagnóstico confirmado. Si solicitas el examen, tienes derecho a realizártelo inmediatamente.</p>
+      </div>
+
       <div class="pagina-seccion" id="sec-Prestaciones">
-        <div class="pagina-seccion-titulo-principal">Prestaciones</div>
+        <div class="pagina-seccion-titulo-principal">Prestaciones Garantizadas</div>
+        <p class="pagina-texto">El GES Nº18 cubre tres etapas: diagnóstico, tratamiento y seguimiento.</p>
         
-        <p class="pagina-texto" style="font-weight:600; margin-bottom:6px;">En el CESFAM</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Examen de detección de VIH (test de Elisa) gratuito y confidencial.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Consejería pre y post test.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Derivación a centro de tratamiento (CONASIDA/Infectious Disease) en caso de resultado positivo.</span></div>
-        <p class="pagina-texto" style="font-weight:600; margin-top:12px; margin-bottom:6px;">En la red de salud (GES)</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tratamiento antirretroviral garantizado y gratuito.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Controles periódicos de carga viral y CD4.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Atención multidisciplinaria en centros especializados.</span></div>
-        ${enlaceTarjeta('ges','GES — Garantías en Salud','Ver las garantías del tratamiento VIH')}
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Diagnóstico</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Examen de detección (test de VIH):</strong> Realizado de forma gratuita y confidencial</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Consejería:</strong> Información y apoyo antes y después del examen</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Confirmación diagnóstica:</strong> Mediante pruebas de laboratorio específicas</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Tratamiento Antirretroviral (TAR)</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Medicamentos antirretrovirales:</strong> Esquemas de tratamiento según criterios médicos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Exámenes de control:</strong> Determinación de carga viral, CD4, resistencia genética</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Evaluación pretratamiento:</strong> Valoración inicial completa</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Consulta médica especializada:</strong> Por médico con competencias para el tratamiento</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Prestaciones Especiales</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Prevención de transmisión vertical:</strong> Para personas embarazadas VIH (+), sus hijos/as nacidos/as y puérperas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Fórmula láctea:</strong> Para hijos/as de madres VIH (+) desde el nacimiento</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Medicamentos para interrupción de lactancia:</strong> En puérperas VIH (+)</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Seguimiento</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Control periódico:</strong> Monitoreo continuo de carga viral y recuento de CD4</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Atención multidisciplinaria:</strong> Coordinada entre centros especializados</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Seguimiento de niños/as expuestos:</strong> Hijos/as de madres con VIH (+)</span></div>
       </div>
+
       <div class="pagina-seccion" id="sec-Requisitos">
         <div class="pagina-seccion-titulo-principal">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Sospecha de VIH o solicitud propia del examen.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Ser beneficiario/a de FONASA o ISAPRE.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">El examen es voluntario y confidencial — se respeta tu privacidad.</span></div>
         
-        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5 para el examen de detección.</span></div>
-        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">El examen es voluntario y confidencial — no se informa a terceros sin consentimiento.</span></div>
-        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">No se requiere hora previa para solicitar el examen en algunos casos — consulte en el SOME.</span></div>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px; font-weight:600;">Importante:</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">NO se requiere autorización de terceros para solicitar el examen. Es tu derecho acceder a él sin permiso de nadie.</p>
       </div>
-      <div class="pagina-seccion" id="sec-Acceder">
-        <div class="pagina-seccion-titulo-principal">Acceder</div>
+
+      <div class="pagina-seccion" id="sec-Acceso">
+        <div class="pagina-seccion-titulo-principal">Cómo Acceder</div>
         
-        <p class="pagina-texto">Para realizarse el examen de detección, solicite hora con su <strong>médico/a o matrona</strong> de sector, o consulte directamente en el SOME.</p>
-        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora de atención')}
-        ${enlaceTarjeta('its','ITS — Infecciones de Transmisión Sexual','Prevención y otras ITS')}
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Para examen de detección (diagnóstico):</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Acude directamente a tu CESFAM/Consultorio inscrito</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Solicita el examen de VIH (test de Elisa)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>También puedes consultar en el SOME (Servicio de Orientación Médica de Emergencia)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>O en Servicio de Urgencia si lo prefieres</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Para tratamiento:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Con diagnóstico confirmado, serás derivado/a a centro especializado</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Se te asignará médico con competencias para el tratamiento</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Inician inmediatamente la evaluación y el tratamiento antirretroviral</span></div>
+        
+        <div style="background:#E8F5E9; border-left:4px solid #388E3C; padding:12px 14px; margin-top:14px; border-radius:6px;">
+          <strong style="color:#1B5E20;">🔒 Confidencialidad garantizada</strong>
+          <p style="font-size:13px; color:#2E7D32; margin:6px 0 0 0;">Tu resultado es estrictamente confidencial. Solo tú conoces tu estado de VIH. No se informa a terceros sin tu consentimiento.</p>
+        </div>
       </div>
+
+      <div class="pagina-seccion" id="sec-Horario">
+        <div class="pagina-seccion-titulo-principal">Horarios de Atención</div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">CESFAM/Consultorio (Diagnóstico):</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Lunes a viernes:</strong> 08:00 a 17:00 horas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Algunos CESFAM ofrecen horarios extendidos o atención sábados</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Servicio de Urgencia (Diagnóstico):</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>24 horas, 7 días a la semana</strong></span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Atención inmediata sin requisitos previos</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Centro Especializado (Tratamiento y Seguimiento):</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Variable según centro — Consulta tu centro designado</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Se coordina tratamiento de forma continua</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-GES">
+        <div class="pagina-seccion-titulo-principal">Garantías GES Nº 18</div>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-bottom:12px;">Vigente desde su incorporación al GES</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Cuatro Garantías Explícitas:</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">1. Garantía de Acceso</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Toda persona con sospecha de VIH tiene derecho a examen de diagnóstico en la red de salud pública (FONASA) o privada (ISAPRE). No pueden negarte la atención.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">2. Garantía de Oportunidad (Plazos máximos)</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Diagnóstico:</strong> máximo 45 días desde la sospecha o solicitud</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Primera consulta especializada:</strong> máximo 45 días desde confirmación diagnóstica</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Inicio de tratamiento:</strong> máximo 7 días desde indicación médica</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Embarazadas:</strong> 7 días inicio TAR desde indicación</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Recién nacido de madre VIH (+):</strong> TAR dentro de 4 horas post nacimiento</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">3. Garantía de Calidad</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Las prestaciones se otorgan por prestadores acreditados, con protocolos basados en evidencia científica y normas técnicas de calidad.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">4. Garantía de Protección Financiera</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>FONASA A, B, C, D:</strong> 0% — Completamente gratuito</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>ISAPRE:</strong> 20% copago sobre arancel de referencia GES</span></div>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">📌 <strong>Ejemplo ISAPRE:</strong> Si esquema terapéutico antirretroviral cuesta $121.930:
+        <br>• ISAPRE paga: $97.544 (80%)
+        <br>• Tú pagas: $24.386 (20%)</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">¿Qué cubre?</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Examen de detección de VIH</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Medicamentos antirretrovirales (todos los esquemas)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Exámenes: carga viral, CD4, resistencia genética, evaluación pretratamiento</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Consultas médicas especializadas</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Seguimiento clínico continuo</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Prevención de transmisión vertical (embarazo, parto, recién nacido)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Fórmula láctea para hijos/as de madres VIH (+)</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Equipo">
+        <div class="pagina-seccion-titulo-principal">Equipo Multidisciplinario</div>
+        <p class="pagina-texto">La atención integral del VIH requiere coordinación entre múltiples profesionales:</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">En Atención Primaria (CESFAM):</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Médico/a General:</strong> Diagnóstico inicial, consejería</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Matrona/Enfermero/a:</strong> Consejería, educación, derivación</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Psicólogo/a:</strong> Apoyo emocional inicial</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Trabajador/a Social:</strong> Recursos comunitarios y apoyo psicosocial</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">En Centro Especializado (Tratamiento):</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Infectólogo/a:</strong> Diagnóstico diferencial, indicación del tratamiento antirretroviral</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Médico/a VIH especialista:</strong> Seguimiento y ajuste de tratamiento</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Psicólogo/a clínico:</strong> Apoyo psicológico continuo</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Nutricionista:</strong> Asesoramiento nutricional especializado</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Enfermero/a especializado/a:</strong> Educación y monitoreo del tratamiento</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Obstetra/Ginecólogo/a:</strong> En el caso de embarazadas VIH (+)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Pediatra especializado/a:</strong> Para niños/as con VIH o expuestos/as</span></div>
+      </div>
+
       <div class="pagina-seccion" id="sec-Saber +">
         <div class="pagina-seccion-titulo-principal">Saber +</div>
         
-        <p class="pagina-texto"><strong>¿El examen es confidencial?</strong></p>
-        <p class="pagina-texto">Sí. El resultado del examen VIH es estrictamente confidencial. Solo se informa a la persona examinada.</p>
-        <p class="pagina-texto" style="margin-top:12px;"><strong>¿Con qué frecuencia debo hacerme el examen?</strong></p>
-        <p class="pagina-texto">Se recomienda realizarse el examen al menos una vez al año si se tienen prácticas de riesgo, o antes si se sospecha una exposición reciente.</p>
-        <p class="pagina-texto" style="margin-top:12px;"><strong>¿El tratamiento es gratuito?</strong></p>
-        <p class="pagina-texto">Sí. El tratamiento antirretroviral está garantizado por el plan GES y es completamente gratuito para usuarios FONASA.</p>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Fuentes oficiales</p>
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/sindrome-de-inmunodeficiencia-adquirida-vih-sida/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          SuperDESALUD — GES Nº 18 Detalles y Garantías
+        </a><br>
+        
+        <a href="https://auge.minsal.cl/problemasdesalud/index/18" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          AUGE MINSAL — GES 18 Definición y Prestaciones
+        </a><br>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">¿Por qué es importante el tratamiento inmediato?</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">El tratamiento antirretroviral moderno ha transformado la infección por VIH en una enfermedad crónica controlable. Las personas en tratamiento con carga viral indetectable logran una vida normal y esperanza de vida cercana a la de la población general.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Información sobre carga viral e indetectable</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">"Indetectable" significa que la carga viral es tan baja que no se puede medir en sangre. Una persona con carga viral indetectable con tratamiento antirretroviral NO transmite el VIH a otras personas (Indetectable = Intransmisible).</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Confidencialidad en el diagnóstico</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Tu resultado VIH es información médica confidencial. Solo tú y tu equipo de salud conocen tu diagnóstico. No se informa a familiares, empleadores o terceros sin tu consentimiento informado.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Prevención de transmisión vertical</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Si estás embarazada y VIH (+), el tratamiento antirretroviral reduce a casi 0% el riesgo de transmitir el virus a tu hijo/a. El GES cubre medicamentos especiales para el parto y fórmula láctea para alimentación del recién nacido.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Duración del tratamiento</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">El tratamiento antirretroviral es de por vida, pero permitir una vida normal con buena calidad de vida. Los medicamentos modernos tienen pocos efectos secundarios y se toman una vez al día.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">¿Dónde puedo obtener apoyo?</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Además del equipo de salud, existen organizaciones como VIVO en Chile, grupos de apoyo y líneas de orientación para personas con VIH. Tu equipo de salud puede conectarte con estos recursos.</p>
+      </div>
+
+      <div style="background:#FFF3E0; border-left:4px solid #F57C00; padding:14px 16px; margin-top:18px; border-radius:6px;">
+        <p style="font-size:13px; color:#E65100; margin:0; line-height:1.6;">
+          <strong>🔬 Acción inmediata:</strong> Si crees haber tenido exposición a VIH, consulta en tu CESFAM o Servicio de Urgencia. El examen es gratuito, rápido y completamente confidencial. El diagnóstico temprano es fundamental para tu salud.
+        </p>
       </div>
     `
   },
