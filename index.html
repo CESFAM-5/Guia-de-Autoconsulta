@@ -633,6 +633,7 @@ const BASE_URL = "https://sites.google.com/view/guiadeorientacionusuaria";
 const TEMAS = [
   {letra:"A",nombre:"Adolescentes y Jóvenes",url:"/a/adolescentes-y-jóvenes",categoria:"Programa",tags:"adolescente joven programa salud sexual anticonceptivo control",pagina:"adolescentes-jovenes"},
   {letra:"A",nombre:"Adulto Mayor Autovalente",url:"/a/adulto-mayor-autovalente-programa",categoria:"Programa",tags:"adulto mayor anciano 60 años tercera edad programa autovalente",pagina:"adulto-mayor-autovalente"},
+  {letra:"A",nombre:"Atención en Agresión Sexual Aguda",url:"/a/agresion-sexual-aguda",categoria:"GES",tags:"agresion sexual violencia sexual atención urgencia psicológica GES derechos",pagina:"agresion-sexual-aguda"},
   {letra:"A",nombre:"Alimentación Complementaria — PNAC",url:"/a/alimentación-complementaria-programa-nacional-de-pnac",categoria:"Programa",tags:"leche pnac alimento niño embarazada lactante bebé formula purita",pagina:"pnac"},
   {letra:"A",nombre:"Alimentación Adulto Mayor, PACAM",url:"/a/alimentación-complementaria-del-adulto-mayor-programa-nacional-de-pacam",categoria:"Programa",tags:"pacam alimento adulto mayor leche nutrición anciano",pagina:"pacam"},
   {letra:"A",nombre:"Alzheimer y otras Demencias",url:"/a/alzheimer-demencias",categoria:"GES",tags:"alzheimer demencia neurodegenerativa GES tratamiento diagnóstico memoria",pagina:"alzheimer-demencias"},
@@ -1102,6 +1103,214 @@ const PAGINAS = {
 
   /* ── Agregar más temas aquí siguiendo el mismo patrón ── */
 
+  "agresion-sexual-aguda": {
+    id: "agresion-sexual-aguda",
+    nombre: "Atención Integral de Salud en Agresión Sexual Aguda",
+    titulo: "Atención Integral en Agresión Sexual Aguda — Garantía Explícita en Salud",
+    categoria: "GES",
+    actualizacion: "12/06/2026",
+    nav: ["Descripción","¿Quién accede?","Prestaciones","Requisitos","Acceso","Horario","GES","Equipo","Saber +"],
+    contenido: () => `
+      <div style="background:linear-gradient(135deg,#D32F2F,#C62828);border-radius:14px;padding:20px 18px;margin-bottom:20px;color:white;">
+        <p style="font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;">Tu seguridad y recuperación son prioritarias</p>
+        <p style="font-size:13px;opacity:0.88;line-height:1.5;">Tienes derecho a atención inmediata, integral y respetuosa. Atención de urgencia disponible 24/7 en hospitales.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo-principal">Descripción</div>
+        <p class="pagina-texto">La agresión sexual aguda es un evento traumático reciente (dentro de las últimas 72 horas) que involucra contacto directo con genitales de una persona agresora, con o sin intercambio de fluidos. Puede presentar daños físicos y/o psicológicos que requieren atención inmediata.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">¿Por qué es importante la atención inmediata?</p>
+        <p class="pagina-texto">La atención oportuna permite:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Reducir la probabilidad de adquirir una infección de transmisión sexual (ITS)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Prevenir un embarazo no planificado</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Proteger la salud física y mental de la persona afectada</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Obtener evidencia forense si la persona lo desea</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Facilitar procesos de denuncia y seguimiento legal</span></div>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">📊 En 2022, los servicios de urgencia de Chile atendieron 1.715 personas por agresión sexual aguda (92% mujeres, 8% hombres). El 29% de las mujeres atendidas tenían entre 10 y 17 años.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-¿Quién accede?">
+        <div class="pagina-seccion-titulo-principal">¿Quién puede acceder?</div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Toda persona que:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Haya sufrido una agresión sexual reciente (hasta 72 horas de ocurrido)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Que involucre contacto directo de genitales</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Presente o pueda presentar daños físicos y/o psicológicos que requieran atención</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Importante:</p>
+        <p class="pagina-texto">El acceso al GES NO está sujeto a si la persona realiza denuncia o no. Todas las personas tienen derecho a atención independientemente de su decisión respecto al proceso legal.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo-principal">Prestaciones Garantizadas</div>
+        <p class="pagina-texto">El GES Nº86 cubre dos etapas: Primera Respuesta y Seguimiento.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Primera Respuesta (en Servicio de Urgencia)</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Acogida y Primeros Auxilios Psicológicos:</strong> Recibimiento digno, respetuoso y sensible. Apoyo práctico y emocional no invasivo.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Atención Clínica Integral:</strong> Examen físico completo. Evaluación de lesiones.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Toma de Muestras:</strong> Muestras de importancia clínica y forense (resguardando cadena de custodia)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Profilaxis para ITS:</strong> Medicamentos para prevenir infecciones de transmisión sexual (gonorrea, clamidia, sífilis, tricomoniasis)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Profilaxis para VIH:</strong> Medicamentos antirretrovirales (según evaluación de riesgo de exposición)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Evaluación de Hepatitis B:</strong> Se toman muestras basales para sífilis, hepatitis B y VIH</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Anticoncepción de Emergencia:</strong> Si corresponde, para prevenir embarazo no intencionado</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Seguimiento (antes de 35 días desde la primera atención)</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Atenciones Médicas Especializadas:</strong> Pediatría, Ginecología, Urología, Infectología, Dermatología, Medicina Interna, Medicina Familiar e Inmunología (según necesidad)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Evaluación de Serología:</strong> Control del estado de infecciones</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Atención de Salud Mental:</strong> Mínimo 4 atenciones por psicólogo y 1 atención por psiquiatra (en nivel secundario o terciario)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Seguimiento Clínico y Biopsicosocial:</strong> Evaluación permanente de necesidades de atención</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Derivaciones Especializadas:</strong> A otros profesionales según necesidad (horas entregadas por escrito)</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo-principal">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Consultar en un Servicio de Urgencia Hospitalaria dentro de 72 horas de ocurrida la agresión.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Relatar o sospecha médica de agresión sexual aguda con contacto directo de genitales.</span></div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Ser beneficiario/a de FONASA o ISAPRE.</span></div>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px; font-weight:600;">Importante:</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">NO es necesario tener denuncia previa ni denunciar para acceder. El GES está disponible para toda persona que consulte por agresión sexual aguda en servicio de urgencia hospitalaria, sin requisitos adicionales.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Acceso">
+        <div class="pagina-seccion-titulo-principal">Cómo Acceder</div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Paso 1: Dirigirse al Hospital</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-bottom:8px;">Acude al Servicio de Urgencia del hospital más cercano a tu domicilio o donde ocurrió la agresión.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Paso 2: Indica que fuiste víctima de agresión sexual</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-bottom:8px;">Comunica a personal de salud (recepcionista, enfermera, médico) que has sufrido agresión sexual aguda.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Paso 3: Serás categorizado como C2/ESI2</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-bottom:8px;">Por el alto riesgo psicoemocional, serás atendido antes de 30 minutos.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Paso 4: Recibirás atención integral</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-bottom:8px;">Se activará automáticamente el GES Nº86. Recibirás primeros auxilios psicológicos, examen clínico, toma de muestras, profilaxis y anticoncepción de emergencia.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Paso 5: Recibe información sobre seguimiento</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Se te entregará información por escrito sobre tu seguimiento clínico y psicosocial. Se te darán horas para controles posteriores.</p>
+        
+        <div style="background:#E8F5E9; border-left:4px solid #388E3C; padding:12px 14px; margin-top:14px; border-radius:6px;">
+          <strong style="color:#1B5E20;">⏰ Atención inmediata</strong>
+          <p style="font-size:13px; color:#2E7D32; margin:6px 0 0 0;">La atención en Servicio de Urgencia es INMEDIATA desde el momento que consultas. Primera respuesta completa se realiza dentro de las primeras horas.</p>
+        </div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Horario">
+        <div class="pagina-seccion-titulo-principal">Horarios de Atención</div>
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Servicio de Urgencia Hospitalaria:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>24 horas, 7 días a la semana</strong> — Atención disponible en cualquier momento</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>No requiere hora previa</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Acceso directo sin triage de pago</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Seguimiento (después de primera respuesta):</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Se debe iniciar antes de 35 días desde la primera atención</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Horas entregadas por escrito al egreso de urgencia</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>En CESFAM/Consultorio, Hospital o Centro especializado según corresponda</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-GES">
+        <div class="pagina-seccion-titulo-principal">Garantías GES Nº 86</div>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-bottom:12px;">Incorporado al GES: 1 de octubre de 2022</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Cuatro Garantías Explícitas:</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">1. Garantía de Acceso</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Tienes derecho a atención integral en Servicio de Urgencia Hospitalaria. No pueden negarte la atención si relatas o se sospecha agresión sexual aguda.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">2. Garantía de Oportunidad (Plazos máximos)</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Primera Respuesta:</strong> INMEDIATA desde la solicitud de atención en Servicio de Emergencia Hospitalaria</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Seguimiento:</strong> Máximo 35 días desde la primera respuesta</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">3. Garantía de Calidad</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Las prestaciones deben ser otorgadas por prestadores acreditados. Se aplica atención sensible, respetuosa y no revictimizante, conforme a protocolos clínicos basados en evidencia.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">4. Garantía de Protección Financiera</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>FONASA A, B, C, D:</strong> 0% — Completamente gratuito</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>ISAPRE:</strong> 20% copago sobre arancel de referencia GES</span></div>
+        
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">📌 <strong>Ejemplo ISAPRE:</strong> Si Primera Respuesta tiene arancel de $344.010:
+        <br>• ISAPRE paga: $275.208 (80%)
+        <br>• Tú pagas: $68.802 (20%)</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">¿Qué cubre?</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Consultas médicas y atención de urgencia</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Medicamentos: profilaxis ITS, profilaxis VIH, anticoncepción de emergencia</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Exámenes: laboratorio, serología, detección de embarazo</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Atención de salud mental: psiquiatra, psicólogo</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Derivaciones especializadas según necesidad</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Equipo">
+        <div class="pagina-seccion-titulo-principal">Equipo Multidisciplinario</div>
+        <p class="pagina-texto">La atención integral requiere coordinación de múltiples profesionales en diferentes etapas:</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">Servicio de Urgencia (Primera Respuesta):</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Médico/a:</strong> Evaluación clínica, examen forense, diagnóstico de lesiones</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Profesional de salud mental o especialista:</strong> Primeros auxilios psicológicos, contención emocional</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Enfermero/a:</strong> Apoyo en atención, administración de medicamentos, orientación</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Técnico en salud:</strong> Apoyo en toma de muestras, resguardo de cadena de custodia</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Coordinador/a GES:</strong> Enlace administrativo y clínico</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">Seguimiento (Atención especializada):</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Psiquiatra:</strong> Evaluación de salud mental, prescripción según necesidad</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Psicólogo/a clínico:</strong> Atenciones de apoyo emocional y psicoterapia</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Médico especialista:</strong> Pediatría, Ginecología, Urología, Infectología, Dermatología, Medicina Interna (según necesidad)</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Duplas psicosociales:</strong> Apoyo integral biopsicosocial durante seguimiento</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Equipo de coordinación:</strong> Facilita continuidad de atención entre niveles</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Saber +">
+        <div class="pagina-seccion-titulo-principal">Saber +</div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Fuentes oficiales</p>
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/atencion-integral-de-salud-en-agresion-sexual-aguda/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          SuperDESALUD — GES Nº 86 Detalles y Garantías
+        </a><br>
+        
+        <a href="https://diprece.minsal.cl/wp-content/uploads/2023/11/2023.11.27_PROTOCOLO-AGRESION-SEXUAL-AGUDA.pdf" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          DIPRECE — Protocolo Atención Integral Agresión Sexual Aguda (PDF)
+        </a><br>
+        
+        <a href="https://www.sernameg.gob.cl/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          SERNAMEG — Atención Violencia de Género
+        </a><br>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Acerca de la acogida integral</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">La acogida es un conjunto de prácticas diseñadas para ofrecer un espacio seguro de contención y escucha activa. Incluye: trato digno y respetuoso, información clara sobre derechos, apoyo práctico no invasivo, reconocimiento de que lo ocurrido no es tu culpa.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Primeros Auxilios Psicológicos (PAP)</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Respuesta humana de apoyo que incluye: ayuda práctica no invasiva, evaluación de necesidades inmediatas, atención de necesidades básicas (comida, agua, información), escucha sin presión para hablar, reconfortamiento, acceso a información y servicios, protección de peligros adicionales.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Confidencialidad</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Tu información es confidencial. Será compartida solo con profesionales involucrados en tu atención y con tu consentimiento informado. Se limita el número de personas informadas sobre tu caso.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Sobre la denuncia</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">La denuncia es opcional. Si eres mayor de 18 años, puedes elegir denunciar o no. Si eres menor de 18 años, los profesionales de salud tienen obligación legal de denunciar, pero esto no afecta tu acceso a GES. Si decides no denunciar, tus muestras se guardarán durante 1 año en caso cambies de opinión.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Toma de muestras y cadena de custodia</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Se recolectan evidencias biológicas y no biológicas para análisis forense. Todas se resguardan bajo un sistema de cadena de custodia para mantener su validez judicial. Se requiere consentimiento informado (y asentimiento si eres menor).</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Profilaxis post-exposición VIH</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Medicamentos antirretrovirales disponibles para reducir el riesgo de infección por VIH después de una exposición. Se indican según evaluación de riesgo (alto, mediano o bajo). Se administran por 30 días.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Apoyo disponible</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Centro de las Mujeres: atención psicosocial y legal. SERNAMEG: orientación en violencia de género. Carabineros: 133 | PDI: 134 | Orientación violencia género: 1455 | WhatsApp: +56 9 9700 7000</p>
+      </div>
+
+      <div style="background:#FFF3E0; border-left:4px solid #F57C00; padding:14px 16px; margin-top:18px; border-radius:6px;">
+        <p style="font-size:13px; color:#E65100; margin:0; line-height:1.6;">
+          <strong>🆘 Acción inmediata:</strong> Si has sufrido agresión sexual aguda, acude al hospital más cercano. Tienes derecho a atención gratuita, inmediata e integral. No necesitas permiso de nadie ni denuncia previa. Tu atención es prioritaria.
+        </p>
+      </div>
+    `
+  },
+  
   "alzheimer-demencias": {
     id: "alzheimer-demencias",
     nombre: "GES Nº 85: Enfermedad de Alzheimer y otras Demencias",
