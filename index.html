@@ -162,6 +162,21 @@
     align-items: center;
     gap: 10px;
   }
+  /* ── BADGE GES ── */
+  .item-lista { position: relative; }
+  .badge-ges { 
+    background: rgba(211, 47, 47, 0.15); 
+    color: #D32F2F; 
+    font-size: 10px; 
+    font-weight: 700; 
+    padding: 3px 8px; 
+    border-radius: 8px; 
+    margin-left: 8px; 
+    display: inline-block; 
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
   .indice-guia svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--verde); }
   .indice-guia p { font-size: 13px; color: var(--verde); line-height: 1.4; font-weight: 500; }
 
@@ -910,7 +925,7 @@ function renderIndice(){
       <div class="letra-titulo">${l}</div>
       ${TEMAS.filter(t=>t.letra===l).map(i=>`
         <a class="item-lista" href="${BASE_URL}${i.url}" target="_blank" rel="noopener" ${i.pagina ? 'onclick="event.preventDefault();abrirPagina(\''+i.pagina+'\')"' : ''}">
-          <span>${i.nombre}</span>
+          <span>${i.nombre}${i.categoria === "GES" ? '<span class="badge-ges">GES</span>' : ''}</span>
           <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </a>`).join('')}
       <button onclick="document.getElementById('letrasNav').scrollIntoView({behavior:'smooth'})" style="width:100%;padding:10px;margin-top:8px;background:var(--verde-claro);border:none;border-radius:var(--radio-sm);cursor:pointer;font-family:var(--font);font-size:12px;color:var(--verde);font-weight:500;display:flex;align-items:center;justify-content:center;gap:6px;">
