@@ -1345,6 +1345,7 @@ const PAGINAS = {
         ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora para evaluación y control del asma')}
         ${enlaceTarjeta('hora-presentacion','Hora de Presentación','Llegar 15 minutos antes de la cita')}
       </div>
+      
       <div class="pagina-seccion" id="sec-GES">
         <div class="pagina-seccion-titulo-principal">Garantías Explícitas en Salud (GES)</div>
         <p class="pagina-texto">El asma está incluida en el sistema de <strong>Garantías Explícitas en Salud (GES)</strong>, lo que significa que FONASA e ISAPREs están obligadas a cubrir su diagnóstico, tratamiento y seguimiento.</p>
@@ -1789,16 +1790,14 @@ const PAGINAS = {
       </div>
 
       <div class="pagina-seccion" id="sec-Prestaciones">
-        <div class="pagina-seccion-titulo-principal">Prestaciones Garantizadas</div>
+        <div class="pagina-seccion-titulo-principal">Prestaciones</div>
         <p class="pagina-texto">El GES N°90 cubre tratamiento integral combinado: farmacológico + psicosocial.</p>
         
         <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:12px;">Tratamiento Farmacológico</p>
         <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-bottom:8px;">El tratamiento incluye medicamentos recetados por el médico y apoyo conductual, disponibles en CESFAM</p>
-        
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">✓ Se pueden usar en combinación para mayor efectividad en fumadores con alta dependencia</p>
-        
+            
         <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Intervenciones Psicosociales</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><Consejería conductual individual</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><Consejería conductual individual. Apoyo psicológico</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Seguimiento y monitoreo. Consultas periódicas para evaluar progreso</span></div>
         
      </div>
@@ -1816,18 +1815,13 @@ const PAGINAS = {
       <div class="pagina-seccion" id="sec-Acceso">
         <div class="pagina-seccion-titulo-principal">Cómo Acceder</div>
         
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Si eres Beneficiario FONASA:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Acude a tu CESFAM o consultorio inscrito</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Consulta con el médico sobre tu intención de dejar de fumar</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>El médico evaluará si tienes alta dependencia y etapa apropiada</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Si cumples requisitos, solicitará ingreso a GES N°90</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Automáticamente accederás a todas las prestaciones garantizadas</span></div>
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo-principal">Acceder</div>
+        <p class="pagina-texto">Pronto más información:</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora para evaluación y control.')}
+        ${enlaceTarjeta('hora-presentacion','Hora de Presentación','Llegar 15 minutos antes de la cita')}
+      </div>        
         
-        
-        <div style="background:#E8F5E9; border-left:4px solid #388E3C; padding:12px 14px; margin-top:14px; border-radius:6px;">
-          <strong style="color:#1B5E20;">⏰ Plazo de inicio del tratamiento</strong>
-          <p style="font-size:13px; color:#2E7D32; margin:6px 0 0 0;">Tratamiento farmacológico debe iniciarse dentro de 30 DÍAS desde la confirmación diagnóstica.</p>
-        </div>
       </div>
 
       <div class="pagina-seccion" id="sec-Horario">
@@ -1851,22 +1845,15 @@ const PAGINAS = {
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Cobertura:</strong> diagnóstico, tratamiento farmacológico (si corresponde), psicoterapia y seguimiento.</span></div>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Plazo garantizado:</strong> inicio de tratamiento dentro de 30 días desde la confirmación diagnóstica.</span></div>
       </div>
+      
         <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/cesacion-del-consumo-de-tabaco-en-personas-de-25-anos-y-mas/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         Superintendencia de Salud — GES Nº 90 Detalles y Garantías
       </div>
 
       <div class="pagina-seccion" id="sec-Equipo">
-        <div class="pagina-seccion-titulo-principal">Equipo Multidisciplinario</div>
-        <p class="pagina-texto">El tratamiento integrado de cesación tabáquica requiere coordinación entre profesionales:</p>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">En Atención Primaria:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Médico General:</strong> diagnóstico de dependencia, prescripción de medicamentos, seguimiento</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Enfermera:</strong> educación, apoyo emocional, monitoreo</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Psicólogo/Consejero:</strong> terapia cognitivo-conductual, manejo de ansia</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Trabajador Social:</strong> recursos comunitarios, apoyo psicosocial</span></div>
-           
-        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:12px;">El equipo funciona de forma coordinada, manteniendo comunicación continua para optimizar el tratamiento.</p>
+        <div class="pagina-seccion-titulo-principal">Equipo</div>
+        <p class="pagina-texto">Pronto más información</p>
       </div>
 
       <div class="pagina-seccion" id="sec-Saber +">
