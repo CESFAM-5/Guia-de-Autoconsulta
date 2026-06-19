@@ -52,7 +52,7 @@
 
   /* ── BUSCADOR ── */
   #view-buscar { position: fixed; top: var(--header-h); bottom: 0; left: 0; right: 0; }
-  .buscar-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .buscar-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; height: 100%; }
   .buscar-inner { max-width: 480px; margin: 0 auto; padding: 16px 16px 8px; }
 
   .buscar-input-area { flex-shrink: 0; padding: 10px 16px max(14px, env(safe-area-inset-bottom)); background: var(--fondo); border-top: 1px solid var(--borde); }
@@ -7289,9 +7289,19 @@ function renderizarGES() {
     
     categoria.items.forEach(item => {
       const badge = item.enGuia ? '<span style="background: var(--verde); color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">En guía</span>' : '';
+      
+      // Buscar el ID de la página para este GES
+      let onClickHandler = `abrirURL('${item.url}')`;
+      if (item.enGuia) {
+        const paginaId = Object.keys(MAPEO_PAGINA_GES).find(id => MAPEO_PAGINA_GES[id] === item.nombre);
+        if (paginaId) {
+          onClickHandler = `abrirPagina('${paginaId}')`;
+        }
+      }
+      
       html += `
         <div style="background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; font-size: 13px; cursor: pointer; transition: all 0.15s; display: flex; justify-content: space-between; align-items: center;"
-             onclick="abrirURL('${item.url}')">
+             onclick="${onClickHandler}">
           <span>${item.nombre}</span>
           ${badge}
         </div>`;
