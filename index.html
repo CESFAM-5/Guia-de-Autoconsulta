@@ -7287,6 +7287,63 @@ const MAPEO_GES_PAGINA = {
 // FUNCIONES AUXILIARES - USA EL MAPEO INVERSO
 // ═══════════════════════════════════════════════════════════════
 
+// ═══════════════════════════════════════════════════════════════
+// MAPEO CORREGIDO: IDs REALES de tu archivo Index
+// ═══════════════════════════════════════════════════════════════
+
+const MAPEO_PAGINA_GES = {
+  // Enfermedades Crónicas
+  'diabetes': 'Diabetes mellitus tipo 1',  // Ambas diabetes apuntan al mismo ID
+  'diabetes': 'Diabetes mellitus tipo 2',  // Último valor prevalece en JavaScript
+  'hipertension': 'Hipertensión arterial primaria',
+  'asma': 'Asma bronquial',
+  'epilepsia': 'Epilepsia no refractaria',
+  'epoc': 'Enfermedad pulmonar obstructiva crónica',
+  'hipotiroidismo': 'Hipotiroidismo primario congénito',
+  
+  // Cánceres
+  'cancer': 'Cáncer de mama',  // O el que sea principal
+  
+  // Salud Mental
+  'depresion': 'Depresión grave en personas de 15 años y más',
+  
+  // Enfermedades Infecciosas
+  'vih-sida': 'VIH/SIDA',
+  'tbc': 'Tuberculosis',
+  
+  // Salud Oral
+  'urgencia-odontologica': 'Atención de urgencias odontológicas',
+  
+  // Otros
+  'cesacion-tabaquica': 'Cesación del Tabaco'
+};
+
+// ═══════════════════════════════════════════════════════════════
+// NOTA IMPORTANTE: Para Diabetes tipo 1 y tipo 2
+// ═══════════════════════════════════════════════════════════════
+// Como tienes UN SOLO ID ('diabetes') pero DOS condiciones GES,
+// la mejor solución es usar un mapeo INVERSO:
+
+const MAPEO_GES_PAGINA = {
+  'Diabetes mellitus tipo 1': 'diabetes',
+  'Diabetes mellitus tipo 2': 'diabetes',
+  'Hipertensión arterial primaria': 'hipertension',
+  'Asma bronquial': 'asma',
+  'Epilepsia no refractaria': 'epilepsia',
+  'Enfermedad pulmonar obstructiva crónica': 'epoc',
+  'Hipotiroidismo primario congénito': 'hipotiroidismo',
+  'Cáncer de mama': 'cancer',
+  'Depresión grave en personas de 15 años y más': 'depresion',
+  'VIH/SIDA': 'vih-sida',
+  'Tuberculosis': 'tbc',
+  'Atención de urgencias odontológicas': 'urgencia-odontologica',
+  'Cesación del Tabaco': 'cesacion-tabaquica'
+};
+
+// ═══════════════════════════════════════════════════════════════
+// FUNCIONES AUXILIARES - USA EL MAPEO INVERSO
+// ═══════════════════════════════════════════════════════════════
+
 function verificarSiEsGES(idPagina) {
   // Busca si este ID de página corresponde a alguna condición GES
   return Object.values(MAPEO_GES_PAGINA).includes(idPagina);
@@ -7302,6 +7359,11 @@ function obtenerDatosGES(idPagina) {
     }
   }
   return null;
+}
+
+// Función para buscar ID de página desde nombre GES (usa en renderizarGES)
+function obtenerIdPaginaDesdeGES(nombreGES) {
+  return MAPEO_GES_PAGINA[nombreGES] || null;
 }
 
 // Función para buscar ID de página desde nombre GES (usa en renderizarGES)
@@ -7351,15 +7413,14 @@ function renderizarGES() {
       </div>`;
     
     categoria.items.forEach(item => {
-      const badge = item.enGuia ? '<span style="background: var(--verde); color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">En guía</span>' : '';
+      // Buscar si existe página para esta condición GES
+      const paginaId = obtenerIdPaginaDesdeGES(item.nombre);
+      const badge = paginaId ? '<span style="background: var(--verde); color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">En guía</span>' : '';
       
-      // Buscar el ID de la página para este GES
+      // Determinar qué hacer cuando se clickea
       let onClickHandler = `abrirURL('${item.url}')`;
-      if (item.enGuia) {
-        const paginaId = Object.keys(MAPEO_PAGINA_GES).find(id => MAPEO_PAGINA_GES[id] === item.nombre);
-        if (paginaId) {
-          onClickHandler = `abrirPagina('${paginaId}')`;
-        }
+      if (paginaId) {
+        onClickHandler = `abrirPagina('${paginaId}')`;
       }
       
       html += `
