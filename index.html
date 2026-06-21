@@ -6973,37 +6973,6 @@ function cerrarPagina() {
   document.getElementById('view-pagina').classList.remove('visible');
   history.pushState({vista:'buscar'}, '');
 }
-function cerrarPagina() {
-  // Tu código existente antes...
-  
-  const esGES = verificarSiEsGES(id);
-  let contenido = '';
-  
-  if (esGES) {
-    const datosGES = obtenerDatosGES(id);
-    contenido += `
-      <div style="background: linear-gradient(135deg, #2D6A4F, #3B5F7A); color: white; border-radius: 12px; padding: 12px 14px; margin-bottom: 16px; display: flex; gap: 10px;">
-        <div style="font-size: 20px; flex-shrink: 0; margin-top: 2px;">✅</div>
-        <div style="flex: 1;">
-          <strong style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 4px;">
-            Protegida por GES
-          </strong>
-          <p style="margin: 0; font-size: 12px; opacity: 0.92; line-height: 1.4;">
-            Esta condición tiene cobertura garantizada. 
-            <a href="${datosGES.url}" style="color: white; text-decoration: underline; opacity: 0.9;">
-              Más detalles en Superintendencia
-            </a>
-          </p>
-        </div>
-      </div>
-    `;
-  }
-  
-  contenido += PAGINAS[id].contenido;
-  document.getElementById('paginaBody').innerHTML = contenido;
-  
-  // Tu código existente después...
-}
 
 function irSeccion(id) {
   const el = document.getElementById(id);
