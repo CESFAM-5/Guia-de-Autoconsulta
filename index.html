@@ -7282,6 +7282,31 @@ const MAPEO_GES_PAGINA = {
   'Atención de urgencias odontológicas': 'urgencia-odontologica',
   'Cesación del Tabaco': 'cesacion-tabaquica'
 };
+  // ═══════════════════════════════════════════════════════════════
+// FUNCIONES AUXILIARES PARA GES - COPIA/PEGA TODO ESTO
+// ═══════════════════════════════════════════════════════════════
+
+function verificarSiEsGES(idPagina) {
+  // Busca si este ID de página corresponde a alguna condición GES
+  return Object.values(MAPEO_GES_PAGINA).includes(idPagina);
+}
+
+function obtenerDatosGES(idPagina) {
+  // Encuentra la condición GES que corresponde a este ID
+  for (const categoria of Object.values(CONDICIONES_GES)) {
+    for (const item of categoria.items) {
+      if (MAPEO_GES_PAGINA[item.nombre] === idPagina) {
+        return item;
+      }
+    }
+  }
+  return null;
+}
+
+function obtenerIdPaginaDesdeGES(nombreGES) {
+  // Busca el ID de página para una condición GES por su nombre
+  return MAPEO_GES_PAGINA[nombreGES] || null;
+}
 
 // ═══════════════════════════════════════════════════════════════
 // FUNCIONES AUXILIARES - USA EL MAPEO INVERSO
