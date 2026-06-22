@@ -797,6 +797,7 @@ const TEMAS = [
   {letra:"E",nombre:"Enfermedad Pulmonar Obstructiva Crónica, <strong>EPOC</strong>",url:"/e/epoc",categoria:"GES",ges:38,tags:"EPOC enfermedad pulmonar obstructiva crónica asma bronquitis respiratorio pulmón GES tratamiento",pagina:"epoc"},
   {letra:"E",nombre:"Equipo de Cabecera",url:"/e/equipo-de-cabecera",categoria:"Información",tags:"equipo cabecera médico enfermera sector asignado familia",pagina:"equipo-cabecera"},
   {letra:"E",nombre:"ERA — Sala de Enfermedades Respiratorias",url:"/e/era-sala",categoria:"Servicio",tags:"era asma bronquitis respiratorio inhalador nebulización EPOC pulmón",pagina:"sala-era"},
+  {letra:"E",nombre:"Esquizofrenia",url:"/e/esquizofrenia",categoria:"GES",ges:15,tags:"esquizofrenia trastorno mental EQZ alteracion",pagina:"esquizofrenia"},
   {letra:"E",nombre:"Esquema de vacunas",url:"/v/vacunatorio",categoria:"Servicio",tags:"esquema vacunas calendario vacunación dosis niño adulto",pagina:"vacunatorio"},
   {letra:"E",nombre:"Estimulación Temprana, Sala",url:"/e/estimulación-temprana-sala-de",categoria:"Servicio",tags:"estimulación temprana bebé niño desarrollo motor lenguaje terapia",pagina:"estimulacion-temprana"},
   {letra:"E",nombre:"Examen Citológico",url:"/p/pap",categoria:"Examen",tags:"examen citológico papanicolau pap cuello uterino cáncer cervicouterino",pagina:"pap"},
@@ -6529,6 +6530,74 @@ const PAGINAS = {
     `
   },
 
+  "esquizofrenia": {
+    id: "esquizofrenia",
+    nombre: "Esquizofrenia",
+    titulo: "Esquizofrenia",
+    categoria: "Programa",
+    actualizacion: "22/06/2026",
+    revision: "01/01/2026",
+    nav: ["Descripción","Síntomas","Tipos","Prestaciones","Requisitos","Acceso","GES","Saber +"],
+    contenido: () => `
+      <div class="pagina-seccion" id="sec-Descripción">
+        <div class="pagina-seccion-titulo-principal">Descripción</div>
+        <p class="pagina-texto">Se denomina esquizofrenia a un conjunto de trastornos mentales  caracterizados  por alteraciones de la percepción, del pensamiento y de las emociones, que comprometen las funciones esenciales que dan a la persona la vivencia de su individualidad, singularidad  y dominio de sí misma, y suelen, por tanto, alterar de forma muy importante la vida de las personas que las padecen y también la de sus familiares y  amigos.</p>
+        <p class="pagina-texto">El CESFAM N°5 participa activamente en la detección, tratamiento y seguimiento de personas con esquizofrenia, coordinando con la red especializada cuando es necesario.</p>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Síntomas">
+        <div class="pagina-seccion-titulo-principal">Síntomas</div>
+        <p class="pagina-texto">Las manifestaciones de la enfermedad se clasifican en dos grandes tipos de síntomas:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Síntomas Positivos (alteraciones que se añaden a la conducta normal):</strong> Alucinaciones: Percepciones falsas donde la persona ve, escucha, huele o siente cosas que no están presentes en la realidad (las más comunes son las alucinaciones auditivas, como escuchar voces).
+Ideas delirantes: Creencias falsas o irracionales que la persona mantiene firmemente a pesar de la evidencia que demuestra lo contrario (ej. creer que es perseguido, vigilado o controlado por otros). Trastornos del pensamiento: Ideas incoherentes, discurso desorganizado o pérdida del hilo lógico de las conversaciones.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Síntomas Negativos (funciones normales que disminuyen o desaparecen):</strong> Desmotivación profunda y apatía.
+Reducción de la expresión emocional (rostro inexpresivo, tono de voz monótono).
+Aislamiento social y retraimiento</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Prestaciones">
+        <div class="pagina-seccion-titulo-principal">Prestaciones</div>
+        <p class="pagina-texto">En CESFAM N°5 disponemos:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>En la etapa de diagnóstico y referencia a especialista:</strong>: Evaluación médica y diagnóstico, Indicaciones terapéuticas y prescripción farmacológica, Información al paciente y familiares, Psicoeducación Interconsulta a Psiquiatra.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Tratamiento farmacológico:</strong> Farmacoterapia para alivio sintomático en espera de atención de especialidad.</span></div>
+         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Apoyo psicosocial:</strong> derivación a psicología o trabajo social cuando el impacto en la calidad de vida, el estigma o las limitaciones laborales/educativas lo requieran.</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Requisitos">
+        <div class="pagina-seccion-titulo-principal">Requisitos</div>
+        <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
+      </div>
+
+      <div class="pagina-seccion" id="sec-Acceder">
+        <div class="pagina-seccion-titulo-principal">Acceder</div>
+        <p class="pagina-texto" style="margin-top:14px;"><strong>Si no tienes diagnóstico confirmado:</strong> Para acceder a una atención por médico debe solicitar una hora de Medicina general en el SOME del CESFAM, de lunes a viernes desde las 07:30 hrs.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora de atención médica')}
+        ${enlaceTarjeta('hora-presentacion','Hora de presentación','Llegar 15 minutos antes de la cita')}
+        ${enlaceTarjeta('farmacia','Farmacia','Retiro de medicamentos')}
+      </div>
+
+      <div class="pagina-seccion" id="sec-GES">
+        <div class="pagina-seccion-titulo-principal">Garantías Explícitas en Salud (GES)</div>
+        <p class="pagina-texto">La esquizofrenia está incluida en el sistema de <strong>Garantías Explícitas en Salud (GES)</strong>, lo que significa que tienes derecho a acceso, plazo, calidad y protección económica garantizados.</p>
+
+        <p class="pagina-texto" style="margin-top:14px; font-weight:600; color:var(--verde);">Esquizofrenia en personas mayores de 15 años — GES N° 15</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Garantías de Acceso:</strong> Todo beneﬁciario con sospecha de esquizofrenia que maniﬁesta por primera vez los síntomas tendrá garantizado el acceso a:
+• Con sospecha tendrá acceso a evaluación inicial, conﬁrmación diagnóstica y tratamiento.
+• Con conﬁrmación diagnóstica tendrá acceso a continuar su tratamiento.
+• En tratamiento tendrá acceso a continuarlo.
+.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Garantías de Oportunidad:</strong> Se otorgará atención por médico especialista dentro de 20 días desde la derivació.</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Protección financiera:</strong> Cotizantes de FONASA reciben el beneficio de Copago 0% para grupos A ,B , C y D.</span></div>
+
+        <p class="pagina-texto" style="margin-top:10px;"><a href="https://www.superdesalud.gob.cl/orientacion-en-salud/esquizofrenia/" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver detalles en Superintendencia de Salud →</a></p>
+
+        <p class="pagina-texto" style="margin-top:10px;"><a href="https://www.minsal.cl/wp-content/uploads/2018/06/prio-6.pdf" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver detalles en Ministerio de Salud, MINSAL →</a></p>
+
+        </div>
+      </div>
+    `
+  },
+
   "estimulacion-temprana": {
     id: "estimulacion-temprana",
     nombre: "Estimulación Temprana",
@@ -7423,7 +7492,7 @@ const CONDICIONES_GES = {
     icono: '🧠',
     items: [
       { nombre: 'Alzheimer y otras Demencias', numero: 85, url: 'https://www.superdesalud.gob.cl/orientacion-en-salud/enfermedad-de-alzheimer-y-otras-demencias-2/', enGuia: false },
-      { nombre: 'Esquizofrenia', numero: 25, url: 'https://www.superdesalud.gob.cl/', enGuia: false },
+      { nombre: 'Esquizofrenia', numero: 15, url: 'https://www.superdesalud.gob.cl/orientacion-en-salud/esquizofrenia/', enGuia: false },
       { nombre: 'Depresión grave en menores de 15 años', numero: 26, url: 'https://www.superdesalud.gob.cl/', enGuia: false },
       { nombre: 'Depresión grave en personas de 15 años y más', numero: 27, url: 'https://www.superdesalud.gob.cl/', enGuia: false },
       { nombre: 'Trastorno bipolar', numero: 28, url: 'https://www.superdesalud.gob.cl/', enGuia: false }
@@ -7559,7 +7628,9 @@ const MAPEO_GES_PAGINA = {
   'Atención de urgencias odontológicas': 'urgencia-odontologica',
   'Cesación del Tabaco': 'cesacion-tabaquica',
   'Cataratas': 'cataratas',
-  'Alzheimer y otras Demencias': 'alzheimer-demencias'
+  'Alzheimer y otras Demencias': 'alzheimer-demencias',
+  'Esquizofrenia': 'esquizofrenia'
+
 };
   // ═══════════════════════════════════════════════════════════════
 // FUNCIONES AUXILIARES PARA GES - COPIA/PEGA TODO ESTO
