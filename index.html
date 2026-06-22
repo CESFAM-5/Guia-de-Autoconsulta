@@ -736,7 +736,6 @@ function tieneContenidoGES(nombre) {
   return false;
 }
 
-
 const TEMAS = [
   {letra:"A",nombre:"Acompañamiento psicosocial, Programa",url:"/a/acompanamiento-psicosocial",categoria:"Programa",tags:"acompañamiento psicosocial apoyo familiar vulnerabilidad riesgo social salud mental programa",pagina:"acompanamiento-psicosocial"},
   {letra:"A",nombre:"Adolescentes y Jóvenes",url:"/a/adolescentes-y-jóvenes",categoria:"Programa",tags:"adolescente joven programa salud sexual anticonceptivo control",pagina:"adolescentes-jovenes"},
@@ -7201,6 +7200,7 @@ function handleItemClick(e, el) {
 
 /* ── Abrir / cerrar página ── */
 /* ── Abrir / cerrar página ── */
+  
 let paginaOrigen = 'buscar';
 function abrirPagina(id) {
   const pagina = PAGINAS[id];
@@ -7273,6 +7273,7 @@ function abrirPagina(id) {
   vista.scrollTop = 0;
   history.pushState({vista:'pagina', id}, '');
 }
+  
 function cerrarPagina() {
   document.getElementById('view-pagina').classList.remove('visible');
   history.pushState({vista:'buscar'}, '');
