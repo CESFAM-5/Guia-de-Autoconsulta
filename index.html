@@ -7407,27 +7407,37 @@ const MAPEO_PAGINA_GES = {
   'cesacion-tabaquica': 'Cesación del Tabaco'
 };
 
-// ═══════════════════════════════════════════════════════════════
-// NOTA IMPORTANTE: Para Diabetes tipo 1 y tipo 2
-// ═══════════════════════════════════════════════════════════════
-// Como tienes UN SOLO ID ('diabetes') pero DOS condiciones GES,
-// la mejor solución es usar un mapeo INVERSO:
+// ════════════════════════════════════════════════════════════════
+// MAPEO AUTOMÁTICO: Genera el mapeo desde PAGINAS
+// (Se actualiza automáticamente cuando agregas nuevos GES)
+// ════════════════════════════════════════════════════════════════
 
-const MAPEO_GES_PAGINA = {
-  'Diabetes mellitus tipo 1': 'diabetes',
-  'Diabetes mellitus tipo 2': 'diabetes',
-  'Hipertensión arterial primaria': 'hipertension',
-  'Asma bronquial': 'asma',
-  'Epilepsia no refractaria': 'epilepsia',
-  'Enfermedad pulmonar obstructiva crónica': 'epoc',
-  'Hipotiroidismo primario congénito': 'hipotiroidismo',
-  'Cáncer de mama': 'cancer',
-  'Depresión grave en personas de 15 años y más': 'depresion',
-  'VIH/SIDA': 'vih-sida',
-  'Tuberculosis': 'tbc',
-  'Atención de urgencias odontológicas': 'urgencia-odontologica',
-  'Cesación del Tabaco': 'cesacion-tabaquica'
-};
+const MAPEO_GES_PAGINA = (() => {
+  const mapeo = {};
+  
+  // Recorre cada página en PAGINAS
+  Object.values(PAGINAS).forEach(pagina => {
+    if (pagina.nombre) {
+      // Extrae el nombre limpio removiendo "GES Nº XX: "
+      // Ejemplo: "GES Nº 27: Cáncer Gástrico" → "Cáncer Gástrico"
+      const nombreLimpio = pagina.nombre
+        .replace(/^GES Nº \d+:\s*/, '')  // Quita "GES Nº 27: "
+        .trim();                          // Quita espacios
+      
+      // Crea la entrada en el mapeo
+      mapeo[nombreLimpio] = pagina.id;
+      
+      // Log opcional para debugging (puedes quitarlo después)
+      console.log(`✓ Mapeado: "${nombreLimpio}" → "${pagina.id}"`);
+    }
+  });
+  
+  return mapeo;
+})();
+
+// Mostrar en consola cuántos mapeos se crearon
+console.log(`Total de GES mapeados: ${Object.keys(MAPEO_GES_PAGINA).length}`);
+  
   // ═══════════════════════════════════════════════════════════════
 // FUNCIONES AUXILIARES PARA GES - COPIA/PEGA TODO ESTO
 // ═══════════════════════════════════════════════════════════════
