@@ -654,7 +654,61 @@
 <script>
 const BASE_URL = "https://sites.google.com/view/guiadeorientacionusuaria";
 
-
+// ════════════════════════════════════════════════════════════════
+// DESCARGAR PÁGINA COMO PDF
+// ════════════════════════════════════════════════════════════════
+function descargarPDF(paginaId, titulo) {
+  const elemento = document.getElementById('paginaBody');
+  
+  // Crear un elemento temporal para copiar solo el contenido sin botones
+  const elementoTemporal = elemento.cloneNode(true);
+  
+  // Remover el botón PDF del temporal (para no incluirlo en el PDF)
+  const botónPDF = elementoTemporal.querySelector('div[style*="F5F5F5"]');
+  if (botónPDF) {
+    botónPDF.remove();
+  }
+  
+  // Remover la barra de utilidad (¿Te fue útil?)
+  const utilBar = elementoTemporal.querySelector('.util-bar');
+  if (utilBar) {
+    utilBar.remove();
+  }
+  
+  // Remover el mensaje de gracias
+  const utilGracias = elementoTemporal.querySelector('.util-gracias');
+  if (utilGracias) {
+    utilGracias.remove();
+  }
+  
+  // Opciones del PDF
+  const opciones = {
+    margin: [15, 15, 15, 15],
+    filename: `${paginaId}.pdf`,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { 
+      scale: 2,
+      useCORS: true,
+      allowTaint: true
+    },
+    jsPDF: { 
+      orientation: 'portrait', 
+      unit: 'mm', 
+      format: 'a4',
+      compress: true
+    },
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+  };
+  
+  // Generar y descargar PDF
+  html2pdf()
+    .set(opciones)
+    .from(elementoTemporal)
+    .save();
+  
+  console.log(`✓ PDF descargado: ${paginaId}.pdf`);
+}
+  
 // Mapa de GES con contenido disponible
 const GES_CON_CONTENIDO = new Set([6, 7, 21, 38, 39, 60, 61, 76, 90, 34, 53, 85, 23, 46, 47, 66, 86]);
 
