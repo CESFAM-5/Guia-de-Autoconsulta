@@ -2094,7 +2094,7 @@ const PAGINAS = {
     ges: 11,
     actualizacion: "12/06/2026",
     revision: "12/06/2026",
-    nav: ["Rol CESFAM","Cómo Acceder","Enlaces Oficiales"],
+    nav: ["Rol CESFAM","Acceso","Horarios","Saber +"],
     contenido: () => `
       <div style="background:linear-gradient(135deg,#1565C0,#0D47A1);border-radius:14px;padding:20px 18px;margin-bottom:20px;color:white;">
         <p style="font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;">Recupera tu visión garantizada</p>
@@ -2115,19 +2115,18 @@ const PAGINAS = {
         </p>
       </div>
  
-      <div class="pagina-seccion" id="sec-Cómo Acceder">
-        <div class="pagina-seccion-titulo-principal">Cómo Acceder</div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Si eres Beneficiario FONASA:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Acude a tu CESFAM refiriendo visión borrosa, dificultad para ver de cerca o de lejos</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>El médico evaluará y referirá a oftalmología si sospecha catarata</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>En oftalmología se confirmará diagnóstico y evaluará necesidad quirúrgica</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Si es operble, se activará automáticamente el GES Nº 11</span></div>
-        
-        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Si eres Beneficiario ISAPRE:</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Concurre a tu prestador oftalmológico con evaluación de CESFAM</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Solicita tu ingreso a GES Nº 11 una vez confirmado diagnóstico</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tu ISAPRE designará centro quirúrgico acreditado para la red GES</span></div>
+      <div class="pagina-seccion" id="sec-Acceso">
+        <div class="pagina-seccion-titulo-principal">Acceso</div>
+        <p class="pagina-texto">Para <strong>medicina general</strong> solicitar hora en el SOME Central desde las 07:30 hrs. Para <strong>controles de salud</strong> (programas) solicitar hora en el SOME Satélite de su sector.</p>
+        ${enlaceTarjeta('some','SOME — Sacar hora','Solicitar hora médica')}
+      </div>
+      <div class="pagina-seccion" id="sec-Horarios">
+        <div class="pagina-seccion-titulo-principal">Horarios de atención</div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Horario normal:</strong> lunes a jueves 08:00–17:00 / viernes 08:00–16:00</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Extensión horaria:</strong> lunes a jueves 17:00–20:00 / viernes 16:00–19:00</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Horario de apertura:</strong> sábado 08:00–12:00</span></div>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave); margin-top:8px;">Las horas de extensión y apertura se entregan los días anteriores.</p>
+      </div>
         
         <div style="background:#E8F5E9; border-left:4px solid #388E3C; padding:12px 14px; margin-top:14px; border-radius:6px;">
           <strong style="color:#1B5E20;">⏰ Plazo garantizado</strong>
@@ -2137,7 +2136,7 @@ const PAGINAS = {
         </div>
       </div>
  
-      <div class="pagina-seccion" id="sec-Enlaces Oficiales">
+      <div class="pagina-seccion" id="sec-Saber +">
         <div class="pagina-seccion-titulo-principal">Información Oficial</div>
         
         <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/tratamiento-quirurgico-de-cataratas/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
