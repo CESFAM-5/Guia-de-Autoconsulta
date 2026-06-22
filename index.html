@@ -708,6 +708,7 @@ const TEMAS = [
   {letra:"C",nombre:"GES Nº 27: Cáncer Gástrico",url:"/c/cancer-gastrico",categoria:"GES",ges:27,tags:"cáncer gástrico estómago digestivo GES tratamiento",pagina:"cancer-gastrico"},
   {letra:"C",nombre:"Cardiovascular, Programa",url:"/c/cardiovascular-programa",categoria:"Programa",tags:"corazón hipertensión presión alta diabetes colesterol cardiovascular crónico",pagina:"cardiovascular"},
   {letra:"C",nombre:"Carnet de control",url:"/c/carnet-de-control",categoria:"Trámite",tags:"carnet control registro libreta salud",pagina:"carnet-control"},
+  {letra:"C",nombre:"GES Nº 11: Tratamiento quirúrgico de cataratas",url:"/c/cataratas",categoria:"GES",ges:11,tags:"cataratas quirurgico GES tratamiento",pagina:"cataratas"},
   {letra:"C",nombre:"Certificados médicos",url:"/c/certificados",categoria:"Trámite",tags:"certificado médico constancia papel trabajo colegio juzgado diagnóstico",pagina:"certificados"},
   {letra:"C",nombre:"Cesación del Consumo de Tabaco",url:"/c/cesacion-tabaquica",categoria:"GES",ges:90,tags:"tabaquismo tabaco dejar cigarrillo",pagina:"cesacion-tabaquica"},
   {letra:"C",nombre:"Chile Crece Contigo",url:"/c/chile-crece-contigo",categoria:"Programa",tags:"chile crece contigo embarazo bebé niño primera infancia crianza apoyo",pagina:"chile-crece-contigo"},
@@ -2085,6 +2086,73 @@ const PAGINAS = {
     `
   },
 
+  "cataratas": {
+    id: "cataratas",
+    nombre: "GES Nº 11: Tratamiento Quirúrgico de Cataratas",
+    titulo: "Cirugía de Cataratas — Garantía Explícita en Salud",
+    categoria: "GES",
+    ges: 11,
+    actualizacion: "12/06/2026",
+    revision: "12/06/2026",
+    nav: ["Rol CESFAM","Cómo Acceder","Enlaces Oficiales"],
+    contenido: () => `
+      <div style="background:linear-gradient(135deg,#1565C0,#0D47A1);border-radius:14px;padding:20px 18px;margin-bottom:20px;color:white;">
+        <p style="font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;">Recupera tu visión garantizada</p>
+        <p style="font-size:13px;opacity:0.88;line-height:1.5;">Tu CESFAM te evalúa y refiere. La cirugía está garantizada sin costos si eres FONASA.</p>
+      </div>
+ 
+      <div class="pagina-seccion" id="sec-Rol CESFAM">
+        <div class="pagina-seccion-titulo-principal">Rol del CESFAM</div>
+        <p class="pagina-texto">
+          El CESFAM participa en la detección de cataratas mediante evaluación clínica y examen oftalmológico básico. 
+          Identifica personas con visión borrosa progresiva, opacidad del cristalino, o deterioro visual que afecta 
+          sus actividades diarias.
+        </p>
+        
+        <p class="pagina-texto">
+          Una vez identificada la catarata, el CESFAM realiza la referencia al oftalmólogo especialista para confirmación 
+          diagnóstica y evaluación quirúrgica. El seguimiento post-quirúrgico también se coordina desde el CESFAM.
+        </p>
+      </div>
+ 
+      <div class="pagina-seccion" id="sec-Cómo Acceder">
+        <div class="pagina-seccion-titulo-principal">Cómo Acceder</div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px;">Si eres Beneficiario FONASA:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Acude a tu CESFAM refiriendo visión borrosa, dificultad para ver de cerca o de lejos</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>El médico evaluará y referirá a oftalmología si sospecha catarata</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>En oftalmología se confirmará diagnóstico y evaluará necesidad quirúrgica</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Si es operble, se activará automáticamente el GES Nº 11</span></div>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:8px; margin-top:14px;">Si eres Beneficiario ISAPRE:</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Concurre a tu prestador oftalmológico con evaluación de CESFAM</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Solicita tu ingreso a GES Nº 11 una vez confirmado diagnóstico</span></div>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span>Tu ISAPRE designará centro quirúrgico acreditado para la red GES</span></div>
+        
+        <div style="background:#E8F5E9; border-left:4px solid #388E3C; padding:12px 14px; margin-top:14px; border-radius:6px;">
+          <strong style="color:#1B5E20;">⏰ Plazo garantizado</strong>
+          <p style="font-size:13px; color:#2E7D32; margin:6px 0 0 0;">
+            Máximo 180 días desde derivación para cirugía. Urgencia visual severa: máximo 30 días.
+          </p>
+        </div>
+      </div>
+ 
+      <div class="pagina-seccion" id="sec-Enlaces Oficiales">
+        <div class="pagina-seccion-titulo-principal">Información Oficial</div>
+        
+        <a href="https://www.superdesalud.gob.cl/orientacion-en-salud/tratamiento-quirurgico-de-cataratas/" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          SuperDESALUD — GES Nº 11 Detalles y Garantías
+        </a><br>
+        
+        <a href="https://auge.minsal.cl/problemasdesalud/lep" target="_blank" rel="noopener" class="link-externo" style="display:inline-flex; margin-bottom:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          MINSAL AUGE — Detalles Completos
+        </a>
+      </div>
+    `
+  },
+  
   "cesacion-tabaquica": {
     id: "cesacion-tabaquica",
     nombre: "Cesación del Consumo de Tabaco",
@@ -7303,7 +7371,7 @@ const CONDICIONES_GES = {
     titulo: 'Problemas Oculares',
     icono: '👁️',
     items: [
-      { nombre: 'Cataratas', numero: 30, url: 'https://www.superdesalud.gob.cl/', enGuia: false },
+      { nombre: 'Cataratas', numero: 11, url: 'https://www.superdesalud.gob.cl/', enGuia: false },
       { nombre: 'Retinopatía diabética', numero: 32, url: 'https://www.superdesalud.gob.cl/', enGuia: false },
       { nombre: 'Estrabismo en menores de 9 años', numero: 35, url: 'https://www.superdesalud.gob.cl/', enGuia: false },
       { nombre: 'Baja visión', numero: 36, url: 'https://www.superdesalud.gob.cl/', enGuia: false }
