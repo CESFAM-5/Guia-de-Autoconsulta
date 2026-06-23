@@ -3269,12 +3269,12 @@ const PAGINAS = {
 
 "epilepsia": {
     id: "epilepsia",
-    nombre: "Epilepsia, Programa",
-    titulo: "Programa de Epilepsia",
+    nombre: "Epilepsia",
+    titulo: "Epilepsia",
     categoria: "Programa",
     actualizacion: "",
     revision: "01/01/2026",
-    nav: ["Descripción","Síntomas","Tipos","Prestaciones","Requisitos","Acceder","GES","Saber +"],
+    nav: ["Descripción","Síntomas","Tipos","Prestaciones","Requisitos","Acceso","GES","Saber +"],
     contenido: () => `
       <div class="pagina-seccion" id="sec-Descripción">
         <div class="pagina-seccion-titulo-principal">Descripción</div>
@@ -3292,7 +3292,7 @@ const PAGINAS = {
         <p class="pagina-texto" style="margin-top:14px; font-size:13px; color:#9ab0a6; font-style:italic;"><strong>Nota:</strong> Una sola crisis no implica necesariamente epilepsia. El diagnóstico requiere evaluación médica especializada. Si presencia una crisis por primera vez, llame al 131.</p>
       </div>
 
-      <div class="pagina-seccion" id="sec-Tipos">
+<div class="pagina-seccion" id="sec-Tipos">
         <div class="pagina-seccion-titulo-principal">Tipos</div>
         <p class="pagina-texto">La epilepsia se clasifica principalmente según el área del cerebro donde se originan las descargas eléctricas:</p>
         <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Crisis Focales:</strong> empiezan en una parte del cerebro.</span></div>
@@ -3315,7 +3315,7 @@ const PAGINAS = {
         <div class="pagina-requisito"><span class="pagina-req-check">✓</span><span class="pagina-req-texto">Estar inscrita/o en el CESFAM N°5.</span></div>
       </div>
 
-      <div class="pagina-seccion" id="sec-Acceder">
+      <div class="pagina-seccion" id="sec-Acceso">
         <div class="pagina-seccion-titulo-principal">Acceder</div>
         <p class="pagina-texto"><strong>Si está en medio de una crisis o presencia una crisis por primera vez:</strong> llame al SAMU.</p>
         ${enlaceTarjeta('samu','SAMU — Urgencia 131','Para crisis epilépticas en curso o primera crisis')}
@@ -3326,14 +3326,30 @@ const PAGINAS = {
 
       <div class="pagina-seccion" id="sec-GES">
         <div class="pagina-seccion-titulo-principal">Garantías Explícitas en Salud (GES)</div>
-        <p class="pagina-texto">La epilepsia está incluida en el sistema de <strong>Garantías Explícitas en Salud (GES)</strong>, lo que significa que tienes derecho a acceso, plazo, calidad y protección económica garantizados.</p>
+        <p class="pagina-texto">La epilepsia está incluida en el sistema de <strong>Garantías Explícitas en Salud (GES)</strong>, lo que significa que tienes garantías de <strong>Acceso</strong>, <strong>Oportunidad</strong>, <strong>Calidad</strong> y <strong>Protección económica</strong>.</p>
+        <p class="pagina-texto" style="margin-top:14px; font-weight:600; color:var(--verde);"><strong>Epilepsia no refractaria en personas desde 1 año y menores de 15 años, GES N° 22</strong></p>
+        <p class="pagina-texto" style="margin-top:14px; font-weight:600; color:var(--verde);"><strong>Epilepsia no refractaria en personas de 15 años y más, GES N° 60</strong></p>
 
-        <p class="pagina-texto" style="margin-top:14px; font-weight:600; color:var(--verde);">Epilepsia no refractaria en personas desde 1 año — GES N°9</p>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Cobertura:</strong> diagnóstico, tratamiento farmacológico con fármacos antiepilépticos, seguimiento y educación al paciente y su familia.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Plazo garantizado:</strong> inicio de tratamiento dentro de 30 días desde la confirmación diagnóstica.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Copago:</strong> sin costo si tienes FONASA.</span></div>
-        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>Profesionales:</strong> médico/a de APS, neurólogo/a en caso de derivación.</span></div>
-        <p class="pagina-texto" style="margin-top:10px;"><a href="https://www.superdesalud.gob.cl/orientacion-en-salud/epilepsia-no-refractaria-en-personas-de-15-anos-y-mas/" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver detalles en Superintendencia de Salud →</a></p>
+
+ <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">1. Garantía de Acceso</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Tienes derecho a diagnóstico, tratamiento farmacológico con fármacos antiepilépticos, seguimiento y educación al paciente y su familia.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">2. Garantía de Oportunidad (Plazos máximos)</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">Tienes derecho a diagnóstico, tratamiento farmacológico con fármacos antiepilépticos, seguimiento y educación al paciente y su familia.</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">3. Garantía de Calidad</p>
+        <p class="pagina-texto" style="font-size:13px; color:var(--texto-suave);">asegura que las prestaciones médicas para las enfermedades cubiertas sean otorgadas por profesionales y centros de salud registrados o acreditados. Esto garantiza que la atención cumple con los estándares técnicos, clínicos y de seguridad exigidos por el Ministerio de Salud (MINSAL).</p>
+        
+        <p class="pagina-texto" style="font-weight:600; color:var(--verde); margin-bottom:6px; margin-top:12px;">4. Garantía de Protección Financiera</p>
+        <div class="pagina-bullet"><div class="pagina-bullet-dot"></div><span><strong>FONASA A, B, C, D:</strong> 0% — Completamente gratuito</span></div>
+
+        <p class="pagina-texto" style="margin-top:10px;"><a href="https://www.superdesalud.gob.cl/orientacion-en-salud/epilepsia-no-refractaria-en-personas-desde-1-ano-y-menores-de-15-anos/" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver más información GES N° 22</a></p>
+
+        <p class="pagina-texto" style="margin-top:10px;"><a href=https://auge.minsal.cl/problemasdesalud/index/22/" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver más información GES N° 22, MINSAL</a></p>
+
+      <div class="pagina-seccion" id="sec-Sber +">
+        <div class="pagina-seccion-titulo-principal">Saber +</div>
+href=https://auge.minsal.cl/problemasdesalud/index/60" target="_blank" rel="noopener" style="color:var(--verde); text-decoration:none; font-weight:500; border-bottom:1px solid var(--verde);">Ver más información GES N° 60</a></p>
 
         <div style="background:var(--verde-claro); padding:12px; border-radius:var(--radio-sm); margin-top:14px;">
           <p class="pagina-texto" style="margin:0; font-size:13px; color:var(--verde);">📌 <strong>¿Qué significa GES?</strong> Son garantías que obliga a FONASA a cubrir estas enfermedades. Si te diagnostican una patología GES, tienes derecho a: acceso asegurado, plazo máximo de atención, prestadores autorizados y protección económica.</p>
